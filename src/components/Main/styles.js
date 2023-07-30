@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { lightPink, white } from "../../utils/colors"
 
 export const MainStyled = styled.main`
 	display: flex;
@@ -19,13 +20,13 @@ export const SubContainerStyled = styled.div`
 
 export const TitleStyled = styled.h1`
 	margin-bottom: 16px;
-	color: #E4EFF1;
+	color: ${white};
 `
 
 export const PStyled = styled.p`
 	margin-bottom: 12px;
 	text-align: justify;
-	color: #E4EFF1;
+	color: ${white};
 `
 
 export const listaStyled = styled.ul`
@@ -37,17 +38,21 @@ export const listaStyled = styled.ul`
 `
 
 export const botaoStyled = styled.button`
-	color: #E4EFF1;
+	color: ${white};
 	background-color: transparent;
 	border: none;
-	border-bottom: 1px solid #E4EFF1;
+	border-bottom: 1px solid ${white};
 	cursor: pointer;
 	font-size: 1em;
+
+	&:hover {
+		transition: 1s;
+		background-color: ${lightPink};
+		color: black;
+	}
 `
 
 export const bioContainerStyled = styled.div`
 	display: block;
 	z-index: 1;
-	background-color: red;
-	transition: 3s;
 `

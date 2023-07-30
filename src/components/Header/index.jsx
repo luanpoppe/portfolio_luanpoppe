@@ -1,11 +1,25 @@
 import { ButtonHeader, HeaderStyle } from "./styles";
 
-const Header = () => {
+const Header = (props) => {
 	return (
 		<>
 			<HeaderStyle>
-				<ButtonHeader>Sobre</ButtonHeader>
-				<ButtonHeader>Projetos</ButtonHeader>
+				<ButtonHeader
+					onClick={() => {
+						props.setFalseValues();
+						props.setMostrarInicio(true);
+					}}
+				>
+					Sobre
+				</ButtonHeader>
+				<ButtonHeader
+					onClick={() => {
+						props.setFalseValues();
+						props.funcMostrarProjetos(true);
+					}}
+				>
+					Projetos
+				</ButtonHeader>
 				<ButtonHeader>Contatos</ButtonHeader>
 			</HeaderStyle>
 		</>
