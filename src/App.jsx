@@ -9,6 +9,8 @@ function App() {
 	const [mostrarBio, setMostrarBio] = useState(false);
 	const [mostrarProjetos, setMostrarProjetos] = useState(false);
 
+	const [fadeIn, setFadeIn] = useState(false);
+
 	function setFalseValues() {
 		setMostrarInicio(false);
 		setMostrarBio(false);
@@ -16,24 +18,31 @@ function App() {
 	}
 
 	return (
-		<div className="container">
-			<div className="subContainer">
-				<Header
-					setFalseValues={setFalseValues}
-					setMostrarInicio={setMostrarInicio}
-					funcMostrarProjetos={setMostrarProjetos}
-				/>
-				<Main
-					setFalseValues={setFalseValues}
-					setMostrarBio={setMostrarBio}
-					setMostrarInicio={setMostrarInicio}
-					mostrarInicio={mostrarInicio}
-					mostrarBio={mostrarBio}
-					varMostrarProjetos={mostrarProjetos}
-				/>
-				<footer style={{ marginTop: "80px" }}>footer</footer>
+		<>
+			<div className="container">
+				<div className="subContainer">
+					<Header
+						setFalseValues={setFalseValues}
+						setMostrarInicio={setMostrarInicio}
+						funcMostrarProjetos={setMostrarProjetos}
+						setFadeIn={setFadeIn}
+						fadeIn={fadeIn}
+					/>
+					<Main
+						setFalseValues={setFalseValues}
+						setMostrarBio={setMostrarBio}
+						setMostrarInicio={setMostrarInicio}
+						mostrarInicio={mostrarInicio}
+						mostrarBio={mostrarBio}
+						setFadeIn={setFadeIn}
+						fadeIn={fadeIn}
+						varMostrarProjetos={mostrarProjetos}
+					/>
+					<footer style={{ marginTop: "80px" }}>footer</footer>
+				</div>
 			</div>
-		</div>
+			<div className="backgroundHeader"></div>
+		</>
 	);
 }
 

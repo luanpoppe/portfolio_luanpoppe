@@ -1,16 +1,65 @@
-import { ContainerStyled, EachProjectStyled } from "./styles";
+import {
+	ContainerStyled,
+	EachProjectStyled,
+	ProjectImage,
+	ProjectTitle,
+} from "./styles";
 
-const Projetos = () => {
+import "../../globalStyles.css";
+
+const Projetos = (props) => {
 	return (
-		<ContainerStyled>
+		<ContainerStyled
+			className={props.fadeIn ? "fadeIn" : ""}
+			onAnimationEnd={() => {
+				props.setFadeIn(false);
+			}}
+		>
 			<EachProjectStyled>
-				<h2>Nome do Projeto</h2>
-				<img src="https://via.placeholder.com/120x120" alt="" />
+				<ProjectTitle>Nome do Projeto</ProjectTitle>
+				<ProjectImage>
+					<img src="https://via.placeholder.com/120x120" alt="" />
+				</ProjectImage>
+				<p>
+					Descrição do projeto. Este projeto foi desenvolvido utilizando o React
+				</p>
 			</EachProjectStyled>
-			<EachProjectStyled>Projeto 2</EachProjectStyled>
-			<EachProjectStyled>Projeto 3</EachProjectStyled>
-			<EachProjectStyled>Projeto 4</EachProjectStyled>
-			<EachProjectStyled>Projeto 5</EachProjectStyled>
+			<EachProjectStyled>
+				<ProjectTitle>Nome do Projeto</ProjectTitle>
+				<ProjectImage>
+					<img src="https://via.placeholder.com/120x120" alt="" />
+				</ProjectImage>
+				<p>
+					Descrição do projeto. Este projeto foi desenvolvido utilizando o React
+				</p>
+			</EachProjectStyled>
+			<EachProjectStyled>
+				<ProjectTitle>Nome do Projeto</ProjectTitle>
+				<ProjectImage>
+					<img src="https://via.placeholder.com/120x120" alt="" />
+				</ProjectImage>
+				<p>
+					Descrição do projeto. Este projeto foi desenvolvido utilizando o React
+				</p>
+			</EachProjectStyled>
+			<EachProjectStyled>
+				<ProjectTitle>Nome do Projeto</ProjectTitle>
+				<ProjectImage>
+					<img src="https://via.placeholder.com/120x120" alt="" />
+				</ProjectImage>
+				<p>
+					Descrição do projeto. Este projeto foi desenvolvido utilizando o React
+				</p>
+			</EachProjectStyled>
+			<EachProjectStyled>
+				<ProjectTitle>Nome do Projeto</ProjectTitle>
+				<ProjectImage>
+					<img src="https://via.placeholder.com/120x120" alt="" />
+				</ProjectImage>
+				<p>
+					Descrição do projeto. Este projeto foi desenvolvido utilizando o React
+				</p>
+			</EachProjectStyled>
 		</ContainerStyled>
 	);
 };
