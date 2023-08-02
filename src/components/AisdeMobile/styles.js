@@ -10,7 +10,7 @@ export const HeaderMobileAside = styled.aside`
 	min-width: 160px;
 	z-index: 3;
 	background-color: ${black};
-	opacity: 0.95;
+	/* opacity: 0.95; */
 	border: none;
 
 	animation: fadeIn 0.5s ease;

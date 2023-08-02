@@ -25,18 +25,20 @@ const Header = (props) => {
 
 			<ButtonHeader>Contatos</ButtonHeader>
 
-			<HeaderMobile>
-				<div
-					className="hamburguer"
-					onClick={() => {
-						props.setMostrarSideBar(true);
-					}}
-				>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</HeaderMobile>
+			{!props.mostrarSidebar && (
+				<HeaderMobile>
+					<div
+						className="hamburguer"
+						onClick={() => {
+							props.setMostrarSideBar(true);
+						}}
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</HeaderMobile>
+			)}
 		</HeaderStyle>
 	);
 };

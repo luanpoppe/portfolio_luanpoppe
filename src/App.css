@@ -17,6 +17,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 
 	position: relative;
 }
@@ -37,6 +38,12 @@
 	max-width: 1080px;
 	z-index: 1;
 	position: relative;
+}
+
+.marginTop {
+	@media (max-width: 480px) {
+		margin-top: 40px;
+	}
 }
 
 .backgroundHeader {

@@ -24,7 +24,7 @@ function App() {
 		<>
 			<div className="container">
 				<div
-					className="subContainer"
+					className={`subContainer ${mostrarSidebar ? "marginTop" : ""}`}
 					onClick={() => {
 						if (mostrarSidebar) {
 							setMostrarSideBar(false);
@@ -47,6 +47,7 @@ function App() {
 						funcMostrarProjetos={setMostrarProjetos}
 						setFadeIn={setFadeIn}
 						fadeIn={fadeIn}
+						mostrarSidebar={mostrarSidebar}
 						setMostrarSideBar={setMostrarSideBar}
 					/>
 					<Main
