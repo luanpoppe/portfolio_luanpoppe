@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { subtitle, title } from "../../utils/fontSizes";
+import { subtitle } from "../../utils/fontSizes";
 
 export const OldProjectsStyled = styled.section`
-
+	margin-top: 60px;
 `
 
 export const SubtituloStyled = styled.h2`

@@ -14,6 +14,13 @@ infoOldProjects[1] = {
 	linkProjeto: "https://to-do-app-vue-five.vercel.app/"
 }
 
+infoOldProjects[2] = {
+	nome: "Landing Page de Evento",
+	imagem: "https://via.placeholder.com/120x120",
+	descricao: "Descrição do projeto",
+	linkProjeto: "https://landing-page-aniversario-one.vercel.app/"
+}
+
 
 
 export default infoOldProjects

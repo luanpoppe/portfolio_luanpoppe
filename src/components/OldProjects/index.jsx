@@ -11,7 +11,7 @@ import {
 const OldProjects = (props) => {
 	return (
 		<OldProjectsStyled>
-			<SubtituloStyled>oi irmão enois</SubtituloStyled>
+			<SubtituloStyled>Projetos Antigos/Simples</SubtituloStyled>
 			<ContainerStyled
 				className={props.fadeIn ? "fadeIn" : ""}
 				onAnimationEnd={() => {
