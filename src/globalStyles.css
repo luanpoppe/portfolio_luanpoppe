@@ -7,6 +7,20 @@
 	}
 }
 
+@keyframes fadeOut {
+	50% {
+		opacity: 1;
+	}
+	0%, 100% {
+		opacity: 0;
+	}
+}
+
 .fadeIn {
 	animation: fadeIn 1s;
+}
+
+.fadeOut {
+	animation: fadeOut;
+	opacity: 0;
 }

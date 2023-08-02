@@ -18,7 +18,12 @@ const Main = (props) => {
 					<S.TitleStyled style={{ animationDelay: "0s" }}>
 						Luan Poppe
 					</S.TitleStyled>
-					<S.TitleStyled style={{ animationDelay: "0.5s" }}>
+					<S.TitleStyled
+						style={{ animationDelay: "0.5s" }}
+						fontSize={"48"}
+						fontSizeMobile={"28"}
+						titleBorder={true}
+					>
 						Desenvolvedor Front-end
 					</S.TitleStyled>
 					<S.PStyled style={{ animationDelay: "1s" }}>
@@ -40,12 +45,21 @@ const Main = (props) => {
 						<div>
 							<li>HTML</li>
 							<li>CSS</li>
-							<li>Javascript</li>
+							<li>SASS/LESS</li>
 						</div>
 						<div>
+							<li>Javascript</li>
+							<li>Typescript</li>
 							<li>React</li>
+						</div>
+						<div>
+							<li>Redux</li>
 							<li>Bootstrap</li>
 							<li>NodeJS</li>
+						</div>
+						<div>
+							<li>Git/GitHub</li>
+							<li>AJAX</li>
 						</div>
 					</S.listaStyled>
 				</S.SubContainerStyled>
@@ -62,7 +76,7 @@ const Main = (props) => {
 				<S.ProfileImageStyled src={fotoPerfil} />
 				<S.SubContainerStyled>
 					<S.bioContainerStyled>
-						<S.TitleStyled>Minha trajetória</S.TitleStyled>
+						<S.TitleStyled titleBorder={true}>Minha trajetória</S.TitleStyled>
 						<S.PStyled>
 							Iniciei minha jornada profissional como médico, e me encantei pela
 							área de programação ao buscar soluções para o dia a dia de meu

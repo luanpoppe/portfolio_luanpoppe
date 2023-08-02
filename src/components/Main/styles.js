@@ -1,33 +1,28 @@
 import styled from "styled-components"
-import { blue, lightPink, white } from "../../utils/colors"
-import { paragraph, paragraphMobile, title, titleMobile } from "../../utils/fontSizes"
+import { blue, white } from "../../utils/colors"
+import { paragraph, paragraphMobile, smallParagraph, smallParagraphMobile, title, titleMobile } from "../../utils/fontSizes"
 
 export const MainStyled = styled.main`
 	display: flex;
 	gap: 32px;
 	margin-bottom: 64px;
 	padding: 16px;
-	border: 1px ${lightPink} solid;
+	border: 4px ${white} solid;
+	border-radius: 4px;
 
 	p {
 		font-size: ${paragraph};
 
 		@media (max-width: 480px) {
-		font-size: ${paragraphMobile};
-	}
-	}
-
-	h1 {
-		font-size: ${title};
-
-		@media (max-width: 480px) {
-		font-size: ${titleMobile};
-	}
+			font-size: ${paragraphMobile};
+		}
 	}
 
 	@media (max-width: 480px) {
 		display: block;
 		border: none;
+		padding: 24px;
+		margin-bottom: 28px;
 	}
 `
 
@@ -55,6 +50,19 @@ export const TitleStyled = styled.h1`
 	text-align: center;
 	animation: fadeIn 1s forwards;
 	opacity: 0;
+
+	border-bottom: ${props => props.titleBorder ? `2px solid ${blue}` : "none"};
+	font-size: ${(props => {
+		if (props.fontSize) {
+			return `${props.fontSize}px`
+		} else {
+			return title
+		}
+	})};
+
+	@media (max-width: 480px) {
+		font-size: ${props => props.fontSizeMobile ? `${props.fontSizeMobile}px` : titleMobile};
+	}
 `
 
 export const PStyled = styled.p`
@@ -68,13 +76,27 @@ export const PStyled = styled.p`
 export const listaStyled = styled.ul`
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
 	column-gap: 60px;
 	justify-content: center;
-
 	animation: fadeIn 1s forwards;
 	opacity: 0;
+	margin-top: 32px;
+
+	@media (max-width: 480px) {
+		div {
+			min-width: 80px;
+		}
+		text-align: center;
+	}
+
 	li {
 		padding-bottom: 4px;
+		font-size: ${smallParagraph};
+
+		@media (max-width: 480px) {
+			font-size: ${smallParagraphMobile};
+		}
 	}
 `
 
@@ -88,8 +110,10 @@ export const botaoStyled = styled.button`
 
 	&:hover {
 		transition: 0.5s ease-in;
-		background-color: ${lightPink};
+		background-color: ${blue};
 		color: black;
+		border-radius: 4px;
+		padding: 0 4px;
 	}
 `
 

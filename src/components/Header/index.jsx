@@ -1,4 +1,4 @@
-import { ButtonHeader, HeaderStyle } from "./styles";
+import { ButtonHeader, HeaderMobile, HeaderStyle } from "./styles";
 
 const Header = (props) => {
 	return (
@@ -24,6 +24,19 @@ const Header = (props) => {
 			</ButtonHeader>
 
 			<ButtonHeader>Contatos</ButtonHeader>
+
+			<HeaderMobile>
+				<div
+					className="hamburguer"
+					onClick={() => {
+						props.setMostrarSideBar(true);
+					}}
+				>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</HeaderMobile>
 		</HeaderStyle>
 	);
 };
