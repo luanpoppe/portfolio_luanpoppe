@@ -48,9 +48,9 @@ export const HeaderMobile = styled.div`
 			display: block;
 			/* margin-bottom: 4px; */
 			height: 2px;
-			width: 28px;
+			width: 36px;
 			border: ${blue} 1px solid;
-			margin: 4px auto 4px auto;
+			margin: 8px auto;
 
 		}
 	}

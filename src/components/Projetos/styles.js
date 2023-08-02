@@ -13,6 +13,10 @@ export const ContainerStyled = styled.section`
 
 export const EachProjectStyled = styled.div`
 	padding: 8px;
+
+	a {
+		text-decoration: none;
+	}
 `
 
 export const ProjectTitle = styled.h2`
@@ -23,4 +27,8 @@ export const ProjectImage = styled.div`
 	display: flex;
 	justify-content: center;
 	padding: 8px;
+`
+
+export const DescricaoProjeto = styled.div`
+	text-align: center;
 `

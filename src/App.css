@@ -40,9 +40,9 @@
 	position: relative;
 }
 
-.marginTop {
+.paddingTop {
 	@media (max-width: 480px) {
-		margin-top: 40px;
+		padding-top: 40px;
 	}
 }
 

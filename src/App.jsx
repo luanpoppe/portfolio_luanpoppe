@@ -24,7 +24,7 @@ function App() {
 		<>
 			<div className="container">
 				<div
-					className={`subContainer ${mostrarSidebar ? "marginTop" : ""}`}
+					className={`subContainer ${mostrarSidebar ? "paddingTop" : ""}`}
 					onClick={() => {
 						if (mostrarSidebar) {
 							setMostrarSideBar(false);
