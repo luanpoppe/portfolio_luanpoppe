@@ -17,6 +17,10 @@ export const EachProjectStyled = styled.div`
 	a {
 		text-decoration: none;
 	}
+
+	img {
+		max-width: 100%;
+	}
 `
 
 export const ProjectTitle = styled.h2`

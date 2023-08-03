@@ -6,12 +6,13 @@ export const HeaderMobileAside = styled.aside`
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 100%;
-	min-width: 160px;
+	height: 120px;
+	/* min-width: 160px; */
+	width: 100%;
 	z-index: 3;
 	background-color: ${black};
 	/* opacity: 0.95; */
-	border: none;
+	border-radius: 4px;
 
 	animation: fadeIn 0.5s ease;
 `
