@@ -9,10 +9,12 @@ import {
 import "../../globalStyles.css";
 import infoProjetos from "../../utils/infosProjetos";
 import OldProjects from "../OldProjects";
+import { SubtituloStyled } from "../OldProjects/styles";
 
 const Projetos = (props) => {
 	return (
 		<>
+			<SubtituloStyled>Projetos</SubtituloStyled>
 			<ContainerStyled
 				className={props.fadeIn ? "fadeIn" : ""}
 				onAnimationEnd={() => {

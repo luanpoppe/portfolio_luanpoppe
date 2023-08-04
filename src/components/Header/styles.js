@@ -7,7 +7,7 @@ export const HeaderStyle = styled.header`
 	display: flex;
 	justify-content: center;
 	gap: 80px;
-	margin-top: 8px;
+	margin-top: 12px;
 	margin-bottom: 32px;
 
 	@media (max-width: 480px) {
@@ -38,11 +38,18 @@ export const ButtonHeader = styled.button`
 `
 
 export const HeaderMobile = styled.div`
+	position: fixed;
+	z-index: 3;
+
 	.hamburguer {
 		height: 40px;
 		width: 52px;
 		/* display: block; */
 		padding: 12px;
+		position: absolute;
+		top: 0;
+		left: 0;
+
 
 		span {
 			display: block;

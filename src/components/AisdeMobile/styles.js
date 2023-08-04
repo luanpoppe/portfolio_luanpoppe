@@ -3,7 +3,7 @@ import { black, blue } from "../../utils/colors"
 import "../../globalStyles.css"
 
 export const HeaderMobileAside = styled.aside`
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	height: 120px;
