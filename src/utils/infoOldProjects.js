@@ -11,45 +11,45 @@ let infoOldProjects = []
 infoOldProjects[0] = {
 	nome: "Calculadora de IMC",
 	imagem: calculadoraIMC,
-	descricao: "Descrição do projeto",
+	descricao: "React + Javascript",
 	linkProjeto: "https://calculadora-imc-luanpoppe.vercel.app/"
 }
 
 infoOldProjects[1] = {
 	nome: "Lista de Tarefas - Vue",
 	imagem: listaDeTarefasVue,
-	descricao: "Descrição do projeto",
+	descricao: "VueJS + Javascript",
 	linkProjeto: "https://to-do-app-vue-five.vercel.app/"
 }
 
 infoOldProjects[2] = {
 	nome: "Landing Page de Evento",
 	imagem: landingPageAniversario,
-	descricao: "Descrição do projeto",
+	descricao: "HTML + CSS + Javascript",
 	linkProjeto: "https://landing-page-aniversario-one.vercel.app/"
 }
 infoOldProjects[3] = {
 	nome: "Página de Redirecionamento",
 	imagem: paginaRedirecionamento,
-	descricao: "Descrição do projeto",
+	descricao: "HTML + CSS + Javascript + LESS",
 	linkProjeto: "https://pagina-de-redirecionamento-less.vercel.app/"
 }
 infoOldProjects[4] = {
 	nome: "Newsletter Landing Page",
 	imagem: newsletter,
-	descricao: "Descrição do projeto",
+	descricao: "HTML + CSS + Javascript + LESS",
 	linkProjeto: "https://newsletter-sass.vercel.app/"
 }
 infoOldProjects[5] = {
 	nome: "EBAC Shoes",
 	imagem: ebacShoes,
-	descricao: "Descrição do projeto",
+	descricao: "HTML + CSS",
 	linkProjeto: "https://ebac-shoes-ten-tan.vercel.app/"
 }
 infoOldProjects[6] = {
 	nome: "EBAC Banking",
 	imagem: ebacBanking,
-	descricao: "Descrição do projeto",
+	descricao: "HTML + CSS + Javascript",
 	linkProjeto: "https://ebac-banking-ten.vercel.app/"
 }
 

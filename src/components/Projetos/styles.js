@@ -46,4 +46,5 @@ export const ProjectImage = styled.div`
 
 export const DescricaoProjeto = styled.div`
 	text-align: center;
+	margin-top: 8px;
 `
