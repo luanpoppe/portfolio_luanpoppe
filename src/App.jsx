@@ -11,6 +11,7 @@ function App() {
 	const [mostrarBio, setMostrarBio] = useState(false);
 	const [mostrarProjetos, setMostrarProjetos] = useState(false);
 	const [mostrarSidebar, setMostrarSideBar] = useState(false);
+	const [mostrarContatos, setMosrarContatos] = useState(false);
 
 	const [fadeIn, setFadeIn] = useState(false);
 
@@ -39,6 +40,7 @@ function App() {
 							setFadeIn={setFadeIn}
 							fadeIn={fadeIn}
 							setMostrarSideBar={setMostrarSideBar}
+							setMosrarContatos={setMosrarContatos}
 						/>
 					)}
 					<Header
@@ -49,6 +51,7 @@ function App() {
 						fadeIn={fadeIn}
 						mostrarSidebar={mostrarSidebar}
 						setMostrarSideBar={setMostrarSideBar}
+						setMosrarContatos={setMosrarContatos}
 					/>
 					<Main
 						setFalseValues={setFalseValues}
@@ -59,6 +62,8 @@ function App() {
 						setFadeIn={setFadeIn}
 						fadeIn={fadeIn}
 						varMostrarProjetos={mostrarProjetos}
+						mostrarContatos={mostrarContatos}
+						setMosrarContatos={setMosrarContatos}
 					/>
 					<Footer />
 				</div>

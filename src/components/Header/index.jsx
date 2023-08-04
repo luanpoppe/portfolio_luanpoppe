@@ -23,7 +23,15 @@ const Header = (props) => {
 				Projetos
 			</ButtonHeader>
 
-			<ButtonHeader>Contatos</ButtonHeader>
+			<ButtonHeader
+				onClick={() => {
+					props.setFalseValues();
+					props.setFadeIn(true);
+					props.setMosrarContatos(true);
+				}}
+			>
+				Contatos
+			</ButtonHeader>
 
 			{!props.mostrarSidebar && (
 				<HeaderMobile>

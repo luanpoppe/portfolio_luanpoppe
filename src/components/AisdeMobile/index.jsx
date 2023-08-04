@@ -22,7 +22,15 @@ const AsideMobile = (props) => {
 				>
 					Projetos
 				</EachOptionMobile>
-				<EachOptionMobile>Contatos</EachOptionMobile>
+				<EachOptionMobile
+					onClick={() => {
+						props.setFalseValues();
+						props.setFadeIn(true);
+						props.setMosrarContatos(true);
+					}}
+				>
+					Contatos
+				</EachOptionMobile>
 			</HeaderMobileAside>
 		</>
 	);

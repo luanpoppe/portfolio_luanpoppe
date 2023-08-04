@@ -3,6 +3,7 @@ import "../../globalStyles.css";
 
 import fotoPerfil from "../../images/foto_perfil.jpg";
 import Projetos from "../Projetos";
+import Contacts from "../Contacts";
 
 const Main = (props) => {
 	if (props.mostrarInicio) {
@@ -109,6 +110,8 @@ const Main = (props) => {
 		);
 	} else if (props.varMostrarProjetos) {
 		return <Projetos setFadeIn={props.setFadeIn} fadeIn={props.fadeIn} />;
+	} else if (props.mostrarContatos) {
+		return <Contacts setFadeIn={props.setFadeIn} fadeIn={props.fadeIn} />;
 	}
 };
 
