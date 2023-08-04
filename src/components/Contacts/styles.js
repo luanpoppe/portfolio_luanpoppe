@@ -16,7 +16,8 @@ export const ContactContainerStyled = styled.div`
 		list-style: none;
 		font-size: ${paragraph};
 		display: flex;
-		align-items: center;
+		/* align-items: center; */
+		justify-content: center;
 		margin-bottom: 8px;
 
 		@media (max-width: 480px) {
