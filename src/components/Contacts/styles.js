@@ -61,8 +61,6 @@ export const ContactContainerStyled = styled.div`
 	a {
 		@media (max-width: 480px) {
 			text-align: center;
-			display: flex;
-			justify-content: center;
 		}
 	}
 `
