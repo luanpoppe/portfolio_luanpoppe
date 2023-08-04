@@ -18,4 +18,8 @@ export const SubtituloStyled = styled.h2`
 		font-size: ${titleMobile};
 		margin: 0 20px 32px;
 	}
+
+	@media (min-width: 481px) and (max-width: 768px) {
+		margin: 0 40px 32px;
+	}
 `

@@ -10,6 +10,11 @@ export const ContainerStyled = styled.section`
 		grid-template-columns: 1fr;
 		margin: 12px;
 	}
+
+	@media (min-width: 481px) and (max-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+	}
 `
 
 export const EachProjectStyled = styled.div`
@@ -32,7 +37,11 @@ export const EachProjectStyled = styled.div`
 		height: 140px;
 		border-radius: 4px;
 	}
-	`
+
+	@media (min-width: 481px) and (max-width: 768px) {
+		padding: 12px;
+	}
+`
 
 export const ProjectTitle = styled.h2`
 	text-align: center;

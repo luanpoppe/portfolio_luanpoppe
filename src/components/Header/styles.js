@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { subtitleMobile } from "../../utils/fontSizes"
-import { blue, white } from "../../utils/colors"
+import { blue } from "../../utils/colors"
 
 export const HeaderStyle = styled.header`
 	width: 100%;
@@ -15,6 +15,9 @@ export const HeaderStyle = styled.header`
 		margin-top: 0;
 	}
 
+	@media (min-width: 481px) and (max-width: 768px) {
+		gap: 32px;
+	}
 `
 export const ButtonHeader = styled.button`
 	border: 2px ${blue} solid;
