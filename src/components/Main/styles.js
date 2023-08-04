@@ -25,7 +25,7 @@ export const MainStyled = styled.main`
 		margin-bottom: 28px;
 	}
 
-	@media (min-width: 480px) and (max-width: 768px) {
+	@media (min-width: 481px) and (max-width: 768px) {
 		display: block;
 		padding: 32px;
 	}
@@ -38,12 +38,6 @@ export const ProfileImageStyled = styled.img`
 	object-fit: cover;
 
 	@media (max-width: 480px) {
-		display: block;
-		margin: 0 auto;
-		margin-bottom: 16px;
-	}
-
-	@media (min-width: 481px) and (max-width: 768px) {
 		display: block;
 		margin: 0 auto;
 		margin-bottom: 16px;
@@ -73,6 +67,10 @@ export const TitleStyled = styled.h1`
 
 	@media (max-width: 480px) {
 		font-size: ${props => props.fontSizeMobile ? `${props.fontSizeMobile}px` : titleMobile};
+	}
+
+	@media (min-width: 481px) and (max-width: 768px) {
+		margin: 0;
 	}
 `
 

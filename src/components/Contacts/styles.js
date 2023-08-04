@@ -7,10 +7,21 @@ export const ContactsStyled = styled(MainStyled)`
 	display: flex;
 	justify-content: center;
 	padding: 40px;
+
+	@media (min-width: 481px) and (max-width: 768px) {
+		display: block;
+		padding: 20px;
+	}
 `
 
 export const ContactContainerStyled = styled.div`
 	display: block;
+
+	ul {
+		@media (min-width: 481px) and (max-width: 768px) {
+			display: block;
+		}
+	}
 
 	li {
 		list-style: none;
@@ -22,6 +33,11 @@ export const ContactContainerStyled = styled.div`
 
 		@media (max-width: 480px) {
 			font-size: ${paragraphMobile};
+			flex-wrap: wrap;
+			margin-bottom: 24px;
+		}
+
+		@media (min-width: 481px) and (max-width: 768px) {
 			flex-wrap: wrap;
 			margin-bottom: 24px;
 		}
@@ -61,6 +77,10 @@ export const ContactContainerStyled = styled.div`
 
 	a {
 		@media (max-width: 480px) {
+			text-align: center;
+		}
+
+		@media (min-width: 481px) and (max-width: 768px) {
 			text-align: center;
 		}
 	}
