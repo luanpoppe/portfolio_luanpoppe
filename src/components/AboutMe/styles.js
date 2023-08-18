@@ -5,6 +5,7 @@ export const AboutMeStyled = styled.section`
 	display: block;
 	margin: 0 auto;
 	margin-top: 64px;
+	margin-bottom: 64px;
 
 	h2 {
 		text-align: center;
@@ -13,6 +14,7 @@ export const AboutMeStyled = styled.section`
 	p {
 		font-size: ${fontSmallText};
 		text-align: justify;
+		line-height: 140%;
 
 		&:first-child {
 			margin-bottom: 32px;

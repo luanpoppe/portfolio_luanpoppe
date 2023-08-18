@@ -18,14 +18,17 @@ function Header() {
 					>
 						<a href="">Home</a>
 					</li>
-					<li>
+					<li
+						onClick={() => (navbarItens = 2)}
+						className={navbarItens === 2 ? "navbarSublinhado" : ""}
+					>
 						<a href="#sobre-mim">Sobre mim</a>
 					</li>
 					<li>
-						<a href="">Projetos</a>
+						<a href="#habilidades">Habilidades</a>
 					</li>
 					<li>
-						<a href="">Habilidades</a>
+						<a href="">Projetos</a>
 					</li>
 				</ul>
 			</Navbar>
