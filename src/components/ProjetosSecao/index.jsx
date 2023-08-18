@@ -12,17 +12,16 @@ function ProjetosSecao() {
 		})
 	})
 	const [projetosModal, setProjetosModal] = useState(listaIndexProjetos)
-	const [mostrarModal, setMostrarModal] = useState({})
 
 	const resetarModais = () => {
-		let resetaProjetos = []
-		objetoProjetos.map(() => {
-			resetaProjetos.push({
-				isOpen: false
-			})
-		})
-		setProjetosModal(resetaProjetos)
-		console.log(projetosModal)
+		// let resetaProjetos = []
+		// objetoProjetos.map(() => {
+		// 	resetaProjetos.push({
+		// 		isOpen: false
+		// 	})
+		// })
+		// setProjetosModal(resetaProjetos)
+		setProjetosModal(listaIndexProjetos)
 	}
 
 	const conteudoProjetos = (
@@ -30,19 +29,22 @@ function ProjetosSecao() {
 			projetosModal={projetosModal}
 			setProjetosModal={setProjetosModal}
 			resetarModais={resetarModais}
-			mostrarModal={mostrarModal}
-			setMostrarModal={setMostrarModal}
 		/>
 	)
-
-	objetoProjetos.map((projeto, indexProjeto) => <></>)
 
 	return (
 		<>
 			<TituloSecao>Projetos</TituloSecao>
 			<ProjetosSecaoStyled>
 				{conteudoProjetos}
-				{mostrarModal && <ModalStyled>{conteudoProjetos}</ModalStyled>}
+				{projetosModal.map(
+					(projeto) =>
+						projeto.isOpen === true && (
+							<ModalStyled key={projeto}>
+								{conteudoProjetos}
+							</ModalStyled>
+						)
+				)}
 			</ProjetosSecaoStyled>
 		</>
 	)

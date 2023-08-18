@@ -30,8 +30,10 @@ const ConteudoProjetos = (props) => {
 										!props.projetosModal[indexProjeto]
 											.isOpen)
 								])
-								props.setMostrarModal(props.projetosModal)
-								console.log(props.mostrarModal)
+								// props.setProjetosModal(
+								// 	props.projetosModal.pop()
+								// )
+								console.log(props.projetosModal)
 							}}
 						>
 							{props.projetosModal[indexProjeto].isOpen
