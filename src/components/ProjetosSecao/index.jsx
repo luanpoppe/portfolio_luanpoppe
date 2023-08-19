@@ -1,50 +1,45 @@
-import { useState } from "react"
-import { objetoProjetos } from "../../utils/objetoProjetos"
-import ConteudoProjetos from "../ConteudoProjetos"
+/* eslint-disable no-unused-vars */
 import TituloSecao from "../TituloSecao"
 import { ModalStyled, ProjetosSecaoStyled } from "./styles"
+import { objetoProjetos } from "../../utils/objetoProjetos"
+import ConteudoProjetos from "../ConteudoProjetos"
+import { useState } from "react"
 
 function ProjetosSecao() {
-	let listaIndexProjetos = []
-	objetoProjetos.map(() => {
-		listaIndexProjetos.push({
-			isOpen: false
-		})
-	})
-	const [projetosModal, setProjetosModal] = useState(listaIndexProjetos)
-
-	const resetarModais = () => {
-		// let resetaProjetos = []
-		// objetoProjetos.map(() => {
-		// 	resetaProjetos.push({
-		// 		isOpen: false
-		// 	})
-		// })
-		// setProjetosModal(resetaProjetos)
-		setProjetosModal(listaIndexProjetos)
-	}
-
-	const conteudoProjetos = (
-		<ConteudoProjetos
-			projetosModal={projetosModal}
-			setProjetosModal={setProjetosModal}
-			resetarModais={resetarModais}
-		/>
+	const objetoProjetosIsOpen = objetoProjetos.filter(
+		(projeto) => projeto.isModalOpen === true
 	)
+
+	let modalIsOpen = objetoProjetos.map((projeto) => projeto.isModalOpen)
+
+	const [stateModalIsOpen, setStateModalIsOpen] = useState(modalIsOpen)
+
+	function updateObject(paramIndex) {
+		const novoObjeto = stateModalIsOpen.map((state, index) => {
+			if (paramIndex === index) {
+				return !state
+			} else {
+				return state
+			}
+		})
+
+		setStateModalIsOpen(novoObjeto)
+	}
 
 	return (
 		<>
 			<TituloSecao>Projetos</TituloSecao>
 			<ProjetosSecaoStyled>
-				{conteudoProjetos}
-				{projetosModal.map(
-					(projeto) =>
-						projeto.isOpen === true && (
-							<ModalStyled key={projeto}>
-								{conteudoProjetos}
-							</ModalStyled>
-						)
-				)}
+				<ConteudoProjetos
+					stateModalIsOpen={stateModalIsOpen}
+					updateObject={updateObject}
+				/>
+
+				{stateModalIsOpen
+					.filter((state) => state === true)
+					.map((state, index) => (
+						<ModalStyled key={index}>{}</ModalStyled>
+					))}
 			</ProjetosSecaoStyled>
 		</>
 	)
