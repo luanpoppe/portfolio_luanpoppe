@@ -17,8 +17,8 @@ function App() {
 				<Hero />
 				<AboutMe />
 				<HabilidadesSecao />
-				<ProjetosSecao />
 			</MainContainer>
+			<ProjetosSecao />
 		</>
 	)
 }

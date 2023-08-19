@@ -1,7 +1,9 @@
 import fotoPerfilLuan from "../images/foto_perfil_luan.jpg"
 import imagemSecaoSobreMim from "../images/imegam_secao_sobre_mim_tiny_png.jpg"
+import closeButton from "../images/close-button.png"
 
 import eplayImagem from "../images/projetos/eplay.png"
+import todoListReact from "../images/projetos/todo_list_react.png"
 
 import htmlIcon from "../images/icons/html.png"
 import cssIcon from "../images/icons/css.png"
@@ -19,9 +21,9 @@ import githubIcon from "../images/icons/github.png"
 import linkedinIcon from "../images/icons/linkedin.png"
 import gmailIcon from "../images/icons/gmail.png"
 
-export { fotoPerfilLuan, imagemSecaoSobreMim }
+export { fotoPerfilLuan, imagemSecaoSobreMim, closeButton }
 export { githubIcon, gmailIcon, linkedinIcon }
-export { eplayImagem }
+export { eplayImagem, todoListReact }
 export {
 	htmlIcon,
 	cssIcon,

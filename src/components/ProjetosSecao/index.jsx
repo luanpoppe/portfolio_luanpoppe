@@ -24,6 +24,8 @@ function ProjetosSecao() {
 		})
 
 		setStateModalIsOpen(novoObjeto)
+
+		document.body.classList.add("stop-scroll")
 	}
 
 	return (
@@ -33,13 +35,14 @@ function ProjetosSecao() {
 				<ConteudoProjetos
 					stateModalIsOpen={stateModalIsOpen}
 					updateObject={updateObject}
+					setStateModalIsOpen={setStateModalIsOpen}
 				/>
 
-				{stateModalIsOpen
+				{/* {stateModalIsOpen
 					.filter((state) => state === true)
 					.map((state, index) => (
 						<ModalStyled key={index}>{}</ModalStyled>
-					))}
+					))} */}
 			</ProjetosSecaoStyled>
 		</>
 	)

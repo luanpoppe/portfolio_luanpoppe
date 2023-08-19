@@ -1,69 +1,81 @@
 /* eslint-disable no-unused-vars */
+import { closeButton } from "../../utils/images"
 import { objetoProjetos } from "../../utils/objetoProjetos"
-import { ModalStyled } from "../ProjetosSecao/styles"
-import { CadaProjetoStyled, TagsHabilidadesStyled } from "./styles"
+import {
+	BackgroundStyled,
+	CloseButtonStyled,
+	ModalStyled,
+	TagsModalStyled
+} from "./ModalStyled"
+import {
+	CadaProjetoStyled,
+	RedirecionamentoStyled,
+	TagsHabilidadesStyled
+} from "./styles"
 
 const ConteudoProjetos = (props) => {
 	const conteudoDosProjetos = (projeto, index = 0) => {
 		return (
 			<>
-				<img src={projeto.imagem} alt={projeto.nome} />
+				<a href={projeto.link}>
+					<img src={projeto.imagem} alt={projeto.nome} />
+				</a>
 				<div>
-					<h2>{projeto.nome}</h2>
+					<h2>
+						<a href={projeto.link}>{projeto.nome}</a>
+					</h2>
 					<TagsHabilidadesStyled>
 						{projeto.habilidades.map((tag) => (
 							<p key={tag}>{tag}</p>
 						))}
 					</TagsHabilidadesStyled>
-					<p>{projeto.descricao.split(" ").slice(0, 15).join(" ")}</p>
+					<p className="paragrafo-descricao">
+						{projeto.descricao.split(" ").slice(0, 15).join(" ")}
+						{"..."}
+					</p>
 
-					<button
-						onClick={() => {
-							props.updateObject(index)
-							console.log(props.stateModalIsOpen)
-							console.log(
-								props.stateModalIsOpen.findIndex(
-									(state) => state === true
+					<RedirecionamentoStyled>
+						<button
+							onClick={() => {
+								props.updateObject(index)
+								console.log(props.stateModalIsOpen)
+								console.log(
+									props.stateModalIsOpen.findIndex(
+										(state) => state === true
+									)
 								)
-							)
-							console.log(projetoAtivoModal)
-							// console.log(
-							// 	objetoProjetos.map((state, index) => {
-							// 		return { ...state, indexNumber: index }
-							// 	})
-							// )
-						}}
-					>
-						Ver mais
-					</button>
+								console.log(projetoAtivoModal)
+							}}
+						>
+							Ver mais
+						</button>
+					</RedirecionamentoStyled>
 				</div>
 			</>
 		)
 	}
 
-	// console.log(
-	// 	// props.stateModalIsOpen.filter((state) => state === false).length == 2,
-	// 	props.stateModalIsOpen
-	// 		.filter((state) => state === true)
-	// 		.map((projeto, index) => (
-	// 			<div key={projeto.nome}>{projeto.nome}</div>
-	// 		))
-	// )
-
 	const projetosComIndex = objetoProjetos.map((state, index) => {
 		return { ...state, indexNumber: index }
 	})
 
-	// const indexAtivoModal = projetosComIndex.filter((state) => {
-	// 	return props.stateModalIsOpen.findIndex((state) => state === true)
-	// })
 	const indexAtivoModal = props.stateModalIsOpen.findIndex(
 		(state) => state === true
 	)
 
-	const projetoAtivoModal = projetosComIndex.filter(
+	let projetoAtivoModal = projetosComIndex.filter(
 		(state) => state.indexNumber === indexAtivoModal
 	)
+	projetoAtivoModal = projetoAtivoModal[0]
+
+	function fecharModal() {
+		document.body.classList.remove("stop-scroll")
+		props.setStateModalIsOpen(
+			props.stateModalIsOpen.map((state) => {
+				return (state = false)
+			})
+		)
+	}
 
 	return (
 		<>
@@ -76,15 +88,27 @@ const ConteudoProjetos = (props) => {
 			})}
 			{props.stateModalIsOpen.filter((state) => state === true).length ==
 			1 ? (
-				<ModalStyled>
-					<div>cadê carai</div>
-					<div>{projetoAtivoModal[0].descricao}</div>
-				</ModalStyled>
+				<>
+					<ModalStyled>
+						<h2>{projetoAtivoModal.nome}</h2>
+						<TagsModalStyled>
+							{projetoAtivoModal.habilidades.map((tag) => (
+								<p key={tag}>{tag}</p>
+							))}
+						</TagsModalStyled>
+						<img
+							src={projetoAtivoModal.imagem}
+							alt={projetoAtivoModal.nome}
+						/>
+						<p>{projetoAtivoModal.descricao}</p>
+						<CloseButtonStyled onClick={() => fecharModal()}>
+							<img src={closeButton} alt="Botão de fechar" />
+						</CloseButtonStyled>
+					</ModalStyled>
+					<BackgroundStyled onClick={() => fecharModal()} />
+				</>
 			) : (
-				// 	props.stateModalIsOpen.map((projeto, index) => (
-				// 		<ModalStyled key={index}>jejejeje</ModalStyled>
-				//   ))
-				"hue"
+				""
 			)}
 		</>
 	)

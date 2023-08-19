@@ -15,6 +15,10 @@ const EstiloGlobal = createGlobalStyle`
 	body {
 		background-color: ${corPadraoDeFundo};
 	}
+
+	.stop-scroll {
+		overflow-y: hidden;
+	}
 `
 
 export default EstiloGlobal
