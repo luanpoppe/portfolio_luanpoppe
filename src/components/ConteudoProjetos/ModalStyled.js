@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { TagsHabilidadesStyled } from "./styles"
-import { fontSmallText } from "../../utils/fontSizes"
+import { fontSmallText, titleModal } from "../../utils/fontSizes"
 import { corDeFundoModal, corPadraoTextos } from "../../utils/colors"
 
 export const ModalStyled = styled.div`
@@ -22,6 +22,7 @@ export const ModalStyled = styled.div`
 	h2 {
 		text-align: center;
 		margin-bottom: 16px;
+		font-size: ${titleModal};
 	}
 
 	img {

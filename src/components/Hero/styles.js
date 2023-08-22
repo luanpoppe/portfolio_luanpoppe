@@ -56,7 +56,7 @@ export const AcessarCurriculoStyled = styled.a`
 	border-radius: 8px;
 	padding: 12px;
 	margin-right: 48px;
-	box-shadow: 4px 4px rgba(255, 255, 255, 0.3);
+	box-shadow: -4px 4px rgba(255, 255, 255, 0.3);
 	max-height: 60px;
 	margin: auto 48px auto 0;
 

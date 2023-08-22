@@ -4,3 +4,5 @@ export const fontTitleIcons = "32px"
 
 export const fontLargeText = "52px"
 export const fontSmallText = "20px"
+
+export const titleModal = "36px"

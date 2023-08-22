@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { closeButton } from "../../utils/images"
+import { corPadraoDeFundo, corPadraoTextos } from "../../utils/colors"
+import { closeButton, githubIcon } from "../../utils/images"
 import { objetoProjetos } from "../../utils/objetoProjetos"
 import {
 	BackgroundStyled,
@@ -9,6 +10,7 @@ import {
 } from "./ModalStyled"
 import {
 	CadaProjetoStyled,
+	ImagemGitHub,
 	RedirecionamentoStyled,
 	TagsHabilidadesStyled
 } from "./styles"
@@ -17,12 +19,18 @@ const ConteudoProjetos = (props) => {
 	const conteudoDosProjetos = (projeto, index = 0) => {
 		return (
 			<>
-				<a href={projeto.link}>
-					<img src={projeto.imagem} alt={projeto.nome} />
+				<a href={projeto.link} target="_blank" rel="noreferrer">
+					<img
+						className="imagem-projeto"
+						src={projeto.imagem}
+						alt={projeto.nome}
+					/>
 				</a>
 				<div>
 					<h2>
-						<a href={projeto.link}>{projeto.nome}</a>
+						<a href={projeto.link} target="_blank" rel="noreferrer">
+							{projeto.nome}
+						</a>
 					</h2>
 					<TagsHabilidadesStyled>
 						{projeto.habilidades.map((tag) => (
@@ -49,6 +57,41 @@ const ConteudoProjetos = (props) => {
 						>
 							Ver mais
 						</button>
+						<a
+							className="acesso-ao-site"
+							href={projeto.link}
+							target="_blank"
+							rel="noreferrer"
+						>
+							Acesse
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								className="w-full h-auto ml-1 !w-6 md:!w-4"
+							>
+								<path fill="none" d="M0 0h24v24H0z"></path>
+								<path
+									fill="none"
+									stroke={corPadraoDeFundo}
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="1"
+									d="M11 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-5m-7 1L20 4m-5 0h5v5"
+								></path>
+							</svg>
+						</a>
+						<a
+							href={projeto.github}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<ImagemGitHub
+								src={githubIcon}
+								alt="Acesse o github"
+							/>
+						</a>
 					</RedirecionamentoStyled>
 				</div>
 			</>

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { fontNavBar } from "../../utils/fontSizes"
-import { corPadraoTextos } from "../../utils/colors"
+import { corAzul } from "../../utils/colors"
 
 export const NavbarStyled = styled.nav`
 	ul {
@@ -19,7 +19,7 @@ export const NavbarStyled = styled.nav`
 
 		.navbarSublinhado {
 			border: none;
-			border-bottom: 1px ${corPadraoTextos} solid;
+			border-bottom: 3px ${corAzul} solid;
 		}
 	}
 `

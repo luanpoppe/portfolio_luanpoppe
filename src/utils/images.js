@@ -4,6 +4,11 @@ import closeButton from "../images/close-button.png"
 
 import eplayImagem from "../images/projetos/eplay.png"
 import todoListReact from "../images/projetos/todo_list_react.png"
+import portfolioGithub from "../images/projetos/portfolio_github.png"
+import ebacTechTalks from "../images/projetos/ebac_tech_talks.png"
+import cloneDisneyPlus from "../images/projetos/clone_disney.png"
+import gamesBootstrap from "../images/projetos/games_bootstrap.png"
+import gameShop from "../images/projetos/games_shop.png"
 
 import htmlIcon from "../images/icons/html.png"
 import cssIcon from "../images/icons/css.png"
@@ -23,7 +28,15 @@ import gmailIcon from "../images/icons/gmail.png"
 
 export { fotoPerfilLuan, imagemSecaoSobreMim, closeButton }
 export { githubIcon, gmailIcon, linkedinIcon }
-export { eplayImagem, todoListReact }
+export {
+	eplayImagem,
+	todoListReact,
+	portfolioGithub,
+	ebacTechTalks,
+	cloneDisneyPlus,
+	gamesBootstrap,
+	gameShop
+}
 export {
 	htmlIcon,
 	cssIcon,

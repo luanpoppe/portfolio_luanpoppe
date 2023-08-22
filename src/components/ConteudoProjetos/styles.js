@@ -1,26 +1,27 @@
 import styled from "styled-components"
-import { corPadraoDeFundo, corPadraoTextos } from "../../utils/colors"
+import { corPadraoDeFundo, corPadraoTextos, corTags } from "../../utils/colors"
 import { fontSmallText } from "../../utils/fontSizes"
 
 export const CadaProjetoStyled = styled.div`
-	border: 1px solid ${corPadraoTextos};
+	border: 2px solid ${corPadraoTextos};
 	border-radius: 8px;
 	padding: 16px;
 	display: flex;
 	justify-content: center;
 	column-gap: 32px;
 	text-align: center;
-	margin: 64px auto 0 auto;
+	margin: 32px auto 0 auto;
 
 	h2 {
-		margin-bottom: 16px;
+		margin-bottom: 24px;
+		font-size: 28px;
 	}
 
 	a {
 		max-width: 240px;
 		max-height: 200px;
 
-		img {
+		.imagem-projeto {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -48,11 +49,19 @@ export const TagsHabilidadesStyled = styled.div`
 		padding: 8px 16px;
 		max-width: 256px;
 		border-radius: 12px;
-		background-color: green;
+		color: ${corPadraoDeFundo};
+		font-weight: bold;
+		background-color: ${corTags};
 	}
 `
 
 export const RedirecionamentoStyled = styled.div`
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	margin-top: 24px;
+
+	.acesso-ao-site,
 	button {
 		background-color: ${corPadraoTextos};
 		color: ${corPadraoDeFundo};
@@ -61,6 +70,32 @@ export const RedirecionamentoStyled = styled.div`
 		border: none;
 		border-radius: 8px;
 		cursor: pointer;
-		margin-top: 24px;
+	}
+
+	.acesso-ao-site {
+		display: flex;
+		box-shadow: -4px 4px rgba(255, 255, 255, 0.3);
+		svg {
+			margin-left: 4px;
+		}
+	}
+
+	.acesso-ao-site:hover,
+	button:hover {
+		transform: scale(1.05);
+		transition: all ease 350ms;
+	}
+`
+
+export const ImagemGitHub = styled.img`
+	max-width: 64px;
+	max-height: 64px;
+	padding: 0;
+	border-radius: 8px;
+	box-shadow: -4px 4px rgba(255, 255, 255, 0.3);
+
+	&:hover {
+		transform: scale(1.05);
+		transition: all ease 350ms;
 	}
 `

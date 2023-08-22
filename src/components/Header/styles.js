@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { fontTitleHeader } from "../../utils/fontSizes"
-import { corAzul } from "../../utils/colors"
+import { corAzul, corPadraoDeFundo } from "../../utils/colors"
 
 export const HeaderStyled = styled.header`
 	display: flex;
@@ -9,8 +9,22 @@ export const HeaderStyled = styled.header`
 	padding: 24px;
 	font-size: ${fontTitleHeader};
 	margin-bottom: 16px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1;
 
 	span {
 		color: ${corAzul};
+	}
+
+	.header-background {
+		height: 100px;
+		width: 100%;
+		background-color: ${corPadraoDeFundo};
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
 	}
 `

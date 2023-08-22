@@ -32,6 +32,7 @@ function Header() {
 					</li>
 				</ul>
 			</Navbar>
+			<div className="header-background"></div>
 		</HeaderStyled>
 	)
 }
