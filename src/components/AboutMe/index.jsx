@@ -4,9 +4,9 @@ import TituloSecao from "../TituloSecao"
 import ImagemSecao from "../ImagemSecao"
 import { imagemSecaoSobreMim } from "../../utils/images"
 
-function AboutMe() {
+function AboutMe(props) {
 	return (
-		<AboutMeStyled>
+		<AboutMeStyled maxWidth={props.maxWidth}>
 			<TituloSecao id="sobre-mim">Sobre Mim</TituloSecao>
 			<AboutMeContentStyled>
 				<div>

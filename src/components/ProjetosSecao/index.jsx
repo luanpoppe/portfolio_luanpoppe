@@ -5,7 +5,7 @@ import { objetoProjetos } from "../../utils/objetoProjetos"
 import ConteudoProjetos from "../ConteudoProjetos"
 import { useState } from "react"
 
-function ProjetosSecao() {
+function ProjetosSecao(props) {
 	const objetoProjetosIsOpen = objetoProjetos.filter(
 		(projeto) => projeto.isModalOpen === true
 	)
@@ -30,8 +30,8 @@ function ProjetosSecao() {
 
 	return (
 		<>
-			<TituloSecao>Projetos</TituloSecao>
-			<ProjetosSecaoStyled>
+			<TituloSecao id="projetos">Projetos</TituloSecao>
+			<ProjetosSecaoStyled maxWidth={props.maxWidth}>
 				<ConteudoProjetos
 					stateModalIsOpen={stateModalIsOpen}
 					updateObject={updateObject}

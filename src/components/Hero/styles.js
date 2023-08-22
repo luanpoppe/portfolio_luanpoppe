@@ -5,6 +5,7 @@ import { corPadraoTextos } from "../../utils/colors"
 export const HeroStyled = styled.main`
 	display: flex;
 	justify-content: center;
+	/* max-width: ${(props) => props.maxWidth}; */
 
 	& > img {
 		max-width: 320px;

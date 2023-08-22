@@ -7,5 +7,5 @@ export const ProjetosSecaoStyled = styled.section`
 	/* margin: 0 auto; */
 	margin: 0 12px;
 	margin-bottom: 64px;
-	max-width: 100vw;
+	max-width: ${(props) => props.maxWidth};
 `

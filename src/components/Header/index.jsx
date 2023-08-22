@@ -2,9 +2,7 @@ import React from "react"
 import { HeaderStyled } from "./styles"
 import Navbar from "../Navbar"
 
-function Header() {
-	let navbarItens = 1
-
+function Header(props) {
 	return (
 		<HeaderStyled>
 			<h1>
@@ -13,22 +11,40 @@ function Header() {
 			<Navbar>
 				<ul>
 					<li
-						onClick={() => (navbarItens = 1)}
-						className={navbarItens === 1 ? "navbarSublinhado" : ""}
+						className={
+							props.activeNavbar === "hero"
+								? "navbarSublinhado"
+								: ""
+						}
 					>
-						<a href="">Home</a>
+						<a href="#hero">Home</a>
 					</li>
 					<li
-						onClick={() => (navbarItens = 2)}
-						className={navbarItens === 2 ? "navbarSublinhado" : ""}
+						className={
+							props.activeNavbar === "sobre-mim"
+								? "navbarSublinhado"
+								: ""
+						}
 					>
 						<a href="#sobre-mim">Sobre mim</a>
 					</li>
-					<li>
+					<li
+						className={
+							props.activeNavbar === "habilidades"
+								? "navbarSublinhado"
+								: ""
+						}
+					>
 						<a href="#habilidades">Habilidades</a>
 					</li>
-					<li>
-						<a href="">Projetos</a>
+					<li
+						className={
+							props.activeNavbar === "projetos"
+								? "navbarSublinhado"
+								: ""
+						}
+					>
+						<a href="#projetos">Projetos</a>
 					</li>
 				</ul>
 			</Navbar>

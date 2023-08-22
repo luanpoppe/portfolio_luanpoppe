@@ -3,11 +3,11 @@ import TituloSecao from "../TituloSecao"
 import { HabilidadesSecaoStyled } from "./styles"
 import ImagensHabilidades from "../ImagensHabilidades"
 
-function HabilidadesSecao() {
+function HabilidadesSecao(props) {
 	return (
 		<>
 			<TituloSecao id="habilidades">Habilidades</TituloSecao>
-			<HabilidadesSecaoStyled>
+			<HabilidadesSecaoStyled maxWidth={props.maxWidth}>
 				<ImagensHabilidades />
 			</HabilidadesSecaoStyled>
 		</>

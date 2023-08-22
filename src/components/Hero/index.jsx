@@ -15,9 +15,9 @@ import {
 	linkedinIcon
 } from "../../utils/images"
 
-function Hero() {
+function Hero(props) {
 	return (
-		<HeroStyled>
+		<HeroStyled maxWidth={props.maxWidth} id="hero">
 			<img src={fotoPerfilLuan} alt="Foto de Perfil" />
 			<HeroTextStyled>
 				<h1>
