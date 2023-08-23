@@ -9,6 +9,9 @@ function AboutMe(props) {
 		<AboutMeStyled maxWidth={props.maxWidth}>
 			<TituloSecao id="sobre-mim">Sobre Mim</TituloSecao>
 			<AboutMeContentStyled>
+				<div className="imagem-sobre-mim-mobile">
+					<ImagemSecao src={imagemSecaoSobreMim} />
+				</div>
 				<div>
 					<p>
 						Iniciei minha jornada profissional como médico, e me
@@ -28,7 +31,10 @@ function AboutMe(props) {
 						contínuo.
 					</p>
 				</div>
-				<ImagemSecao src={imagemSecaoSobreMim} />
+				<ImagemSecao
+					src={imagemSecaoSobreMim}
+					className="imagem-sobre-mim-pc"
+				/>
 			</AboutMeContentStyled>
 		</AboutMeStyled>
 	)

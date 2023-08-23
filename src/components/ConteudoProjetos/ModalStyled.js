@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { TagsHabilidadesStyled } from "./styles"
 import { fontSmallText, titleModal } from "../../utils/fontSizes"
 import { corDeFundoModal, corPadraoTextos } from "../../utils/colors"
+import { widthTablet } from "../../utils/mediaQuery"
 
 export const ModalStyled = styled.div`
 	display: block;
@@ -18,6 +19,10 @@ export const ModalStyled = styled.div`
 	transform: translate(-50%, -50%);
 	z-index: 2;
 	overflow-y: scroll;
+
+	@media (max-width: ${widthTablet}) {
+		max-width: 100%;
+	}
 
 	h2 {
 		text-align: center;
@@ -54,6 +59,10 @@ export const TagsModalStyled = styled(TagsHabilidadesStyled)`
 
 	p {
 		max-width: 132px;
+	}
+
+	@media (max-width: ${widthTablet}) {
+		grid-template-columns: 1fr 1fr;
 	}
 `
 

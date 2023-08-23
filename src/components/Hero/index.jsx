@@ -21,7 +21,7 @@ function Hero(props) {
 			<img src={fotoPerfilLuan} alt="Foto de Perfil" />
 			<HeroTextStyled>
 				<h1>
-					Olá! Me chamo Luan Poppe. Atuo como desenvolver front-end
+					Olá! Me chamo Luan Poppe. Atuo como desenvolvedor front-end
 				</h1>
 				<p>
 					Atualmente atuo como desenvolvedor front-end, enquanto
@@ -29,7 +29,7 @@ function Hero(props) {
 					Desenvolvedor Fullstack, com previsão de término para o fim
 					de 2023.
 				</p>
-				<div>
+				<div className="container-acessar-curriculo">
 					<AcessarCurriculoStyled
 						href="https://drive.google.com/file/d/1fd20PJj6w6JqNqwimLdGh7stiu9Q2yRR/view?usp=sharing"
 						target="_blank"
@@ -59,31 +59,39 @@ function Hero(props) {
 						<EntreEmContatoStyled>
 							Entre em contato:
 						</EntreEmContatoStyled>
-						<a
-							target="_blank"
-							href="https://github.com/luanpoppe"
-							title="GitHub"
-							rel="noreferrer"
-						>
-							<ContactIconsStyled src={githubIcon} alt="GitHub" />
-						</a>
-						<a
-							target="_blank"
-							href="https://www.linkedin.com/in/luan-poppe/"
-							title="LinkedIn"
-							rel="noreferrer"
-						>
-							<ContactIconsStyled
-								src={linkedinIcon}
-								alt="LinkedIn"
-							/>
-						</a>
-						<a
-							href="mailto:luanpoppe@gmail.com"
-							title="Entre em Contato"
-						>
-							<ContactIconsStyled src={gmailIcon} alt="Gmail" />
-						</a>
+						<div className="container-icones">
+							<a
+								target="_blank"
+								href="https://github.com/luanpoppe"
+								title="GitHub"
+								rel="noreferrer"
+							>
+								<ContactIconsStyled
+									src={githubIcon}
+									alt="GitHub"
+								/>
+							</a>
+							<a
+								target="_blank"
+								href="https://www.linkedin.com/in/luan-poppe/"
+								title="LinkedIn"
+								rel="noreferrer"
+							>
+								<ContactIconsStyled
+									src={linkedinIcon}
+									alt="LinkedIn"
+								/>
+							</a>
+							<a
+								href="mailto:luanpoppe@gmail.com"
+								title="Entre em Contato"
+							>
+								<ContactIconsStyled
+									src={gmailIcon}
+									alt="Gmail"
+								/>
+							</a>
+						</div>
 					</ContainerEntreEmContatoStyled>
 				</div>
 			</HeroTextStyled>

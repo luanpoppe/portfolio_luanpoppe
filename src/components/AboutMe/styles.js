@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { fontSmallText } from "../../utils/fontSizes"
+import { widthTablet } from "../../utils/mediaQuery"
 
 export const AboutMeStyled = styled.section`
 	display: block;
@@ -31,5 +32,27 @@ export const AboutMeContentStyled = styled.div`
 	> div {
 		/* display: block; */
 		margin: auto 48px;
+	}
+
+	.imagem-sobre-mim-mobile {
+		display: none;
+	}
+
+	@media (max-width: ${widthTablet}) {
+		display: block;
+
+		& > div {
+			margin-left: 0;
+			margin-right: 0;
+			margin-bottom: 32px;
+		}
+
+		.imagem-sobre-mim-pc {
+			display: none;
+		}
+
+		.imagem-sobre-mim-mobile {
+			display: block;
+		}
 	}
 `

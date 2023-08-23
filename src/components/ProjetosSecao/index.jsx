@@ -37,12 +37,6 @@ function ProjetosSecao(props) {
 					updateObject={updateObject}
 					setStateModalIsOpen={setStateModalIsOpen}
 				/>
-
-				{/* {stateModalIsOpen
-					.filter((state) => state === true)
-					.map((state, index) => (
-						<ModalStyled key={index}>{}</ModalStyled>
-					))} */}
 			</ProjetosSecaoStyled>
 		</>
 	)

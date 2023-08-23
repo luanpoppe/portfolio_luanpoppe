@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import * as I from "../../utils/images"
-import { fontTitleIcons } from "../../utils/fontSizes"
+import { fontMobileTitleIcons, fontTitleIcons } from "../../utils/fontSizes"
+import { widthTablet } from "../../utils/mediaQuery"
 
 const objetoHabilidades = [
 	{ nome: "HTML", imagem: I.htmlIcon },
@@ -20,12 +21,22 @@ const objetoHabilidades = [
 
 const ImgIcons = styled.img`
 	width: 100%;
+
+	@media (max-width: ${widthTablet}) {
+		max-width: 50%;
+		display: block;
+		margin: 0 auto;
+	}
 `
 
 const TituloHabilidade = styled.div`
 	text-align: center;
 	font-size: ${fontTitleIcons};
 	font-weight: bold;
+
+	@media (max-width: ${widthTablet}) {
+		font-size: ${fontMobileTitleIcons};
+	}
 `
 
 const ContainerHabilidades = styled.div`
@@ -38,6 +49,11 @@ const ContainerHabilidades = styled.div`
 		box-shadow: rgba(255, 255, 255, 0.5) 0px 6px 16px;
 		transform: scale(1.05);
 		transition: all ease 350ms;
+	}
+
+	@media (max-width: ${widthTablet}) {
+		width: 100%;
+		padding: 8px;
 	}
 `
 
