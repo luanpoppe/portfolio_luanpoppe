@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { widthTablet } from "../../utils/mediaQuery"
+import { widthLargeMonitor, widthTablet } from "../../utils/mediaQuery"
 
 export const ProjetosSecaoStyled = styled.section`
 	display: grid;
@@ -12,5 +12,9 @@ export const ProjetosSecaoStyled = styled.section`
 	@media (max-width: ${widthTablet}) {
 		display: block;
 		margin: 0 0;
+	}
+
+	@media (min-width: ${widthLargeMonitor}) {
+		margin: 0 auto;
 	}
 `
