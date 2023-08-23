@@ -21,7 +21,8 @@ function Hero(props) {
 			<img src={fotoPerfilLuan} alt="Foto de Perfil" />
 			<HeroTextStyled>
 				<h1>
-					Olá! Me chamo Luan Poppe. Atuo como desenvolvedor front-end
+					Olá! Me chamo Luan <span>Poppe</span>. Atuo como
+					desenvolvedor <span> front-end</span>.
 				</h1>
 				<p>
 					Atualmente atuo como desenvolvedor front-end, enquanto

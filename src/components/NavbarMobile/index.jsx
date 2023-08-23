@@ -1,35 +1,65 @@
-import React from "react"
+import React, { useState } from "react"
+import { NavbarMobileStyled, NavbarOpenStyled } from "./style"
 
-import styled from "styled-components"
-import { widthTablet } from "../../utils/mediaQuery"
-import { corAzul } from "../../utils/colors"
+function NavbarMobile(props) {
+	const [isNavbarMobileOpen, setIsNavbarMobileOpen] = useState(true)
 
-export const NavbarMobileStyled = styled.div`
-	display: none;
-	height: 44px;
-	width: 100%;
-	margin-left: 8px;
-	margin-top: 8px;
-
-	span {
-		display: block;
-		height: 4px;
-		width: 48px;
-		margin-top: 8px;
-		background-color: ${corAzul};
+	function abrirNavbarMobile() {
+		setIsNavbarMobileOpen(!isNavbarMobileOpen)
 	}
 
-	@media (max-width: ${widthTablet}) {
-		display: block;
-	}
-`
-
-function NavbarMobile() {
 	return (
-		<NavbarMobileStyled>
-			<span></span>
-			<span></span>
-			<span></span>
+		<NavbarMobileStyled onClick={() => abrirNavbarMobile()}>
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<h1>
+				Luan <span>Poppe</span>
+			</h1>
+			{isNavbarMobileOpen && (
+				<NavbarOpenStyled>
+					<ul>
+						<li
+							className={
+								props.activeNavbar === "hero"
+									? "navbarSublinhado"
+									: ""
+							}
+						>
+							<a href="#hero">Home</a>
+						</li>
+						<li
+							className={
+								props.activeNavbar === "sobre-mim"
+									? "navbarSublinhado"
+									: ""
+							}
+						>
+							<a href="#sobre-mim">Sobre mim</a>
+						</li>
+						<li
+							className={
+								props.activeNavbar === "habilidades"
+									? "navbarSublinhado"
+									: ""
+							}
+						>
+							<a href="#habilidades">Habilidades</a>
+						</li>
+						<li
+							className={
+								props.activeNavbar === "projetos"
+									? "navbarSublinhado"
+									: ""
+							}
+						>
+							<a href="#projetos">Projetos</a>
+						</li>
+					</ul>
+				</NavbarOpenStyled>
+			)}
 		</NavbarMobileStyled>
 	)
 }

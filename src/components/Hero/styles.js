@@ -4,7 +4,7 @@ import {
 	fontMobileLargeText,
 	fontSmallText
 } from "../../utils/fontSizes"
-import { corPadraoTextos } from "../../utils/colors"
+import { corAzul, corPadraoTextos } from "../../utils/colors"
 import { widthTablet } from "../../utils/mediaQuery"
 
 export const HeroStyled = styled.main`
@@ -18,6 +18,7 @@ export const HeroStyled = styled.main`
 		margin-right: 48px;
 		border: transparent;
 		border-radius: 4px;
+		margin-top: 60px;
 	}
 
 	@media (max-width: ${widthTablet}) {
@@ -47,6 +48,10 @@ export const HeroTextStyled = styled.div`
 		font-size: ${fontLargeText};
 		line-height: 44px;
 		margin-bottom: 24px;
+
+		& > span {
+			color: ${corAzul};
+		}
 
 		@media (max-width: ${widthTablet}) {
 			display: block;

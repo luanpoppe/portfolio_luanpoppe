@@ -52,7 +52,7 @@ function Header(props) {
 				</Navbar>
 				<div className="header-background"></div>
 			</HeaderStyled>
-			<NavbarMobile />
+			<NavbarMobile activeNavbar={props.activeNavbar} />
 		</>
 	)
 }
