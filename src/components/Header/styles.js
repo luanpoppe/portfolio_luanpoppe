@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { fontTitleHeader } from "../../utils/fontSizes"
 import { corAzul, corPadraoDeFundo } from "../../utils/colors"
+import { widthTablet } from "../../utils/mediaQuery"
 
 export const HeaderStyled = styled.header`
 	display: flex;
@@ -26,5 +27,9 @@ export const HeaderStyled = styled.header`
 		top: 0;
 		left: 0;
 		z-index: -1;
+	}
+
+	@media (max-width: ${widthTablet}) {
+		display: none;
 	}
 `

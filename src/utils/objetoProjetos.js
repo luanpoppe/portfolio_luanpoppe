@@ -71,7 +71,7 @@ const objetoProjetos = [
 		indexNumber: ""
 	},
 	{
-		nome: "Luan Pope Games",
+		nome: "Luan Poppe Games",
 		imagem: gamesBootstrap,
 		descricao:
 			"Este site foi desenvolvido utilizando os conceitos básicos de HTML e CSS, bem como utilizando o Bootstrap para auxiliar durtante a estilização dos elementos. Use tamém o pré-processador SASS para também auxiliar e agilizar a estilização do site. O site também foi feito de forma a ser devidamente responsivo a dispositivos de diferentes tamanhos.",

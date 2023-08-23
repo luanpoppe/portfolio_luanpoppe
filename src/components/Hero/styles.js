@@ -3,9 +3,10 @@ import { fontLargeText, fontSmallText } from "../../utils/fontSizes"
 import { corPadraoTextos } from "../../utils/colors"
 
 export const HeroStyled = styled.main`
+	max-width: ${(props) => props.maxWidth};
 	display: flex;
 	justify-content: center;
-	/* max-width: ${(props) => props.maxWidth}; */
+	margin: 0 auto;
 
 	& > img {
 		max-width: 320px;
