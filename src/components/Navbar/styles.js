@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { fontNavBar } from "../../utils/fontSizes"
+import { fontNavBar, fontSmallText } from "../../utils/fontSizes"
 import { corAzul } from "../../utils/colors"
 
 export const NavbarStyled = styled.nav`
@@ -20,6 +20,24 @@ export const NavbarStyled = styled.nav`
 		.navbarSublinhado {
 			border: none;
 			border-bottom: 3px ${corAzul} solid;
+		}
+
+		.escolher-lingua {
+			font-size: ${fontSmallText};
+			margin: auto 0;
+			height: 34px;
+
+			img {
+				width: 24px;
+				height: 16px;
+				object-fit: cover;
+				cursor: pointer;
+				transition: none;
+				margin: auto 8px;
+			}
+			img:last-child {
+				margin-right: 48px;
+			}
 		}
 	}
 `

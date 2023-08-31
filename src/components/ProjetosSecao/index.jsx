@@ -4,6 +4,7 @@ import { ModalStyled, ProjetosSecaoStyled } from "./styles"
 import { objetoProjetos } from "../../utils/objetoProjetos"
 import ConteudoProjetos from "../ConteudoProjetos"
 import { useState } from "react"
+import { projetoTexto } from "../../utils/textos/titles"
 
 function ProjetosSecao(props) {
 	const objetoProjetosIsOpen = objetoProjetos.filter(
@@ -30,12 +31,19 @@ function ProjetosSecao(props) {
 
 	return (
 		<>
-			<TituloSecao id="projetos">Projetos</TituloSecao>
+			<TituloSecao id="projetos">
+				{props.activeLanguage === "english"
+					? projetoTexto.en
+					: props.activeLanguage === "portuguese"
+					? projetoTexto.ptbr
+					: ""}
+			</TituloSecao>
 			<ProjetosSecaoStyled maxWidth={props.maxWidth}>
 				<ConteudoProjetos
 					stateModalIsOpen={stateModalIsOpen}
 					updateObject={updateObject}
 					setStateModalIsOpen={setStateModalIsOpen}
+					activeLanguage={props.activeLanguage}
 				/>
 			</ProjetosSecaoStyled>
 		</>

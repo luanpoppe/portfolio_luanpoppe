@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { corPadraoDeFundo, corPadraoTextos } from "../../utils/colors"
 import { closeButton, githubIcon } from "../../utils/images"
-import { objetoProjetos } from "../../utils/objetoProjetos"
+import {
+	objetoProjetos,
+	objetoProjetosIngles
+} from "../../utils/objetoProjetos"
 import {
 	BackgroundStyled,
 	CloseButtonStyled,
@@ -55,7 +58,11 @@ const ConteudoProjetos = (props) => {
 								console.log(projetoAtivoModal)
 							}}
 						>
-							Ver mais
+							{props.activeLanguage === "english"
+								? "Read more"
+								: props.activeLanguage === "portuguese"
+								? "Ver mais"
+								: ""}
 						</button>
 						<a
 							className="acesso-ao-site"
@@ -63,7 +70,11 @@ const ConteudoProjetos = (props) => {
 							target="_blank"
 							rel="noreferrer"
 						>
-							Acesse
+							{props.activeLanguage === "english"
+								? "Access"
+								: props.activeLanguage === "portuguese"
+								? "Acesse"
+								: ""}
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="24"
@@ -98,7 +109,18 @@ const ConteudoProjetos = (props) => {
 		)
 	}
 
-	const projetosComIndex = objetoProjetos.map((state, index) => {
+	const projetosComIndex =
+		props.activeLanguage === "english"
+			? objetoProjetosIngles.map((state, index) => {
+					return { ...state, indexNumber: index }
+			  })
+			: props.activeLanguage === "portuguese"
+			? objetoProjetos.map((state, index) => {
+					return { ...state, indexNumber: index }
+			  })
+			: ""
+
+	objetoProjetos.map((state, index) => {
 		return { ...state, indexNumber: index }
 	})
 
@@ -122,13 +144,24 @@ const ConteudoProjetos = (props) => {
 
 	return (
 		<>
-			{objetoProjetos.map((projeto, index) => {
-				return (
-					<CadaProjetoStyled key={projeto.nome}>
-						{conteudoDosProjetos(projeto, index)}
-					</CadaProjetoStyled>
-				)
-			})}
+			{props.activeLanguage === "english"
+				? objetoProjetosIngles.map((projeto, index) => {
+						return (
+							<CadaProjetoStyled key={projeto.nome}>
+								{conteudoDosProjetos(projeto, index)}
+							</CadaProjetoStyled>
+						)
+				  })
+				: props.activeLanguage === "portuguese"
+				? objetoProjetos.map((projeto, index) => {
+						return (
+							<CadaProjetoStyled key={projeto.nome}>
+								{conteudoDosProjetos(projeto, index)}
+							</CadaProjetoStyled>
+						)
+				  })
+				: ""}
+
 			{props.stateModalIsOpen.filter((state) => state === true).length ==
 			1 ? (
 				<>

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { widthTablet } from "../../utils/mediaQuery"
 import { corAzul, corPadraoDeFundo } from "../../utils/colors"
+import { fontSmallText } from "../../utils/fontSizes"
 
 export const NavbarMobileStyled = styled.div`
 	display: none;
@@ -12,7 +13,7 @@ export const NavbarMobileStyled = styled.div`
 	left: 0;
 	z-index: 2;
 
-	div {
+	div.hamburguer-menu {
 		padding: 8px;
 		span {
 			display: block;
@@ -23,11 +24,32 @@ export const NavbarMobileStyled = styled.div`
 		}
 	}
 
-	h1 {
-		margin-left: 40px;
+	div.title-and-language {
+		display: block;
+		h1 {
+			margin-left: 40px;
 
-		span {
-			color: ${corAzul};
+			span {
+				color: ${corAzul};
+			}
+		}
+		.escolher-lingua {
+			font-size: ${fontSmallText};
+			margin: auto 0;
+			margin-left: 40px;
+			height: 34px;
+
+			img {
+				width: 24px;
+				height: 16px;
+				object-fit: cover;
+				cursor: pointer;
+				transition: none;
+				margin: auto 8px;
+			}
+			img:last-child {
+				margin-right: 48px;
+			}
 		}
 	}
 
@@ -54,4 +76,15 @@ export const NavbarOpenStyled = styled.nav`
 		border: none;
 		border-bottom: 1px solid ${corAzul};
 	}
+`
+
+export const NavbarBackgroundStyled = styled.div`
+	background-color: ${corPadraoDeFundo};
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
 `

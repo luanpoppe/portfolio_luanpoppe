@@ -12,6 +12,7 @@ import ProjetosSecao from "./components/ProjetosSecao"
 function App() {
 	const [scrollTop, setScrollTop] = useState(0)
 	const [activeNavbar, setActiveNavbar] = useState("hero")
+	const [activeLanguage, setActiveLanguage] = useState("portuguese")
 
 	window.addEventListener("scroll", (evento) => {
 		const secaoHabilidades =
@@ -37,11 +38,21 @@ function App() {
 		<>
 			<EstiloGlobal />
 			<MainContainer>
-				<Header activeNavbar={activeNavbar} />
-				<Hero maxWidth={"1080px"} />
-				<AboutMe maxWidth={"1080px"} />
-				<HabilidadesSecao maxWidth={"1080px"} />
-				<ProjetosSecao maxWidth={"1440px"} />
+				<Header
+					activeNavbar={activeNavbar}
+					setActiveLanguage={setActiveLanguage}
+					activeLanguage={activeLanguage}
+				/>
+				<Hero maxWidth={"1080px"} activeLanguage={activeLanguage} />
+				<AboutMe maxWidth={"1080px"} activeLanguage={activeLanguage} />
+				<HabilidadesSecao
+					maxWidth={"1080px"}
+					activeLanguage={activeLanguage}
+				/>
+				<ProjetosSecao
+					maxWidth={"1440px"}
+					activeLanguage={activeLanguage}
+				/>
 			</MainContainer>
 		</>
 	)

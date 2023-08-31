@@ -14,6 +14,7 @@ import {
 	gmailIcon,
 	linkedinIcon
 } from "../../utils/images"
+import { heroTexts } from "../../utils/textos/hero"
 
 function Hero(props) {
 	return (
@@ -21,14 +22,34 @@ function Hero(props) {
 			<img src={fotoPerfilLuan} alt="Foto de Perfil" />
 			<HeroTextStyled>
 				<h1>
-					Olá! Me chamo Luan <span>Poppe</span>. Atuo como
-					desenvolvedor <span> front-end</span>.
+					{props.activeLanguage === "english"
+						? heroTexts.mainText[1].en
+						: props.activeLanguage === "portuguese"
+						? heroTexts.mainText[1].ptbr
+						: ""}
+					<span>Poppe</span>
+					{props.activeLanguage === "english"
+						? heroTexts.mainText[2].en
+						: props.activeLanguage === "portuguese"
+						? heroTexts.mainText[2].ptbr
+						: ""}
+					<span> front-end</span>
+					{props.activeLanguage === "english"
+						? heroTexts.mainText[3].en
+						: props.activeLanguage === "portuguese"
+						? heroTexts.mainText[3].ptbr
+						: ""}
 				</h1>
 				<p>
-					Atualmente atuo como desenvolvedor front-end, enquanto
+					{props.activeLanguage === "english"
+						? heroTexts.secondaryText.en
+						: props.activeLanguage === "portuguese"
+						? heroTexts.secondaryText.ptbr
+						: ""}
+					{/* Atualmente atuo como desenvolvedor front-end, enquanto
 					realizo curso da plataforma da EBAC para me tornar
 					Desenvolvedor Fullstack, com previsão de término para o fim
-					de 2023.
+					de 2023. */}
 				</p>
 				<div className="container-acessar-curriculo">
 					<AcessarCurriculoStyled
@@ -36,7 +57,11 @@ function Hero(props) {
 						target="_blank"
 					>
 						<p>
-							Currículo
+							{props.activeLanguage === "english"
+								? heroTexts.menores.curriculo.en
+								: props.activeLanguage === "portuguese"
+								? heroTexts.menores.curriculo.ptbr
+								: ""}
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="24"
@@ -58,7 +83,11 @@ function Hero(props) {
 					</AcessarCurriculoStyled>
 					<ContainerEntreEmContatoStyled>
 						<EntreEmContatoStyled>
-							Entre em contato:
+							{props.activeLanguage === "english"
+								? heroTexts.menores.contato.en
+								: props.activeLanguage === "portuguese"
+								? heroTexts.menores.contato.ptbr
+								: ""}
 						</EntreEmContatoStyled>
 						<div className="container-icones">
 							<a

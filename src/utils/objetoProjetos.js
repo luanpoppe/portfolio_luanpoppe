@@ -94,4 +94,90 @@ const objetoProjetos = [
 	}
 ]
 
-export { objetoProjetos }
+const objetoProjetosIngles = [
+	{
+		nome: "EPLAY",
+		imagem: eplayImagem,
+		descricao:
+			"I worked on the development of this website throughout the last modules of the EBAC course. In this project, I applied the knowledge acquired during the course in HTML, CSS, and Javascript, using React to assist in the project's development. I utilized Styled Components for creating pre-styled CSS components, and Redux for managing its states.",
+		link: "https://eplay-luanpoppe.vercel.app/",
+		github: "https://github.com/luanpoppe/M_35-eplay",
+		habilidades: [
+			"React",
+			"Javascript",
+			"Typescript",
+			"Styled Components",
+			"Redux"
+		],
+		isModalOpen: false,
+		indexNumber: ""
+	},
+	{
+		nome: "To-Do List",
+		imagem: todoListReact,
+		descricao:
+			"I developed this website following the lessons from the EBAC front-end course. The website works as a dynamic task list, where tasks can be edited, added, and deleted, and it's also possible to filter them.",
+		link: "https://to-do-list-react-lac.vercel.app/",
+		github: "https://github.com/luanpoppe/M_31-To-Do_List_React",
+		habilidades: ["React", "Javascript", "Typescript", "Styled Components"],
+		isModalOpen: false,
+		indexNumber: ""
+	},
+	{
+		nome: "GitHub Portfolio",
+		imagem: portfolioGithub,
+		descricao:
+			"I developed this website following the front-end course at EBAC. In it, I was able to practice creating components using React, and I also used AJAX protocols to integrate the website with a public API that GitHub provides about my own profile. The website also offers the option for you to choose between the light and dark themes, further personalizing the user experience.",
+		link: "https://portfolio-git-hub-react.vercel.app/",
+		github: "https://github.com/luanpoppe/M_29_portfolio_GitHub-react",
+		habilidades: ["React", "Javascript", "Ajax", "Styled Components"],
+		isModalOpen: false,
+		indexNumber: ""
+	},
+	{
+		nome: "Ebac Tech Talks",
+		imagem: ebacTechTalks,
+		descricao:
+			"This landing page was developed using only HTML, CSS, and Javascript. For CSS, I used the SASS pre-processing language to simplify the styling of elements. I also developed skills to work with dates and times in the Javascript language. Additionally, a highlight is the animation of the website's components as the user scrolls to view all areas of the site.",
+		link: "https://ebac-tech-talks-luanpoppe.vercel.app/",
+		github: "https://github.com/luanpoppe/M_22-ebac-tech-talks",
+		habilidades: ["HTML", "CSS", "Javascript", "SASS"],
+		isModalOpen: false,
+		indexNumber: ""
+	},
+	{
+		nome: "Disney Plus Clone",
+		imagem: cloneDisneyPlus,
+		descricao:
+			"In this project, completed during the EBAC front-end course, I developed a clone of the initial Disney Plus streaming service website. To achieve this, I used the knowledge acquired in HTML and CSS, and I also gained experience using Bootstrap to assist with the site's styling. This approach allows for a pleasant navigation experience through the different sections of the site. As a highlight, I also created a frequently asked questions (FAQ) section with the assistance of Bootstrap.",
+		link: "https://disney-plus-clone-weld.vercel.app/",
+		github: "https://github.com/luanpoppe/M_21_Clone_Disney_Plus",
+		habilidades: ["HTML", "CSS", "Bootstrap", "SASS", "Javascript"],
+		isModalOpen: false,
+		indexNumber: ""
+	},
+	{
+		nome: "Luan Poppe Games",
+		imagem: gamesBootstrap,
+		descricao:
+			"This website was developed using the fundamental concepts of HTML and CSS, along with the assistance of Bootstrap to aid in styling the elements. Additionally, the SASS pre-processor was used to further facilitate and simplify the styling process. The site was also designed to be fully responsive across devices of various sizes.",
+		link: "https://loja-games-bootstrap.vercel.app/",
+		github: "https://github.com/luanpoppe/E_14-Loja_Games_bootstrap",
+		habilidades: ["HTML", "CSS", "Bootstrap", "SASS"],
+		isModalOpen: false,
+		indexNumber: ""
+	},
+	{
+		nome: "Games Shop",
+		imagem: gameShop,
+		descricao:
+			"My first website, developed right at the beginning of the front-end course I'm taking on the EBAC platform. This site was created using only HTML and CSS, demonstrating how even with just the basic and initial front-end concepts, it's still possible to build beautiful and functional web pages.",
+		link: "https://game-shop-ebac-gamma.vercel.app/",
+		github: "https://github.com/luanpoppe/M_05-game-shop",
+		habilidades: ["HTML", "CSS"],
+		isModalOpen: false,
+		indexNumber: ""
+	}
+]
+
+export { objetoProjetos, objetoProjetosIngles }
