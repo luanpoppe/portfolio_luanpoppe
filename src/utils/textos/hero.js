@@ -14,8 +14,10 @@ export const heroTexts = {
 		}
 	},
 	secondaryText: {
-		ptbr: "Atualmente atuo como desenvolvedor front-end, enquanto realizo curso da plataforma da EBAC para me tornar Desenvolvedor Fullstack, com previsão de término para o fim de 2023.",
-		en: "I currently work as a front-end developer, while I take the EBAC platform course to become a Fullstack Developer, scheduled to end in 2023."
+		ptbr: `Atualmente atuo como Desenvolvedor Front-End na empresa Solos Brasil, onde desenvolvo plataformas utilizando o framework Angular no cargo de Trainee,
+		enquanto cotinuo realizando um curso da plataforma da EBAC para me tornar Desenvolvedor Fullstack, com previsão de término para o fim de 2024.
+		`,
+		en: "Currently I work as a Front-End Developer at Solos Brasil, where I develop platforms using the Angular framework, while I am taking a course on the EBAC platform to become a Fullstack Developer, with an expected completion date by the end of 2024. My work is based on the pillars of commitment, inspiring confidence, good teamwork, seeking effective solutions, and continuous learning."
 	},
 	menores: {
 		curriculo: {
