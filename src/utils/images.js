@@ -26,6 +26,11 @@ import githubIcon from "../images/icons/github.png"
 import linkedinIcon from "../images/icons/linkedin.png"
 import gmailIcon from "../images/icons/gmail.png"
 
+import angualrIcon from "../images/icons/angular.png"
+import jestIcon from "../images/icons/jest.svg"
+import djangoIcon from "../images/icons/django.svg"
+import djangoRestIcon from "../images/icons/Django REST.svg"
+
 export { fotoPerfilLuan, imagemSecaoSobreMim, closeButton }
 export { githubIcon, gmailIcon, linkedinIcon }
 export {
@@ -49,5 +54,9 @@ export {
 	bootstrapIcon,
 	gitIcon,
 	nodejsIcon,
-	pythonIcon
+	pythonIcon,
+	angualrIcon,
+	jestIcon,
+	djangoIcon,
+	djangoRestIcon
 }

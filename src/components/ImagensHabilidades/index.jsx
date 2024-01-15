@@ -8,12 +8,16 @@ const objetoHabilidades = [
 	{ nome: "HTML", imagem: I.htmlIcon },
 	{ nome: "CSS", imagem: I.cssIcon },
 	{ nome: "JavaScript", imagem: I.javascriptIcon },
-	{ nome: "React", imagem: I.reactIcon },
 	{ nome: "TypeScript", imagem: I.typescriptIcon },
+	{ nome: "Angular", imagem: I.angualrIcon },
+	{ nome: "Django", imagem: I.djangoIcon },
+	{ nome: "Django REST", imagem: I.djangoRestIcon },
+	{ nome: "React", imagem: I.reactIcon },
 	{ nome: "Redux", imagem: I.reduxIcon },
+	{ nome: "Jest", imagem: I.jestIcon },
+	{ nome: "Bootstrap", imagem: I.bootstrapIcon },
 	{ nome: "SASS", imagem: I.sassIcon },
 	{ nome: "LESS", imagem: I.lessIcon },
-	{ nome: "Bootstrap", imagem: I.bootstrapIcon },
 	{ nome: "NodeJS", imagem: I.nodejsIcon },
 	{ nome: "Git", imagem: I.gitIcon },
 	{ nome: "Python", imagem: I.pythonIcon }
@@ -21,6 +25,7 @@ const objetoHabilidades = [
 
 const ImgIcons = styled.img`
 	width: 100%;
+	max-height: 210px;
 
 	@media (max-width: ${widthTablet}) {
 		max-width: 50%;
@@ -62,7 +67,9 @@ function ImagensHabilidades() {
 		<>
 			{objetoHabilidades.map((h) => (
 				<ContainerHabilidades key={h.nome}>
-					<TituloHabilidade>{h.nome}</TituloHabilidade>
+					<TituloHabilidade style={{ marginBottom: "10px" }}>
+						{h.nome}
+					</TituloHabilidade>
 					<ImgIcons src={h.imagem} alt={h.nome} />
 				</ContainerHabilidades>
 			))}
