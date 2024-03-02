@@ -71,7 +71,7 @@ export const CloseButtonStyled = styled.button`
 	position: absolute;
 	top: 16px;
 	right: 16px;
-	background-color: transparent;
+	background-color: ${corDeFundoModal};
 	border: none;
 
 	img {
