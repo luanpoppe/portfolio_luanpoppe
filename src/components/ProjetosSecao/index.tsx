@@ -1,17 +1,17 @@
-/* eslint-disable no-unused-vars */
+ 
 import TituloSecao from "../TituloSecao"
-import { ModalStyled, ProjetosSecaoStyled } from "./styles"
+import { ProjetosSecaoStyled } from "./styles"
 import { objetoProjetos } from "../../utils/objetoProjetos"
 import ConteudoProjetos from "../ConteudoProjetos"
 import { useState } from "react"
 import { projetoTexto } from "../../utils/textos/titles"
 
 function ProjetosSecao(props) {
-	const objetoProjetosIsOpen = objetoProjetos.filter(
-		(projeto) => projeto.isModalOpen === true
-	)
+	// const objetoProjetosIsOpen = objetoProjetos.filter(
+	// 	(projeto) => projeto.isModalOpen === true
+	// )
 
-	let modalIsOpen = objetoProjetos.map((projeto) => projeto.isModalOpen)
+	const modalIsOpen = objetoProjetos.map((projeto) => projeto.isModalOpen)
 
 	const [stateModalIsOpen, setStateModalIsOpen] = useState(modalIsOpen)
 

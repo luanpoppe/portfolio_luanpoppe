@@ -7,7 +7,7 @@ export const AboutMeStyled = styled.section`
 	margin: 0 auto;
 	margin-top: 64px;
 	margin-bottom: 64px;
-	max-width: ${(props) => props.maxWidth};
+	max-width: ${(props: any) => props.maxWidth};
 
 	h2 {
 		text-align: center;

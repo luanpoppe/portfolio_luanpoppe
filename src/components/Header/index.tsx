@@ -4,7 +4,7 @@ import Navbar from "../Navbar"
 import NavbarMobile from "../NavbarMobile"
 import { navbarTexts } from "../../utils/textos/navbar"
 
-function Header(props) {
+function Header(props: any) {
 	return (
 		<>
 			<HeaderStyled>

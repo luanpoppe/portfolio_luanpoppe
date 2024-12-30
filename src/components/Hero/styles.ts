@@ -8,7 +8,7 @@ import { corAzul, corPadraoTextos } from "../../utils/colors"
 import { widthTablet } from "../../utils/mediaQuery"
 
 export const HeroStyled = styled.main`
-	max-width: ${(props) => props.maxWidth};
+	max-width: ${(props: any) => props.maxWidth};
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;

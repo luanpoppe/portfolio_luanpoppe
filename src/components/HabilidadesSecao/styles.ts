@@ -9,7 +9,7 @@ export const HabilidadesSecaoStyled = styled.section`
 	margin: 0 auto;
 	margin-top: 64px;
 	margin-bottom: 64px;
-	max-width: ${(props) => props.maxWidth};
+	max-width: ${(props: any) => props.maxWidth};
 
 	@media (max-width: ${widthTablet}) {
 		grid-template-columns: 1fr 1fr;

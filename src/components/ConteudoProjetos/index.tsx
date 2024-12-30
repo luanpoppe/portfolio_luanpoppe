@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
-import { corPadraoDeFundo, corPadraoTextos } from "../../utils/colors"
+ 
+import { corPadraoDeFundo } from "../../utils/colors"
 import { closeButton, githubIcon } from "../../utils/images"
 import {
 	objetoProjetos,
@@ -109,7 +109,7 @@ const ConteudoProjetos = (props) => {
 		)
 	}
 
-	const projetosComIndex =
+	const projetosComIndex: any =
 		props.activeLanguage === "english"
 			? objetoProjetosIngles.map((state, index) => {
 					return { ...state, indexNumber: index }
@@ -128,7 +128,7 @@ const ConteudoProjetos = (props) => {
 		(state) => state === true
 	)
 
-	let projetoAtivoModal = projetosComIndex.filter(
+	let projetoAtivoModal: any = projetosComIndex.filter(
 		(state) => state.indexNumber === indexAtivoModal
 	)
 	projetoAtivoModal = projetoAtivoModal[0]
@@ -137,6 +137,7 @@ const ConteudoProjetos = (props) => {
 		document.body.classList.remove("stop-scroll")
 		props.setStateModalIsOpen(
 			props.stateModalIsOpen.map((state) => {
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				return (state = false)
 			})
 		)
