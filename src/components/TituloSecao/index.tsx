@@ -1,8 +1,15 @@
-import React from "react"
-import { TituloSecaoStyled } from "./styles"
+import { PropsWithChildren } from "react"
 
-function TituloSecao(props) {
-	return <TituloSecaoStyled id={props.id}>{props.children}</TituloSecaoStyled>
+import styled from "styled-components"
+import { fontLargeText } from "../../utils/fontSizes"
+
+export const TituloSecaoStyled = styled.h2`
+	font-size: ${fontLargeText};
+	text-align: center;
+`
+
+function TituloSecao({ id, children }: PropsWithChildren & { id: string }) {
+	return <TituloSecaoStyled id={id}>{children}</TituloSecaoStyled>
 }
 
 export default TituloSecao

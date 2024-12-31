@@ -7,7 +7,7 @@ import {
 import { corAzul, corPadraoTextos } from "../../utils/colors"
 import { widthTablet } from "../../utils/mediaQuery"
 
-export const HeroStyled = styled.main`
+export const HeroStyled = styled.main<any>`
 	max-width: ${(props: any) => props.maxWidth};
 	display: flex;
 	justify-content: center;
@@ -141,8 +141,7 @@ export const ContainerEntreEmContatoStyled = styled.div`
 	border: 2px solid ${corPadraoTextos};
 	padding: 12px;
 	border-radius: 8px;
-	box-shadow:
-		rgba(255, 255, 255, 0.25) 0px 18px 19px,
+	box-shadow: rgba(255, 255, 255, 0.25) 0px 18px 19px,
 		rgba(255, 255, 255, 0.12) 0px -12px 30px,
 		rgba(255, 255, 255, 0.12) 0px 4px 6px,
 		rgba(255, 255, 255, 0.17) 0px 12px 13px,

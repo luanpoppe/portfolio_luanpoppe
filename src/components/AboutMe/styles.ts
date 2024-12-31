@@ -2,12 +2,12 @@ import styled from "styled-components"
 import { fontSmallText } from "../../utils/fontSizes"
 import { widthTablet } from "../../utils/mediaQuery"
 
-export const AboutMeStyled = styled.section`
+export const AboutMeStyled = styled.section<PropMaxWidth>`
 	display: block;
 	margin: 0 auto;
 	margin-top: 64px;
 	margin-bottom: 64px;
-	max-width: ${(props: any) => props.maxWidth};
+	max-width: ${(props) => props.maxWidth};
 
 	h2 {
 		text-align: center;

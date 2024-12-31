@@ -9,17 +9,10 @@ const ImagemSecaoStyled = styled.img`
 	}
 `
 
-import React from "react"
 import { widthTablet } from "../../utils/mediaQuery"
 
-function ImagemSecao(props) {
-	return (
-		<ImagemSecaoStyled
-			src={props.src}
-			alt={props.alt}
-			className={props.className}
-		/>
-	)
+function ImagemSecao({ src, alt, className }: PropImage & PropClass) {
+	return <ImagemSecaoStyled src={src} alt={alt} className={className} />
 }
 
 export default ImagemSecao

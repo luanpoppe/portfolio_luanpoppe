@@ -15,6 +15,7 @@ import {
 	linkedinIcon
 } from "../../utils/images"
 import { heroTexts } from "../../utils/textos/hero"
+import { getTextLang } from "../../utils/textos/funcs"
 
 function Hero(props) {
 	return (
@@ -22,34 +23,14 @@ function Hero(props) {
 			<img src={fotoPerfilLuan} alt="Foto de Perfil" />
 			<HeroTextStyled>
 				<h1>
-					{props.activeLanguage === "english"
-						? heroTexts.mainText[1].en
-						: props.activeLanguage === "portuguese"
-						? heroTexts.mainText[1].ptbr
-						: ""}
+					{getTextLang(heroTexts.mainText[0], props.activeLanguage)}
 					<span>Poppe</span>
-					{props.activeLanguage === "english"
-						? heroTexts.mainText[2].en
-						: props.activeLanguage === "portuguese"
-						? heroTexts.mainText[2].ptbr
-						: ""}
+					{getTextLang(heroTexts.mainText[1], props.activeLanguage)}
 					<span> front-end</span>
-					{props.activeLanguage === "english"
-						? heroTexts.mainText[3].en
-						: props.activeLanguage === "portuguese"
-						? heroTexts.mainText[3].ptbr
-						: ""}
+					{getTextLang(heroTexts.mainText[2], props.activeLanguage)}
 				</h1>
 				<p>
-					{props.activeLanguage === "english"
-						? heroTexts.secondaryText.en
-						: props.activeLanguage === "portuguese"
-						? heroTexts.secondaryText.ptbr
-						: ""}
-					{/* Atualmente atuo como desenvolvedor front-end, enquanto
-					realizo curso da plataforma da EBAC para me tornar
-					Desenvolvedor Fullstack, com previsão de término para o fim
-					de 2023. */}
+					{getTextLang(heroTexts.secondaryText, props.activeLanguage)}
 				</p>
 				<div className="container-acessar-curriculo">
 					<AcessarCurriculoStyled

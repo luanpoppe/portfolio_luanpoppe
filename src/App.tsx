@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import { useState } from "react"
 
 import EstiloGlobal from "./globalStyle"
@@ -9,13 +7,17 @@ import Hero from "./components/Hero"
 import AboutMe from "./components/AboutMe"
 import HabilidadesSecao from "./components/HabilidadesSecao"
 import ProjetosSecao from "./components/ProjetosSecao"
+import "./utils/styles/display.css"
+import "./utils/styles/widthAndHeight.css"
+import "./utils/styles/maxMinWidthAndHeight.css"
 
 export function App() {
 	const [scrollTop, setScrollTop] = useState(0)
 	const [activeNavbar, setActiveNavbar] = useState("hero")
-	const [activeLanguage, setActiveLanguage] = useState("portuguese")
+	const [activeLanguage, setActiveLanguage] =
+		useState<ActiveLanguage>("portuguese")
 
-	window.addEventListener("scroll", (evento) => {
+	window.addEventListener("scroll", () => {
 		const secaoHabilidades =
 			document.getElementById("habilidades").offsetTop
 		const secaoHero = document.getElementById("hero").offsetTop
