@@ -4,7 +4,7 @@ import {
 	NavbarMobileStyled,
 	NavbarOpenStyled
 } from "./style"
-import { navbarTexts } from "../../utils/textos/navbar"
+import { navbarTexts } from "../../../utils/textos/navbar"
 
 function NavbarMobile(props) {
 	const [isNavbarMobileOpen, setIsNavbarMobileOpen] = useState(false)

@@ -4,7 +4,7 @@ import { fontMobileSmallText, fontSmallText } from "../../utils/fontSizes"
 import { widthTablet } from "../../utils/mediaQuery"
 
 export const CadaProjetoStyled = styled.div`
-	display: flex;
+	/* display: flex;
 	justify-content: center;
 	border: 2px solid ${corPadraoTextos};
 	border-radius: 8px;
@@ -51,11 +51,11 @@ export const CadaProjetoStyled = styled.div`
 
 	@media (max-width: ${widthTablet}) {
 		max-width: 100%;
-	}
+	} */
 `
 
 export const TagsHabilidadesStyled = styled.div`
-	display: grid;
+	/* display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: center;
 	gap: 8px;
@@ -77,11 +77,11 @@ export const TagsHabilidadesStyled = styled.div`
 			margin-left: auto;
 			margin-right: auto;
 		}
-	}
+	} */
 `
 
 export const RedirecionamentoStyled = styled.div`
-	display: flex;
+	/* display: flex;
 	gap: 16px;
 	align-items: center;
 	margin-top: 24px;
@@ -137,11 +137,11 @@ export const RedirecionamentoStyled = styled.div`
 
 	button {
 		height: 64px;
-	}
+	} */
 `
 
 export const ImagemGitHub = styled.img`
-	max-width: 64px;
+	/* max-width: 64px;
 	max-height: 64px;
 	padding: 0;
 	border-radius: 8px;
@@ -150,5 +150,5 @@ export const ImagemGitHub = styled.img`
 	&:hover {
 		transform: scale(1.05);
 		transition: all ease 350ms;
-	}
+	} */
 `

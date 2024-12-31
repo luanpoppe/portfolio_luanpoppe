@@ -1,4 +1,3 @@
- 
 import TituloSecao from "../TituloSecao"
 import { ProjetosSecaoStyled } from "./styles"
 import { objetoProjetos } from "../../utils/objetoProjetos"
@@ -38,7 +37,7 @@ function ProjetosSecao(props) {
 					? projetoTexto.ptbr
 					: ""}
 			</TituloSecao>
-			<ProjetosSecaoStyled maxWidth={props.maxWidth}>
+			<ProjetosSecaoStyled className="flex-column flex-lg-row flex-wrap w-100"  maxWidth={props.maxWidth}>
 				<ConteudoProjetos
 					stateModalIsOpen={stateModalIsOpen}
 					updateObject={updateObject}

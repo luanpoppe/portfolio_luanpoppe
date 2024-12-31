@@ -1,5 +1,7 @@
 declare type ActiveLanguage = "english" | "portuguese"
 
+declare type ActiveNavbar = "hero" | "sobre-mim" | "habilidades" | "projetos"
+
 declare type PropActiveLanguage = {
 	activeLanguage: ActiveLanguage
 }

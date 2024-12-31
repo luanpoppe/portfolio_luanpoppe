@@ -21,15 +21,15 @@ import {
 const ConteudoProjetos = (props) => {
 	const conteudoDosProjetos = (projeto, index = 0) => {
 		return (
-			<>
-				<a href={projeto.link} target="_blank" rel="noreferrer">
+			<div className="w-100">
+				<a href={projeto.link} target="_blank" rel="noreferrer" className="w-100">
 					<img
-						className="imagem-projeto"
+						className="imagem-projeto w-50"
 						src={projeto.imagem}
 						alt={projeto.nome}
 					/>
 				</a>
-				<div>
+				<div className="w-100">
 					<h2>
 						<a href={projeto.link} target="_blank" rel="noreferrer">
 							{projeto.nome}
@@ -105,7 +105,7 @@ const ConteudoProjetos = (props) => {
 						</a>
 					</RedirecionamentoStyled>
 				</div>
-			</>
+			</div>
 		)
 	}
 

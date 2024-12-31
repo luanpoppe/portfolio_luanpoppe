@@ -14,6 +14,8 @@ const EstiloGlobal = createGlobalStyle`
 
 	body {
 		background-color: ${corPadraoDeFundo};
+		max-width: 100vw;
+		min-height: 100vh;
 	}
 
 	.stop-scroll {

@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { widthTablet } from "../../utils/mediaQuery"
-import { corAzul, corPadraoDeFundo } from "../../utils/colors"
-import { fontSmallText } from "../../utils/fontSizes"
+import { widthTablet } from "../../../utils/mediaQuery"
+import { corAzul, corPadraoDeFundo } from "../../../utils/colors"
+import { fontSmallText } from "../../../utils/fontSizes"
 
 export const NavbarMobileStyled = styled.div`
 	display: none;

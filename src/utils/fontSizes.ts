@@ -1,4 +1,4 @@
-export const fontNavBar = "1.75rem" // originalmente 28px
+export const fontNavBar = "1.5rem" // originalmente 28px
 export const fontTitleHeader = "1.5rem" // originalmente 24px
 export const fontTitleIcons = "2rem" // originalmente 36px
 

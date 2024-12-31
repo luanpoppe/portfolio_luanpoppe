@@ -6,7 +6,7 @@ import { habilidadesTexto } from "../../utils/textos/titles"
 
 function HabilidadesSecao(props) {
 	return (
-		<>
+		<div className="w-50">
 			<TituloSecao id="habilidades">
 				{props.activeLanguage === "english"
 					? habilidadesTexto.en
@@ -17,7 +17,7 @@ function HabilidadesSecao(props) {
 			<HabilidadesSecaoStyled maxWidth={props.maxWidth}>
 				<ImagensHabilidades />
 			</HabilidadesSecaoStyled>
-		</>
+		</div>
 	)
 }
 
