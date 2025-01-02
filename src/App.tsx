@@ -7,9 +7,10 @@ import Hero from "./components/Hero"
 import AboutMe from "./components/AboutMe"
 import HabilidadesSecao from "./components/HabilidadesSecao"
 import ProjetosSecao from "./components/ProjetosSecao"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./utils/styles/resetBootstrap.css"
 import "./utils/styles/display.css"
 import "./utils/styles/widthAndHeight.css"
-import "./utils/styles/maxMinWidthAndHeight.css"
 import "./utils/styles/marginAndPadding.css"
 
 export function App() {

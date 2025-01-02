@@ -2,13 +2,18 @@ import { createGlobalStyle } from "styled-components"
 import { corPadraoDeFundo, corPadraoTextos } from "./utils/colors"
 
 const EstiloGlobal = createGlobalStyle`
+	:root {
+		scroll-behavior: smooth;
+		scroll-padding-top: 120px;
+	}
+
 	* {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		text-decoration: none;
-		font-family: 'Roboto', sans-serif;
+		/* font-family: 'Roboto', sans-serif; */
 		color: ${corPadraoTextos}
 	}
 

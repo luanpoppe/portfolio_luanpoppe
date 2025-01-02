@@ -4,13 +4,8 @@ import { corAzul, corPadraoDeFundo } from "../../../utils/colors"
 import { fontSmallText } from "../../../utils/fontSizes"
 
 export const NavbarMobileStyled = styled.div`
-	display: none;
 	height: 80px;
-	width: 100%;
 	background-color: ${corPadraoDeFundo};
-	position: fixed;
-	top: 0px;
-	left: 0;
 	z-index: 2;
 
 	div.hamburguer-menu {
@@ -51,11 +46,6 @@ export const NavbarMobileStyled = styled.div`
 				margin-right: 48px;
 			}
 		}
-	}
-
-	@media (max-width: ${widthTablet}) {
-		display: flex;
-		align-items: center;
 	}
 `
 

@@ -1,6 +1,6 @@
 import { HeaderStyled } from "./HeaderStyle"
-import Navbar from "../../components/Navbar"
-import NavbarMobile from "./NavbarMobile"
+import { Navbar } from "../../components/Navbar"
+import { NavbarMobile } from "./NavbarMobile"
 import { navbarTexts } from "../../utils/textos/navbar"
 import { getTextLang } from "../../utils/textos/funcs"
 import { IoLanguage } from "react-icons/io5"
@@ -22,12 +22,18 @@ export function Header({
 
 	return (
 		<>
-			<HeaderStyled className="w-100 none flex-md-row jcb aic">
+			<HeaderStyled className="w-100 d-flex jcb aic">
+				<NavbarMobile
+					className="d-flex aic d-lg-none"
+					activeNavbar={activeNavbar}
+					activeLanguage={activeLanguage}
+					setActiveLanguage={setActiveLanguage}
+				/>
 				<h1>
-					Luan <span>Poppe</span>
+					{"<"}Luan <span>Poppe</span>{" />"}
 				</h1>
-				<Navbar>
-					<ul>
+				<Navbar className="w-100 d-none d-lg-flex jcc aic mx-0">
+					<ul className="d-flex jcc aic m-0 gap-4">
 						{/* <div className="escolher-lingua">
 							Language:
 							<img
@@ -78,18 +84,12 @@ export function Header({
 								)}
 							</a>
 						</li>
-
-						<li>
-							<IoLanguage />
-						</li>
 					</ul>
 				</Navbar>
+				<div>
+					<IoLanguage />
+				</div>
 			</HeaderStyled>
-			<NavbarMobile
-				activeNavbar={activeNavbar}
-				activeLanguage={activeLanguage}
-				setActiveLanguage={setActiveLanguage}
-			/>
 		</>
 	)
 }
