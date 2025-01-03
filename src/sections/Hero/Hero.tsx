@@ -1,5 +1,3 @@
-import React from "react"
-
 import {
 	AcessarCurriculoStyled,
 	ContactIconsStyled,
@@ -17,9 +15,11 @@ import {
 import { heroTexts } from "../../utils/textos/hero"
 import { getTextLang } from "../../utils/textos/funcs"
 
-function Hero(props) {
+type Props = PropActiveLanguage
+
+export function Hero(props: Props) {
 	return (
-		<HeroStyled maxWidth={props.maxWidth} id="hero">
+		<HeroStyled id="hero">
 			<img src={fotoPerfilLuan} alt="Foto de Perfil" />
 			<HeroTextStyled>
 				<h1>
@@ -109,5 +109,3 @@ function Hero(props) {
 		</HeroStyled>
 	)
 }
-
-export default Hero

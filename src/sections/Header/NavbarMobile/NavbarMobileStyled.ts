@@ -1,7 +1,5 @@
 import styled from "styled-components"
-import { widthTablet } from "../../../utils/mediaQuery"
 import { corAzul, corPadraoDeFundo } from "../../../utils/colors"
-import { fontSmallText } from "../../../utils/fontSizes"
 
 export const NavbarMobileStyled = styled.div`
 	height: 80px;
@@ -26,24 +24,6 @@ export const NavbarMobileStyled = styled.div`
 
 			span {
 				color: ${corAzul};
-			}
-		}
-		.escolher-lingua {
-			font-size: ${fontSmallText};
-			margin: auto 0;
-			margin-left: 40px;
-			height: 34px;
-
-			img {
-				width: 24px;
-				height: 16px;
-				object-fit: cover;
-				cursor: pointer;
-				transition: none;
-				margin: auto 8px;
-			}
-			img:last-child {
-				margin-right: 48px;
 			}
 		}
 	}

@@ -1,93 +1,65 @@
-import { HeaderStyled } from "./HeaderStyle"
-import { Navbar } from "../../components/Navbar"
+import { Navbar } from "./Navbar"
 import { NavbarMobile } from "./NavbarMobile"
-import { navbarTexts } from "../../utils/textos/navbar"
-import { getTextLang } from "../../utils/textos/funcs"
 import { IoLanguage } from "react-icons/io5"
+import { FlagsComponents } from "./FlagsComponents"
+import { useState } from "react"
+import styled from "styled-components"
+import { fontTitleHeader } from "../../utils/fontSizes"
+import { corAzul, corPadraoDeFundo } from "../../utils/colors"
 
 type Props = PropActiveLanguage & {
 	setActiveLanguage: React.Dispatch<React.SetStateAction<ActiveLanguage>>
 	activeNavbar: ActiveNavbar
 }
 
+const HeaderStyled = styled.header`
+	background-color: ${corPadraoDeFundo};
+	min-height: 120px;
+	font-size: ${fontTitleHeader};
+	z-index: 1;
+
+	span {
+		color: ${corAzul};
+	}
+`
+
 export function Header({
 	activeLanguage,
 	activeNavbar,
 	setActiveLanguage
 }: Props) {
-	function defineUnderlinedNavbar(navbarName: string) {
-		if (navbarName == activeNavbar) return "navbarSublinhado"
-		return ""
-	}
+	const [isLanguageOpen, setisLanguageOpen] = useState<boolean>(false)
 
 	return (
 		<>
-			<HeaderStyled className="w-100 d-flex jcb aic">
+			<HeaderStyled className="w-100 d-flex jcb aic mb-4 position-sticky top-0 start-0 text-nowrap">
 				<NavbarMobile
-					className="d-flex aic d-lg-none"
+					className="d-flex aic d-lg-none h-100"
 					activeNavbar={activeNavbar}
 					activeLanguage={activeLanguage}
 					setActiveLanguage={setActiveLanguage}
 				/>
-				<h1>
-					{"<"}Luan <span>Poppe</span>{" />"}
+
+				<h1 className="m-0">
+					{"<"}Luan <span>Poppe</span>
+					{" />"}
 				</h1>
-				<Navbar className="w-100 d-none d-lg-flex jcc aic mx-0">
-					<ul className="d-flex jcc aic m-0 gap-4">
-						{/* <div className="escolher-lingua">
-							Language:
-							<img
-								onClick={() => {
-									setActiveLanguage("portuguese")
-								}}
-								src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/275px-Flag_of_Brazil.svg.png"
-								alt="Brasil"
-							/>
-							<img
-								onClick={() => {
-									setActiveLanguage("english")
-								}}
-								src="https://cdn-icons-png.flaticon.com/512/555/555526.png"
-								alt="EUA"
-							/>
-						</div> */}
-						<li className={defineUnderlinedNavbar("hero")}>
-							<a href="#hero">Home</a>
-						</li>
-						<li
-							className={
-								activeNavbar === "sobre-mim"
-									? "navbarSublinhado"
-									: ""
-							}
-						>
-							<a href="#sobre-mim">
-								{getTextLang(
-									navbarTexts.sobreMim,
-									activeLanguage
-								)}
-							</a>
-						</li>
-						<li className={defineUnderlinedNavbar("habilidades")}>
-							<a href="#habilidades">
-								{getTextLang(
-									navbarTexts.habilidades,
-									activeLanguage
-								)}
-							</a>
-						</li>
-						<li className={defineUnderlinedNavbar("projetos")}>
-							<a href="#projetos">
-								{getTextLang(
-									navbarTexts.projetos,
-									activeLanguage
-								)}
-							</a>
-						</li>
-					</ul>
-				</Navbar>
-				<div>
-					<IoLanguage />
+
+				<Navbar
+					activeNavbar={activeNavbar}
+					activeLanguage={activeLanguage}
+				/>
+
+				<div className="position-relative">
+					<IoLanguage
+						size={32}
+						onClick={() => setisLanguageOpen(!isLanguageOpen)}
+					/>
+					{isLanguageOpen && (
+						<FlagsComponents
+							setActiveLanguage={setActiveLanguage}
+						/>
+					)}
 				</div>
 			</HeaderStyled>
 		</>

@@ -3,7 +3,7 @@ import {
 	NavbarBackgroundStyled,
 	NavbarMobileStyled,
 	NavbarOpenStyled
-} from "./style"
+} from "./NavbarMobileStyled"
 import { navbarTexts } from "../../../utils/textos/navbar"
 
 export function NavbarMobile(props) {
@@ -24,28 +24,6 @@ export function NavbarMobile(props) {
 					<span></span>
 					<span></span>
 				</div>
-				{/* <div className="title-and-language">
-					<h1>
-						Luan <span>Poppe</span>
-					</h1>
-					<div className="escolher-lingua">
-						Language:
-						<img
-							onClick={() => {
-								props.setActiveLanguage("portuguese")
-							}}
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/275px-Flag_of_Brazil.svg.png"
-							alt="Brasil"
-						/>
-						<img
-							onClick={() => {
-								props.setActiveLanguage("english")
-							}}
-							src="https://cdn-icons-png.flaticon.com/512/555/555526.png"
-							alt="EUA"
-						/>
-					</div>
-				</div> */}
 				{isNavbarMobileOpen && (
 					<>
 						<NavbarOpenStyled>
