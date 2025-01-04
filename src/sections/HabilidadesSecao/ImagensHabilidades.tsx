@@ -24,20 +24,12 @@ const objetoHabilidades = [
 ]
 
 const ImgIcons = styled.img`
-	width: 100%;
-	max-height: 210px;
-
-	@media (max-width: ${widthTablet}) {
-		max-width: 50%;
-		display: block;
-		margin: 0 auto;
-	}
+	max-height: 130px;
+	max-width: 130px;
 `
 
 const TituloHabilidade = styled.div`
-	text-align: center;
 	font-size: ${fontTitleIcons};
-	font-weight: bold;
 
 	@media (max-width: ${widthTablet}) {
 		font-size: ${fontMobileTitleIcons};
@@ -49,32 +41,26 @@ const ContainerHabilidades = styled.div`
 	padding: 16px;
 	border-radius: 8px;
 	box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
+	min-width: 150px;
 
 	&:hover {
 		box-shadow: rgba(255, 255, 255, 0.5) 0px 6px 16px;
 		transform: scale(1.05);
 		transition: all ease 350ms;
 	}
-
-	@media (max-width: ${widthTablet}) {
-		width: 100%;
-		padding: 8px;
-	}
 `
 
-function ImagensHabilidades() {
+export function ImagensHabilidades() {
 	return (
 		<>
 			{objetoHabilidades.map((h) => (
-				<ContainerHabilidades key={h.nome}>
-					<TituloHabilidade style={{ marginBottom: "10px" }}>
+				<ContainerHabilidades key={h.nome} className="d-flex flex-column-aic gap-2 col-4 col-sm-5 col-lg-3 col-xl-2">
+					<TituloHabilidade className="text-center fw-bold">
 						{h.nome}
 					</TituloHabilidade>
-					<ImgIcons src={h.imagem} alt={h.nome} />
+					<ImgIcons src={h.imagem} alt={h.nome} className="w-100" />
 				</ContainerHabilidades>
 			))}
 		</>
 	)
 }
-
-export default ImagensHabilidades

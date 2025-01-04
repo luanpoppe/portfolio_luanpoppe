@@ -1,0 +1,1 @@
+export { HabilidadesSecao } from "./HabilidadesSecao"

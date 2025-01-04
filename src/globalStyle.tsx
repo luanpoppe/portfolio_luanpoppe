@@ -28,7 +28,7 @@ const EstiloGlobal = createGlobalStyle`
 	}
 
 	.main-padding {
-		padding: 2rem 4rem;
+		padding: 2rem 2rem;
 
 		@media (min-width: 990px) {
 			padding: 2rem 6rem;
