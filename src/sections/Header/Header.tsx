@@ -32,7 +32,7 @@ export function Header({
 
 	return (
 		<>
-			<HeaderStyled className="w-100 d-flex jcb aic mb-4 position-sticky top-0 start-0 text-nowrap">
+			<HeaderStyled className="main-padding w-100 d-flex jcb aic mb-4 position-sticky top-0 start-0 text-nowrap">
 				<NavbarMobile
 					className="d-flex aic d-lg-none h-100"
 					activeNavbar={activeNavbar}

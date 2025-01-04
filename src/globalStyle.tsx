@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import { corPadraoDeFundo, corPadraoTextos } from "./utils/colors"
+import { corAzul, corPadraoDeFundo, corPadraoTextos } from "./utils/colors"
 
 const EstiloGlobal = createGlobalStyle`
 	:root {
@@ -25,6 +25,18 @@ const EstiloGlobal = createGlobalStyle`
 
 	.stop-scroll {
 		overflow-y: hidden;
+	}
+
+	.main-padding {
+		padding: 2rem 4rem;
+
+		@media (min-width: 990px) {
+			padding: 2rem 8rem;
+		}
+	}
+
+	.color-purple {
+		color: ${corAzul};
 	}
 `
 
