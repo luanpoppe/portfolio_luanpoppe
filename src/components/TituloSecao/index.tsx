@@ -8,8 +8,14 @@ export const TituloSecaoStyled = styled.h2`
 	text-align: center;
 `
 
-function TituloSecao({ id, children }: PropsWithChildren & { id: string }) {
-	return <TituloSecaoStyled id={id}>{children}</TituloSecaoStyled>
+type Props = PropsWithChildren & PropClass & { id: string }
+
+function TituloSecao({ id, children, className }: Props) {
+	return (
+		<TituloSecaoStyled id={id} className={className}>
+			{children}
+		</TituloSecaoStyled>
+	)
 }
 
 export default TituloSecao

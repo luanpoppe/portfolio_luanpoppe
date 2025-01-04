@@ -5,7 +5,7 @@ import { FlagsComponents } from "./FlagsComponents"
 import { useState } from "react"
 import styled from "styled-components"
 import { fontTitleHeader } from "../../utils/fontSizes"
-import { corAzul, corPadraoDeFundo } from "../../utils/colors"
+import { corPadraoDeFundo } from "../../utils/colors"
 
 type Props = PropActiveLanguage & {
 	setActiveLanguage: React.Dispatch<React.SetStateAction<ActiveLanguage>>
@@ -17,10 +17,6 @@ const HeaderStyled = styled.header`
 	min-height: 120px;
 	font-size: ${fontTitleHeader};
 	z-index: 1;
-
-	span {
-		color: ${corAzul};
-	}
 `
 
 export function Header({
@@ -41,7 +37,7 @@ export function Header({
 				/>
 
 				<h1 className="m-0">
-					{"<"}Luan <span>Poppe</span>
+					{"<"}Luan <span className="color-purple">Poppe</span>
 					{" />"}
 				</h1>
 
@@ -52,6 +48,7 @@ export function Header({
 
 				<div className="position-relative">
 					<IoLanguage
+						className="cursor-pointer"
 						size={32}
 						onClick={() => setisLanguageOpen(!isLanguageOpen)}
 					/>

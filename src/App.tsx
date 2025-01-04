@@ -4,7 +4,7 @@ import EstiloGlobal from "./globalStyle"
 import { Header } from "./sections/Header"
 import { MainContainer } from "./components/MainContainer"
 import { Hero } from "./sections/Hero"
-import AboutMe from "./components/AboutMe"
+import { AboutMe } from "./sections/AboutMe"
 import HabilidadesSecao from "./components/HabilidadesSecao"
 import ProjetosSecao from "./components/ProjetosSecao"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -54,15 +54,9 @@ export function App() {
 					activeLanguage={activeLanguage}
 				/>
 				<Hero activeLanguage={activeLanguage} />
-				<AboutMe maxWidth={"1080px"} activeLanguage={activeLanguage} />
-				<HabilidadesSecao
-					maxWidth={"1080px"}
-					activeLanguage={activeLanguage}
-				/>
-				<ProjetosSecao
-					maxWidth={"1440px"}
-					activeLanguage={activeLanguage}
-				/>
+				<AboutMe activeLanguage={activeLanguage} />
+				<HabilidadesSecao activeLanguage={activeLanguage} />
+				<ProjetosSecao activeLanguage={activeLanguage} />
 			</MainContainer>
 		</>
 	)

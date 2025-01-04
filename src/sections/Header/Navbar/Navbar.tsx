@@ -19,7 +19,7 @@ export function Navbar({ activeNavbar, activeLanguage }: Props) {
 
 	return (
 		<NavbarStyled className="w-100 d-none d-lg-flex jcc aic mx-0">
-			<ul className="d-flex jcc aic m-0 gap-4">
+			<ul className="d-flex jcc aic m-0 gap-3 gap-xxl-5">
 				<li className={defineUnderlinedNavbar("hero")}>
 					<a href="#hero">Home</a>
 				</li>

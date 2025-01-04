@@ -31,12 +31,20 @@ const EstiloGlobal = createGlobalStyle`
 		padding: 2rem 4rem;
 
 		@media (min-width: 990px) {
-			padding: 2rem 8rem;
+			padding: 2rem 6rem;
 		}
 	}
 
 	.color-purple {
 		color: ${corAzul};
+	}
+
+	.text-justify {
+		text-align: justify;
+	}
+
+	.cursor-pointer {
+		cursor: pointer;
 	}
 `
 

@@ -10,11 +10,11 @@ export function Hero({ activeLanguage }: Props) {
 	return (
 		<main
 			id="hero"
-			className="main-padding d-flex flex-column flex-lg-row jcc gap-7 w-100"
+			className="main-padding d-flex flex-column flex-lg-row jcc align-items-xxl-center gap-7 w-100"
 		>
 			<ImageHero />
 
-			<HeroTextStyled className="col-12 col-lg-8 d-flex flex-column aic text-center text-lg-start">
+			<HeroTextStyled className="col-12 col-lg-7 col-xxl-6 d-flex flex-column aic text-center text-lg-start">
 				<div className="d-flex flex-column col-10 mt-0">
 					<HeroTitle activeLanguage={activeLanguage} />
 					<HeroParagraph activeLanguage={activeLanguage} />
