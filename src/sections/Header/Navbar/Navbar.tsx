@@ -9,10 +9,6 @@ type Props = PropActiveLanguage & {
 
 export function Navbar({ activeNavbar, activeLanguage }: Props) {
 	function defineUnderlinedNavbar(navbarName: string) {
-		console.log({
-			activeNavbar: activeNavbar,
-			navbarName: navbarName
-		})
 		if (navbarName == activeNavbar) return "navbarSublinhado"
 		return ""
 	}

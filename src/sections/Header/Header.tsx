@@ -2,7 +2,7 @@ import { Navbar } from "./Navbar"
 import { NavbarMobile } from "./NavbarMobile"
 import { IoLanguage } from "react-icons/io5"
 import { FlagsComponents } from "./FlagsComponents"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { fontTitleHeader } from "../../utils/fontSizes"
 import { corPadraoDeFundo } from "../../utils/colors"
@@ -24,7 +24,11 @@ export function Header({
 	activeNavbar,
 	setActiveLanguage
 }: Props) {
-	const [isLanguageOpen, setisLanguageOpen] = useState<boolean>(false)
+	const [isLanguageOpen, setIsLanguageOpen] = useState<boolean>(false)
+
+	useEffect(() => {
+		console.log('isLanguageOpen: ', isLanguageOpen)
+	}, [isLanguageOpen])
 
 	return (
 		<>
@@ -50,11 +54,12 @@ export function Header({
 					<IoLanguage
 						className="cursor-pointer"
 						size={32}
-						onClick={() => setisLanguageOpen(!isLanguageOpen)}
+						onClick={() => setIsLanguageOpen(!isLanguageOpen)}
 					/>
 					{isLanguageOpen && (
 						<FlagsComponents
 							setActiveLanguage={setActiveLanguage}
+							setIsLanguageOpen={setIsLanguageOpen}
 						/>
 					)}
 				</div>

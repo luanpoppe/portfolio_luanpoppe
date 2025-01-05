@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import {
 	objetoProjetos,
 	objetoProjetosIngles
@@ -22,10 +22,6 @@ export function ProjetosSecao(props: PropActiveLanguage) {
 			: activeLanguage === "portuguese"
 			? objetoProjetos
 			: objetoProjetos
-
-	useEffect(() => {
-		console.log("indexProjetoAtivo: ", indexProjetoAtivo)
-	}, [indexProjetoAtivo])
 
 	return (
 		<section className="main-padding">
