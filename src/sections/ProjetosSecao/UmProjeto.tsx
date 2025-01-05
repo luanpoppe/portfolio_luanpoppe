@@ -1,12 +1,11 @@
-import { corPadraoTextos } from "../../utils/colors"
 import { ImagemProjeto } from "./ImagemProjeto"
 import { TagsHabilidades } from "./TagsHabilidades"
 import { RedirecionamentoProjeto } from "./RedirecionamentoProjeto"
 
 type Props = PropActiveLanguage & {
-	projeto: any
+	projeto: Projeto
 	index: number
-	updateObject: (paramIndex: any) => void
+	updateObject: (paramIndex: number) => void
 }
 
 const cardStyle: React.CSSProperties = {
@@ -53,7 +52,7 @@ export function UmProjeto({
 	)
 }
 
-function TituloProjeto({ projeto }: { projeto: any }) {
+function TituloProjeto({ projeto }: { projeto: Projeto }) {
 	return (
 		<h2 className="mb-3">
 			<a href={projeto.link} target="_blank" rel="noreferrer">

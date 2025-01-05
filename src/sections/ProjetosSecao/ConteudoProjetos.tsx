@@ -10,42 +10,31 @@ import {
 	TagsModalStyled
 } from "./ModalStyled"
 import { UmProjeto } from "./UmProjeto"
+import { closeModal, defineProjectsIndexes } from "./utils"
 
 type Props = PropActiveLanguage & {
-	stateModalIsOpen: any
-	updateObject: any
-	setStateModalIsOpen: any
+	stateModalIsOpen: boolean[]
+	updateObject: (paramIndex: number) => void
+	setStateModalIsOpen: SetState<boolean[]>
 }
 
-export function ConteudoProjetos({
-	activeLanguage,
-	stateModalIsOpen,
-	setStateModalIsOpen,
-	updateObject
-}: Props) {
-	const projetosComIndex: any =
-		activeLanguage === "english"
-			? objetoProjetosIngles.map((state, index) => {
-					return { ...state, indexNumber: index }
-			  })
-			: activeLanguage === "portuguese"
-			? objetoProjetos.map((state, index) => {
-					return { ...state, indexNumber: index }
-			  })
-			: ""
+export function ConteudoProjetos(props: Props) {
+	const {
+		activeLanguage,
+		stateModalIsOpen,
+		setStateModalIsOpen,
+		updateObject
+	} = props
 
-	objetoProjetos.map((state, index) => {
-		return { ...state, indexNumber: index }
-	})
+	const projetosComIndex = defineProjectsIndexes(activeLanguage)
 
 	const indexAtivoModal = stateModalIsOpen.findIndex(
 		(state) => state === true
 	)
 
-	let projetoAtivoModal: any = projetosComIndex.filter(
+	const projetoAtivoModal: Projeto = projetosComIndex.filter(
 		(state) => state.indexNumber === indexAtivoModal
-	)
-	projetoAtivoModal = projetoAtivoModal[0]
+	)[0]
 
 	return (
 		<>
@@ -64,7 +53,7 @@ export function ConteudoProjetos({
 }
 
 type SecaoProjetosProps = PropActiveLanguage & {
-	updateObject: any
+	updateObject: (paramIndex: number) => void
 }
 
 function SecaoProjetos({ activeLanguage, updateObject }: SecaoProjetosProps) {
@@ -92,24 +81,13 @@ function SecaoProjetos({ activeLanguage, updateObject }: SecaoProjetosProps) {
 }
 
 type ModalAbertaProps = {
-	stateModalIsOpen: any
-	projetoAtivoModal: any
-	setStateModalIsOpen: any
+	stateModalIsOpen: boolean[]
+	projetoAtivoModal: Projeto
+	setStateModalIsOpen: SetState<boolean[]>
 }
 
-function ModalAberta({
-	stateModalIsOpen,
-	projetoAtivoModal,
-	setStateModalIsOpen
-}: ModalAbertaProps) {
-	function fecharModal() {
-		document.body.classList.remove("stop-scroll")
-		setStateModalIsOpen(
-			stateModalIsOpen.map((state) => {
-				return (state = false)
-			})
-		)
-	}
+function ModalAberta(props: ModalAbertaProps) {
+	const { stateModalIsOpen, projetoAtivoModal, setStateModalIsOpen } = props
 
 	return (
 		<>
@@ -127,11 +105,22 @@ function ModalAberta({
 							alt={projetoAtivoModal.nome}
 						/>
 						<p>{projetoAtivoModal.descricao}</p>
-						<CloseButtonStyled onClick={() => fecharModal()}>
+						<CloseButtonStyled
+							onClick={() =>
+								closeModal(
+									stateModalIsOpen,
+									setStateModalIsOpen
+								)
+							}
+						>
 							<img src={closeButton} alt="Botão de fechar" />
 						</CloseButtonStyled>
 					</ModalStyled>
-					<BackgroundStyled onClick={() => fecharModal()} />
+					<BackgroundStyled
+						onClick={() =>
+							closeModal(stateModalIsOpen, setStateModalIsOpen)
+						}
+					/>
 				</>
 			) : (
 				""

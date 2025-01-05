@@ -1,6 +1,6 @@
 import { corTags, corTagsTexto } from "../../utils/colors"
 
-export function TagsHabilidades({ projeto }: { projeto: any }) {
+export function TagsHabilidades({ projeto }: { projeto: Projeto }) {
 	const styles: React.CSSProperties = {
 		borderRadius: "12px",
 		fontWeight: "bold",

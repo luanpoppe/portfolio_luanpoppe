@@ -18,3 +18,5 @@ declare type PropImage = {
 	src: string
 	alt?: string
 }
+
+declare type SetState<T> = React.Dispatch<React.SetStateAction<T>>

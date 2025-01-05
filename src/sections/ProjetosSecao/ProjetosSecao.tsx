@@ -14,7 +14,7 @@ export function ProjetosSecao({ activeLanguage }: PropActiveLanguage) {
 
 	const [stateModalIsOpen, setStateModalIsOpen] = useState(modalIsOpen)
 
-	function updateObject(paramIndex) {
+	function updateObject(paramIndex: number) {
 		const novoObjeto = stateModalIsOpen.map((state, index) => {
 			if (paramIndex === index) {
 				return !state

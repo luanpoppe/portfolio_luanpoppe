@@ -4,13 +4,12 @@ import {
 	corPadraoTextos,
 	corTagsTexto
 } from "../../utils/colors"
-import { githubIcon } from "../../utils/images"
 import { ButtonProjetoStyled } from "./ConteudoProjetosStyled"
-import { FaGithub, FaGithubAlt, FaGithubSquare } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
 
 type Props = PropActiveLanguage & {
-	updateObject?: any
-	projeto?: any
+	updateObject?: (paramIndex: number) => void
+	projeto?: Projeto
 	index?: number
 }
 
@@ -109,7 +108,7 @@ const BotaoGitHubStyled = styled.a`
 	display: flex;
 	justify-content: center;
 	box-shadow: -4px 4px rgba(255, 255, 255, 0.7);
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 
 	&:hover {
 		transform: scale(1.05);
@@ -121,7 +120,7 @@ const BotaoGitHubStyled = styled.a`
 	}
 `
 
-function BotaoGitHub({ projeto }: { projeto: any }) {
+function BotaoGitHub({ projeto }: { projeto: Projeto }) {
 	return (
 		<BotaoGitHubStyled
 			href={projeto.github}

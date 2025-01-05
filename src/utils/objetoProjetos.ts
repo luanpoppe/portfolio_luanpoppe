@@ -8,7 +8,7 @@ import {
 	todoListReact
 } from "./images"
 
-const objetoProjetos = [
+const objetoProjetos: Projeto[] = [
 	{
 		nome: "EPLAY",
 		imagem: eplayImagem,
@@ -24,7 +24,7 @@ const objetoProjetos = [
 			"Redux"
 		],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "To-Do List",
@@ -35,7 +35,7 @@ const objetoProjetos = [
 		github: "https://github.com/luanpoppe/M_31-To-Do_List_React",
 		habilidades: ["React", "Javascript", "Typescript", "Styled Components"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Portfólio GitHub",
@@ -46,7 +46,7 @@ const objetoProjetos = [
 		github: "https://github.com/luanpoppe/M_29_portfolio_GitHub-react",
 		habilidades: ["React", "Javascript", "Ajax", "Styled Components"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Ebac Tech Talks",
@@ -57,7 +57,7 @@ const objetoProjetos = [
 		github: "https://github.com/luanpoppe/M_22-ebac-tech-talks",
 		habilidades: ["HTML", "CSS", "Javascript", "SASS"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Clone da Disney Plus",
@@ -68,7 +68,7 @@ const objetoProjetos = [
 		github: "https://github.com/luanpoppe/M_21_Clone_Disney_Plus",
 		habilidades: ["HTML", "CSS", "Bootstrap", "SASS", "Javascript"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Luan Poppe Games",
@@ -79,7 +79,7 @@ const objetoProjetos = [
 		github: "https://github.com/luanpoppe/E_14-Loja_Games_bootstrap",
 		habilidades: ["HTML", "CSS", "Bootstrap", "SASS"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Games Shop",
@@ -90,11 +90,11 @@ const objetoProjetos = [
 		github: "https://github.com/luanpoppe/M_05-game-shop",
 		habilidades: ["HTML", "CSS"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	}
 ]
 
-const objetoProjetosIngles = [
+const objetoProjetosIngles: Projeto[] = [
 	{
 		nome: "EPLAY",
 		imagem: eplayImagem,
@@ -110,7 +110,7 @@ const objetoProjetosIngles = [
 			"Redux"
 		],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "To-Do List",
@@ -121,7 +121,7 @@ const objetoProjetosIngles = [
 		github: "https://github.com/luanpoppe/M_31-To-Do_List_React",
 		habilidades: ["React", "Javascript", "Typescript", "Styled Components"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "GitHub Portfolio",
@@ -132,7 +132,7 @@ const objetoProjetosIngles = [
 		github: "https://github.com/luanpoppe/M_29_portfolio_GitHub-react",
 		habilidades: ["React", "Javascript", "Ajax", "Styled Components"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Ebac Tech Talks",
@@ -143,7 +143,7 @@ const objetoProjetosIngles = [
 		github: "https://github.com/luanpoppe/M_22-ebac-tech-talks",
 		habilidades: ["HTML", "CSS", "Javascript", "SASS"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Disney Plus Clone",
@@ -154,7 +154,7 @@ const objetoProjetosIngles = [
 		github: "https://github.com/luanpoppe/M_21_Clone_Disney_Plus",
 		habilidades: ["HTML", "CSS", "Bootstrap", "SASS", "Javascript"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Luan Poppe Games",
@@ -165,7 +165,7 @@ const objetoProjetosIngles = [
 		github: "https://github.com/luanpoppe/E_14-Loja_Games_bootstrap",
 		habilidades: ["HTML", "CSS", "Bootstrap", "SASS"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	},
 	{
 		nome: "Games Shop",
@@ -176,7 +176,7 @@ const objetoProjetosIngles = [
 		github: "https://github.com/luanpoppe/M_05-game-shop",
 		habilidades: ["HTML", "CSS"],
 		isModalOpen: false,
-		indexNumber: ""
+		indexNumber: null
 	}
 ]
 
