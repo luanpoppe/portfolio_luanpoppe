@@ -1,11 +1,11 @@
-import TituloSecao from "../TituloSecao"
-import { ProjetosSecaoStyled } from "./styles"
+import TituloSecao from "../../components/TituloSecao"
 import { objetoProjetos } from "../../utils/objetoProjetos"
-import ConteudoProjetos from "../ConteudoProjetos"
+import { ConteudoProjetos } from "./ConteudoProjetos"
 import { useState } from "react"
 import { projetoTexto } from "../../utils/textos/titles"
+import { getTextLang } from "../../utils/textos/funcs"
 
-function ProjetosSecao(props) {
+export function ProjetosSecao({ activeLanguage }: PropActiveLanguage) {
 	// const objetoProjetosIsOpen = objetoProjetos.filter(
 	// 	(projeto) => projeto.isModalOpen === true
 	// )
@@ -29,24 +29,17 @@ function ProjetosSecao(props) {
 	}
 
 	return (
-		<>
-			<TituloSecao id="projetos">
-				{props.activeLanguage === "english"
-					? projetoTexto.en
-					: props.activeLanguage === "portuguese"
-					? projetoTexto.ptbr
-					: ""}
+		<section className="main-padding">
+			<TituloSecao id="projetos" className="mb-4">
+				{getTextLang(projetoTexto, activeLanguage)}
 			</TituloSecao>
-			<ProjetosSecaoStyled className="flex-column flex-lg-row flex-wrap w-100"  maxWidth={props.maxWidth}>
+
 				<ConteudoProjetos
 					stateModalIsOpen={stateModalIsOpen}
 					updateObject={updateObject}
 					setStateModalIsOpen={setStateModalIsOpen}
-					activeLanguage={props.activeLanguage}
+					activeLanguage={activeLanguage}
 				/>
-			</ProjetosSecaoStyled>
-		</>
+		</section>
 	)
 }
-
-export default ProjetosSecao

@@ -1,7 +1,7 @@
+import { corPadraoTextos, corDeFundoModal } from "./../../utils/colors"
+import { titleModal, fontSmallText } from "./../../utils/fontSizes"
 import styled from "styled-components"
-import { TagsHabilidadesStyled } from "./styles"
-import { fontSmallText, titleModal } from "../../utils/fontSizes"
-import { corDeFundoModal, corPadraoTextos } from "../../utils/colors"
+
 import { widthTablet } from "../../utils/mediaQuery"
 
 export const ModalStyled = styled.div`
@@ -54,7 +54,19 @@ export const BackgroundStyled = styled.div`
 	z-index: 1;
 `
 
-export const TagsModalStyled = styled(TagsHabilidadesStyled)`
+// export const TagsModalStyled = styled(TagsHabilidadesStyled)`
+// 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+// 	text-align: center;
+
+// 	p {
+// 		max-width: 132px;
+// 	}
+
+// 	@media (max-width: ${widthTablet}) {
+// 		grid-template-columns: 1fr 1fr;
+// 	}
+// `
+export const TagsModalStyled = styled.div`
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	text-align: center;
 
