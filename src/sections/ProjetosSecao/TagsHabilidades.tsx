@@ -13,7 +13,7 @@ export function TagsHabilidades({ projeto }: { projeto: Projeto }) {
 
 	return (
 		<div className="d-flex flex-wrap gap-2 row-gap-3 w-100 justify-content-center mb-2 mt-3">
-			{projeto.habilidades.map((tag) => (
+			{projeto?.habilidades.map((tag) => (
 				<p key={tag} style={styles} className="px-3 m-0">
 					{tag}
 				</p>

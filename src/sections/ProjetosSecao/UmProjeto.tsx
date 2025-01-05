@@ -5,7 +5,7 @@ import { RedirecionamentoProjeto } from "./RedirecionamentoProjeto"
 type Props = PropActiveLanguage & {
 	projeto: Projeto
 	index: number
-	updateObject: (paramIndex: number) => void
+	setIndexProjetoAtivo: SetState<number>
 }
 
 const cardStyle: React.CSSProperties = {
@@ -17,7 +17,7 @@ export function UmProjeto({
 	index = 0,
 	projeto,
 	activeLanguage,
-	updateObject
+	setIndexProjetoAtivo
 }: Props) {
 	return (
 		<>
@@ -33,7 +33,7 @@ export function UmProjeto({
 
 					<TagsHabilidades projeto={projeto} />
 
-					<p className="paragrafo-descricao">
+					<p>
 						{projeto.descricao.split(" ").slice(0, 15).join(" ")}
 						{"..."}
 					</p>
@@ -44,7 +44,7 @@ export function UmProjeto({
 						activeLanguage={activeLanguage}
 						index={index}
 						projeto={projeto}
-						updateObject={updateObject}
+            setIndexProjetoAtivo={setIndexProjetoAtivo}
 					/>
 				</div>
 			</div>

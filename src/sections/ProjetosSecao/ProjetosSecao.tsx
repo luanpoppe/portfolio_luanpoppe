@@ -1,32 +1,31 @@
+import { useEffect, useState } from "react"
+import {
+	objetoProjetos,
+	objetoProjetosIngles
+} from "../../utils/objetoProjetos"
+import { OpenModal } from "./OpenModal"
+import { UmProjeto } from "./UmProjeto"
+import { defineProjectsIndexes } from "./utils"
 import TituloSecao from "../../components/TituloSecao"
-import { objetoProjetos } from "../../utils/objetoProjetos"
-import { ConteudoProjetos } from "./ConteudoProjetos"
-import { useState } from "react"
-import { projetoTexto } from "../../utils/textos/titles"
 import { getTextLang } from "../../utils/textos/funcs"
+import { projetoTexto } from "../../utils/textos/titles"
 
-export function ProjetosSecao({ activeLanguage }: PropActiveLanguage) {
-	// const objetoProjetosIsOpen = objetoProjetos.filter(
-	// 	(projeto) => projeto.isModalOpen === true
-	// )
+export function ProjetosSecao(props: PropActiveLanguage) {
+	const { activeLanguage } = props
 
-	const modalIsOpen = objetoProjetos.map((projeto) => projeto.isModalOpen)
+	const [indexProjetoAtivo, setIndexProjetoAtivo] = useState<number>(null)
 
-	const [stateModalIsOpen, setStateModalIsOpen] = useState(modalIsOpen)
+	const projetosComIndex = defineProjectsIndexes(activeLanguage)
+	const objetoProjetosFinal =
+		activeLanguage === "english"
+			? objetoProjetosIngles
+			: activeLanguage === "portuguese"
+			? objetoProjetos
+			: objetoProjetos
 
-	function updateObject(paramIndex: number) {
-		const novoObjeto = stateModalIsOpen.map((state, index) => {
-			if (paramIndex === index) {
-				return !state
-			} else {
-				return state
-			}
-		})
-
-		setStateModalIsOpen(novoObjeto)
-
-		document.body.classList.add("stop-scroll")
-	}
+	useEffect(() => {
+		console.log("indexProjetoAtivo: ", indexProjetoAtivo)
+	}, [indexProjetoAtivo])
 
 	return (
 		<section className="main-padding">
@@ -34,12 +33,25 @@ export function ProjetosSecao({ activeLanguage }: PropActiveLanguage) {
 				{getTextLang(projetoTexto, activeLanguage)}
 			</TituloSecao>
 
-				<ConteudoProjetos
-					stateModalIsOpen={stateModalIsOpen}
-					updateObject={updateObject}
-					setStateModalIsOpen={setStateModalIsOpen}
-					activeLanguage={activeLanguage}
-				/>
+			<div className="d-flex flex-column flex-lg-row flex-wrap justify-content-lg-center w-100 gap-4 gap-lg-5">
+				{objetoProjetosFinal.map((projeto, index) => {
+					return (
+						<UmProjeto
+							index={index}
+							activeLanguage={activeLanguage}
+							projeto={projeto}
+							setIndexProjetoAtivo={setIndexProjetoAtivo}
+						/>
+					)
+				})}
+			</div>
+
+			<OpenModal
+				setIndexProjetoAtivo={setIndexProjetoAtivo}
+				indexProjetoAtivo={indexProjetoAtivo}
+				projetosComIndex={projetosComIndex}
+				activeLanguage={activeLanguage}
+			/>
 		</section>
 	)
 }

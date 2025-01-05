@@ -8,24 +8,21 @@ import { ButtonProjetoStyled } from "./ConteudoProjetosStyled"
 import { FaGithub } from "react-icons/fa"
 
 type Props = PropActiveLanguage & {
-	updateObject?: (paramIndex: number) => void
 	projeto?: Projeto
 	index?: number
+	setIndexProjetoAtivo?: SetState<number>
 }
 
-export function RedirecionamentoProjeto({
-	activeLanguage,
-	updateObject,
-	projeto,
-	index
-}: Props) {
+export function RedirecionamentoProjeto(props: Props) {
+	const { activeLanguage, projeto, index, setIndexProjetoAtivo } = props
+
 	return (
 		<div className=" d-flex flex-column gap-4 jcc aic">
 			<div className="d-flex gap-3 aic jcc mt-2">
 				<BotaoVerMais
 					activeLanguage={activeLanguage}
 					index={index}
-					updateObject={updateObject}
+					setIndexProjetoAtivo={setIndexProjetoAtivo}
 				/>
 
 				<BotaoAcesseOProjeto
@@ -45,13 +42,11 @@ const styleVerMais: React.CSSProperties = {
 	border: `1px solid ${corPadraoTextos}`
 }
 
-function BotaoVerMais({ activeLanguage, index, updateObject }: Props) {
+function BotaoVerMais({ activeLanguage, index, setIndexProjetoAtivo }: Props) {
 	return (
 		<ButtonProjetoStyled
 			style={styleVerMais}
-			onClick={() => {
-				updateObject(index)
-			}}
+			onClick={() => setIndexProjetoAtivo(index)}
 		>
 			{activeLanguage === "english"
 				? "Read more"
@@ -66,11 +61,11 @@ const styleAcesseOProjeto = {
 	boxShadow: "-2.5px 2.5px rgba(255, 255, 255, 0.3)"
 }
 
-function BotaoAcesseOProjeto({ projeto, activeLanguage }: Props) {
+export function BotaoAcesseOProjeto({ projeto, activeLanguage }: Props) {
 	return (
 		<ButtonProjetoStyled
 			style={styleAcesseOProjeto}
-			href={projeto.link}
+			href={projeto?.link}
 			target="_blank"
 			rel="noreferrer"
 		>
@@ -107,26 +102,32 @@ const BotaoGitHubStyled = styled.a`
 	max-width: 80px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	box-shadow: -4px 4px rgba(255, 255, 255, 0.7);
-	margin-bottom: 1rem;
 
 	&:hover {
 		transform: scale(1.05);
 		transition: all ease 350ms;
 	}
-
-	imf {
-		background-color: ${corTagsTexto};
-	}
 `
 
-function BotaoGitHub({ projeto }: { projeto: Projeto }) {
+export function BotaoGitHub({ projeto, isInModal=false, activeLanguage=null }: { projeto: Projeto, isInModal?: boolean } & Partial<PropActiveLanguage>) {
 	return (
 		<BotaoGitHubStyled
-			href={projeto.github}
+			href={projeto?.github}
 			target="_blank"
 			rel="noreferrer"
+			className={isInModal ? "mb-0" : "mb-3"}
+			style={{
+				maxWidth: isInModal ? "200px" : "80px",
+				width: isInModal ? "200px" : "initial",
+				height: isInModal ? "40px" : "initial"
+			}}
 		>
+			{isInModal && <span className="fs-6 text-nowrap me-2">
+				{activeLanguage == "portuguese" && "Código fonte:"}
+				{activeLanguage == "english" && "Source code:"}
+				</span>}
 			<FaGithub size={30} title="Acesse o github" />
 		</BotaoGitHubStyled>
 	)

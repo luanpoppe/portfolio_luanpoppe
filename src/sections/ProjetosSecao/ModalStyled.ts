@@ -54,18 +54,6 @@ export const BackgroundStyled = styled.div`
 	z-index: 1;
 `
 
-// export const TagsModalStyled = styled(TagsHabilidadesStyled)`
-// 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-// 	text-align: center;
-
-// 	p {
-// 		max-width: 132px;
-// 	}
-
-// 	@media (max-width: ${widthTablet}) {
-// 		grid-template-columns: 1fr 1fr;
-// 	}
-// `
 export const TagsModalStyled = styled.div`
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	text-align: center;
