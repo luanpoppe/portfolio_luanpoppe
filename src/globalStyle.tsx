@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 import { corAzul, corPadraoDeFundo, corPadraoTextos } from "./utils/colors"
 
-const EstiloGlobal = createGlobalStyle`
+export const EstiloGlobal = createGlobalStyle`
 	:root {
 		scroll-behavior: smooth;
 		scroll-padding-top: 115px;
@@ -43,5 +43,3 @@ const EstiloGlobal = createGlobalStyle`
 		cursor: pointer;
 	}
 `
-
-export default EstiloGlobal

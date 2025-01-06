@@ -1,6 +1,6 @@
 @keyframes slide-right {
 	0% {
-		transform: translateX(-200px);
+		transform: translateX(-300px);
 	}
 	100% {
 		transform: translateX(0px);

@@ -54,7 +54,7 @@ export function ImagensHabilidades() {
 	return (
 		<>
 			{objetoHabilidades.map((h) => (
-				<ContainerHabilidades key={h.nome} className="d-flex flex-column-aic gap-2 col-4 col-sm-5 col-lg-3 col-xl-2">
+				<ContainerHabilidades key={h.nome} className="d-flex flex-column-aic gap-2 col-4 col-sm-5 col-lg-3 col-xl-2 hidden">
 					<TituloHabilidade className="text-center fw-bold">
 						{h.nome}
 					</TituloHabilidade>

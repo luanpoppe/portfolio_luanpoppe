@@ -14,7 +14,7 @@ export function NavbarMobile() {
 		<>
 			<RxHamburgerMenu
 				size={32}
-				className="cursor-pointer d-block d-lg-none"
+				className="cursor-pointer d-block d-lg-none mt-2"
 				onClick={() => setIsNavbarMobileOpen(!isNavbarMobileOpen)}
 			/>
 			<Modal

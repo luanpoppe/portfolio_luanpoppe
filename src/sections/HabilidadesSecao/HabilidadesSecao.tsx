@@ -14,7 +14,7 @@ export function HabilidadesSecao() {
 				{getTextLang(habilidadesTexto, activeLanguage)}
 			</TituloSecao>
 
-			<section className="d-flex flex-wrap row-gap-5 column-gap-4 column-gap-sm-5 justify-content-center column-gap-lg-5 w-100 hidden">
+			<section className="d-flex flex-wrap row-gap-5 column-gap-4 column-gap-sm-5 justify-content-center column-gap-lg-5 w-100">
 				<ImagensHabilidades />
 			</section>
 		</section>
