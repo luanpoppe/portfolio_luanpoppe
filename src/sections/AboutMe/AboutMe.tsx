@@ -1,5 +1,5 @@
 import { AboutMeStyled } from "./AboutMeStyled"
-import TituloSecao from "../../components/TituloSecao"
+import { TituloSecao } from "../../components/TituloSecao"
 import ImagemSecao from "../../components/ImagemSecao"
 import { imagemSecaoSobreMim } from "../../utils/images"
 import { aboutMeTexts } from "../../utils/textos/aboutMe"
@@ -13,11 +13,11 @@ export function AboutMe() {
 
 	return (
 		<AboutMeStyled className="main-padding w-100 my-6 text-center d-flex flex-column">
-			<TituloSecao id="sobre-mim" className="col-12">
+			<TituloSecao id="sobre-mim" className="col-12 hidden">
 				{getTextLang(sobreMimTexto, activeLanguage)}
 			</TituloSecao>
 
-			<div className="d-flex jcc flex-column flex-lg-row gap-3 gap-lg-5 mt-5 col-12 align-items-xxl-center">
+			<div className="d-flex jcc flex-column flex-lg-row gap-3 gap-lg-5 mt-5 col-12 align-items-xxl-center hidden">
 				<ImagemSecao
 					src={imagemSecaoSobreMim}
 					className="mb-4 d-block d-lg-none col-12"

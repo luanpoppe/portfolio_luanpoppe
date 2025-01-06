@@ -5,15 +5,13 @@ import styled from "styled-components"
 import { fontSmallText } from "../../utils/fontSizes"
 import { useAppContext } from "../../utils/useContext"
 
-// type Props = PropActiveLanguage
-
 export function Hero() {
 	const { activeLanguage } = useAppContext()
 
 	return (
 		<main
 			id="hero"
-			className="main-padding d-flex flex-column flex-lg-row jcc align-items-xxl-center gap-7 w-100"
+			className="main-padding d-flex flex-column flex-lg-row jcc align-items-xxl-center gap-7 w-100 hidden"
 		>
 			<ImageHero />
 

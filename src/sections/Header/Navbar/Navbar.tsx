@@ -46,9 +46,13 @@ export function Navbar({ activeNavbar, activeLanguage }: Props) {
 }
 
 const NavbarStyled = styled.nav`
-	li {
+	li,
+	a {
+		font-size: 1.3rem;
+		transition: all ease 0.5s;
 		&:hover {
 			transition: all ease 0.5s;
+			color: ${corAzul};
 			transform: scale(1.05);
 		}
 	}

@@ -24,7 +24,7 @@ export function UmProjeto({
 			<div
 				key={projeto.nome}
 				style={cardStyle}
-				className="d-flex justify-content-between flex-column gap-2 text-center p-3 col-12 col-lg-5"
+				className="d-flex justify-content-between flex-column gap-2 text-center p-3 col-12 col-lg-5 hidden"
 			>
 				<div className="d-flex flex-column gap-2">
 					<TituloProjeto projeto={projeto} />

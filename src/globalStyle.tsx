@@ -4,7 +4,7 @@ import { corAzul, corPadraoDeFundo, corPadraoTextos } from "./utils/colors"
 const EstiloGlobal = createGlobalStyle`
 	:root {
 		scroll-behavior: smooth;
-		scroll-padding-top: 110px;
+		scroll-padding-top: 115px;
 	}
 
 	* {

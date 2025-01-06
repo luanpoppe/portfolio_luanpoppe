@@ -6,10 +6,10 @@ import {
 import { OpenModal } from "./OpenModal"
 import { UmProjeto } from "./UmProjeto"
 import { defineProjectsIndexes } from "./utils"
-import TituloSecao from "../../components/TituloSecao"
+import { TituloSecao } from "../../components/TituloSecao"
 import { getTextLang } from "../../utils/textos/funcs"
 import { projetoTexto } from "../../utils/textos/titles"
-import { useAppContext } from "../../utils/useContext" 
+import { useAppContext } from "../../utils/useContext"
 
 export function ProjetosSecao() {
 	const context = useAppContext()
@@ -27,7 +27,7 @@ export function ProjetosSecao() {
 
 	return (
 		<section className="main-padding">
-			<TituloSecao id="projetos" className="mb-4">
+			<TituloSecao id="projetos" className="mb-4 hidden">
 				{getTextLang(projetoTexto, activeLanguage)}
 			</TituloSecao>
 

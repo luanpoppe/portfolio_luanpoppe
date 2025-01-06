@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import styled from "styled-components"
 
 type Props = {
@@ -9,8 +10,22 @@ export function FlagsComponents({
 	setActiveLanguage,
 	setIsLanguageOpen
 }: Props) {
+	useEffect(() => {
+		const callback = () => setIsLanguageOpen(false)
+		const sections = [...document.getElementsByTagName("section")]
+		sections.forEach((section) => {
+			section.addEventListener("click", callback)
+		})
+		return () =>
+			sections.forEach((section) => {
+				section.removeEventListener("click", callback)
+			})
+	}, [])
+
 	return (
-		<FlagStyled className="d-flex flex-column gap-3 position-absolute top-100 mt-4">
+		<FlagStyled
+			className={`d-flex flex-column gap-3 position-absolute top-100 mt-4 fade-in`}
+		>
 			<BrasilFlag
 				setActiveLanguage={setActiveLanguage}
 				setIsLanguageOpen={setIsLanguageOpen}
@@ -28,7 +43,7 @@ const FlagStyled = styled.div`
 		width: 32px;
 		object-fit: cover;
 		cursor: pointer;
-		transition: none;
+		transition: all ease 0.5s;
 	}
 `
 

@@ -45,14 +45,14 @@ export function OpenModal(props: ModalAbertaProps) {
 							onClick={handleClose}
 						/>
 					</div>
-					<ImagemProjeto projeto={projetoAtivo} />
-					<h2 className="mt-3 mb-0">{projetoAtivo?.nome}</h2>
+					<ImagemProjeto isInModal={true} projeto={projetoAtivo} />
+					<h2 className="mt-3 mb-0 fade-in">{projetoAtivo?.nome}</h2>
 
-					<TagsHabilidades projeto={projetoAtivo} />
+					<TagsHabilidades isInModal={true} projeto={projetoAtivo} />
 
-					<p className="text-justify">{projetoAtivo?.descricao}</p>
+					<p className="text-justify fade-in">{projetoAtivo?.descricao}</p>
 
-					<div className="d-flex flex-column flex-sm-row jcc aic column-gap-4 row-gap-3">
+					<div className="d-flex flex-column flex-sm-row jcc aic column-gap-4 row-gap-3 fade-in">
 						<BotaoAcesseOProjeto
 							activeLanguage={activeLanguage}
 							projeto={projetoAtivo}
@@ -75,4 +75,17 @@ const ProjectModalStyled = styled(Modal)`
 	.modal-content {
 		background-color: ${corPadraoDeFundo};
 	}
+
+	/* @keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.fade-in {
+		animation: fade-in 1.5s;
+	} */
 `

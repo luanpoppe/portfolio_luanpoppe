@@ -1,6 +1,6 @@
 @keyframes slide-right {
 	0% {
-		transform: translateX(-100px);
+		transform: translateX(-200px);
 	}
 	100% {
 		transform: translateX(0px);
@@ -17,4 +17,39 @@
 .scale-up-350ms:hover {
 	transform: scale(1.1);
 	transition: all ease 350ms;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	animation: fade-in 1.5s;
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade-out {
+	animation: fade-out 1.5s;
 }

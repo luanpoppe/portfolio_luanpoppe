@@ -1,13 +1,14 @@
 type Props = {
 	projeto: Projeto
+	isInModal?: boolean
 }
-export function ImagemProjeto({ projeto }: Props) {
+export function ImagemProjeto({ projeto, isInModal }: Props) {
 	return (
 		<a
 			href={projeto?.link}
 			target="_blank"
 			rel="noreferrer"
-			className="w-100"
+			className={`w-100 ${isInModal ? "fade-in" : ""}`}
 		>
 			<img
 				className="imagem-projeto w-100"

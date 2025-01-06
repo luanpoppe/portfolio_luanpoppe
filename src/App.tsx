@@ -12,8 +12,12 @@ import "./utils/styles/widthAndHeight.css"
 import "./utils/styles/marginAndPadding.css"
 import "./utils/styles/animations.css"
 import { AppContext } from "./AppContext"
+import { useEffect } from "react"
+import { handleAnimation } from "./utils/animation"
 
 export function App() {
+	useEffect(() => handleAnimation(), [])
+
 	return (
 		<>
 			<EstiloGlobal />
