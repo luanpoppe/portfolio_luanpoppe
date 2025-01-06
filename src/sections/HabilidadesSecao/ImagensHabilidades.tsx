@@ -41,7 +41,7 @@ const ContainerHabilidades = styled.div`
 	padding: 16px;
 	border-radius: 8px;
 	box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 8px;
-	min-width: 140px;
+	min-width: 120px;
 
 	&:hover {
 		box-shadow: rgba(255, 255, 255, 0.5) 0px 6px 16px;
