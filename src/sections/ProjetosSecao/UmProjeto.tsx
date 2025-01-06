@@ -54,7 +54,7 @@ export function UmProjeto({
 
 function TituloProjeto({ projeto }: { projeto: Projeto }) {
 	return (
-		<h2 className="mb-3">
+		<h2 className="mb-3 fs-4">
 			<a href={projeto.link} target="_blank" rel="noreferrer">
 				{projeto.nome}
 			</a>

@@ -11,11 +11,11 @@ export function Hero() {
 	return (
 		<main
 			id="hero"
-			className="main-padding d-flex flex-column flex-lg-row jcc align-items-xxl-center gap-7 w-100 hidden"
+			className="main-padding row gx-0 gy-5 gy-lg-0 flex-column flex-lg-row jcc align-items-xxl-center w-100 hidden"
 		>
-			<ImageHero />
+			<ImageHero className="col-12 col-lg-4" />
 
-			<HeroTextStyled className="col-12 col-lg-7 col-xxl-6 d-flex flex-column aic text-center text-lg-start">
+			<HeroTextStyled className="col-12 col-lg-8 col-xxl-6 d-flex flex-column aic text-center text-lg-start">
 				<div className="d-flex flex-column col-10 mt-0">
 					<HeroTitle activeLanguage={activeLanguage} />
 					<HeroParagraph activeLanguage={activeLanguage} />
