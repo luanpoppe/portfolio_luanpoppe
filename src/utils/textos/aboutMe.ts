@@ -1,10 +1,10 @@
 export const aboutMeTexts = {
 	paragraph1: {
-		ptbr: "Iniciei minha jornada profissional como médico, e me encantei pela área de programação ao buscar soluções para o dia a dia de meu antigo trabalho. Após iniciar o estudo na área de tecnologia de forma autodidata, continuo sempre buscando e adquirindo novos conhecimentos e aptidões.",
-		en: "I began my professional journey as a physician, and I became fascinated with the programming area while seeking solutions for the day-to-day challenges of my previous job. After starting to study on my own, I have continued to always seek and acquire new knowledge and skills."
+		ptbr: "Continuo aprimorando minhas habilidades em desenvolvimento de software por meio de projetos pessoais e cursos, como  Desenvolvimento Fullstack Python pela EBAC. Além disso, estou no terceiro semestre do curso de Análise e Desenvolvimento de Sistemas pela UniRuy.",
+		en: "I continue to enhance my software development skills through personal projects and courses, such as the Fullstack Python Development course by EBAC. Additionally, I am in the third semester of the Systems Analysis and Development program at UniRuy."
 	},
 	paragraph2: {
-		ptbr: "Atualmente atuo como desenvolvedor front-end, enquanto realizo curso da plataforma da EBAC para me tornar Desenvolvedor Fullstack, com previsão de término para o fim de 2024. Possuo como pilares de meu trabalho: comprometimento, inspirar confiança, bom trabalho em equipe, busca por soluções eficazes, aprendizado contínuo.",
-		en: "Currently, I work as a front-end developer, while I am taking a course on the EBAC platform to become a Fullstack Developer, with an expected completion date by the end of 2024. My work is based on the pillars of commitment, inspiring confidence, good teamwork, seeking effective solutions, and continuous learning."
+		ptbr: "Minha trajetória profissional começou na medicina, mas minha paixão pela programação surgiu ao buscar soluções tecnológicas para desafios diários da profissão. Iniciei meus estudos na área de tecnologia de forma autodidata e, desde então, estou sempre me aperfeiçoando e buscando novos conhecimentos.",
+		en: "My professional journey began in medicine, but my passion for programming emerged as I sought technological solutions for daily challenges in the profession. I started studying technology on my own and have been continuously improving and acquiring new knowledge since then."
 	}
 }

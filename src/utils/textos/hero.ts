@@ -14,10 +14,8 @@ export const heroTexts = {
 		}
 	],
 	secondaryText: {
-		ptbr: `Atualmente atuo como Desenvolvedor Front-End na empresa Solos Brasil, onde desenvolvo plataformas utilizando o framework Angular no cargo de Trainee,
-		enquanto cotinuo realizando um curso da plataforma da EBAC para me tornar Desenvolvedor Fullstack, com previsão de término para o fim de 2024.
-		`,
-		en: "Currently I work as a Front-End Developer at Solos Brasil, where I develop platforms using the Angular framework, while I am taking a course on the EBAC platform to become a Fullstack Developer, with an expected completion date by the end of 2024. My work is based on the pillars of commitment, inspiring confidence, good teamwork, seeking effective solutions, and continuous learning."
+		ptbr: `Atualmente, sou responsável pelo desenvolvimento de testes automatizados na Raro Labs para o banco BMG e, na minha experiência anterior, trabalhei com Desenvolvimento Web Front-end. Além disso, sou co-fundador da empresa Vella, que visa entregar soluções customizadas com uso de inteligência artificial para diversas áreas.`,
+		en: "Currently, I am responsible for developing automated tests at Raro Labs for BMG Bank. In my previous experience, I worked focused on front-end web development, primarily using the Angular framework. Additionally, I'm co-founder of Vella, a company that aims to deliver personalized solutions using artificial intelligence across various fields."
 	},
 	menores: {
 		curriculo: {
