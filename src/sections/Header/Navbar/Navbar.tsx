@@ -10,29 +10,35 @@ type Props = PropActiveLanguage & {
 export function Navbar({ activeNavbar, activeLanguage }: Props) {
 	function defineUnderlinedNavbar(navbarName: string) {
 		if (navbarName == activeNavbar) return "navbarSublinhado"
-		return ""
+		return "d-none"
 	}
 
 	return (
 		<NavbarStyled className="w-100 d-none d-lg-flex jcc aic mx-0">
 			<ul className="d-flex jcc aic m-0 gap-3 gap-xxl-5">
-				<li className={defineUnderlinedNavbar("hero")}>
+				<li>
 					<a href="#hero">Home</a>
+					<div className={defineUnderlinedNavbar("hero")}></div>
 				</li>
-				<li className={defineUnderlinedNavbar("sobre-mim")}>
+				<li>
 					<a href="#sobre-mim">
 						{getTextLang(navbarTexts.sobreMim, activeLanguage)}
 					</a>
+					<div className={defineUnderlinedNavbar("sobre-mim")}></div>
 				</li>
-				<li className={defineUnderlinedNavbar("habilidades")}>
+				<li>
 					<a href="#habilidades">
 						{getTextLang(navbarTexts.habilidades, activeLanguage)}
 					</a>
+					<div
+						className={defineUnderlinedNavbar("habilidades")}
+					></div>
 				</li>
-				<li className={defineUnderlinedNavbar("projetos")}>
+				<li>
 					<a href="#projetos">
 						{getTextLang(navbarTexts.projetos, activeLanguage)}
 					</a>
+					<div className={defineUnderlinedNavbar("projetos")}></div>
 				</li>
 			</ul>
 		</NavbarStyled>
@@ -48,7 +54,8 @@ const NavbarStyled = styled.nav`
 	}
 
 	.navbarSublinhado {
-		border: none;
-		border-bottom: 3px ${corAzul} solid;
+		width: 100%;
+		height: 3px;
+		background-color: ${corAzul};
 	}
 `

@@ -4,7 +4,7 @@ import { corAzul, corPadraoDeFundo, corPadraoTextos } from "./utils/colors"
 const EstiloGlobal = createGlobalStyle`
 	:root {
 		scroll-behavior: smooth;
-		scroll-padding-top: 120px;
+		scroll-padding-top: 110px;
 	}
 
 	* {
@@ -21,10 +21,6 @@ const EstiloGlobal = createGlobalStyle`
 		background-color: ${corPadraoDeFundo};
 		max-width: 100vw;
 		min-height: 100vh;
-	}
-
-	.stop-scroll {
-		overflow-y: hidden;
 	}
 
 	.main-padding {

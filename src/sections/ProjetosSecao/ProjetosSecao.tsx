@@ -33,6 +33,7 @@ export function ProjetosSecao(props: PropActiveLanguage) {
 				{objetoProjetosFinal.map((projeto, index) => {
 					return (
 						<UmProjeto
+							key={projeto.nome}
 							index={index}
 							activeLanguage={activeLanguage}
 							projeto={projeto}

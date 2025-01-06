@@ -6,8 +6,8 @@ declare type PropActiveLanguage = {
 	activeLanguage: ActiveLanguage
 }
 
-declare type PropMaxWidth = {
-	maxWidth: string
+declare type PropActiveNavbar = {
+	activeNavbar: ActiveNavbar
 }
 
 declare type PropClass = {

@@ -12,36 +12,24 @@ import "./utils/styles/resetBootstrap.css"
 import "./utils/styles/display.css"
 import "./utils/styles/widthAndHeight.css"
 import "./utils/styles/marginAndPadding.css"
+import "./utils/styles/animations.css"
+import { defineActiveSection } from "./utils/navbar"
 
 export function App() {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const [scrollTop, setScrollTop] = useState(0)
 	const [activeNavbar, setActiveNavbar] = useState<ActiveNavbar>("hero")
 	const [activeLanguage, setActiveLanguage] =
 		useState<ActiveLanguage>("portuguese")
 
+	console.clear()
 	useEffect(() => {
-		console.clear()
-
+		console.log("ADICIONOU O EVENTO")
 		window.addEventListener("scroll", () => {
-			const secaoHabilidades =
-				document.getElementById("habilidades").offsetTop
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			const secaoHero = document.getElementById("hero").offsetTop
-			const secaoSobreMim = document.getElementById("sobre-mim").offsetTop
-			const secaoProjetos = document.getElementById("projetos").offsetTop
-			// setScrollTop(evento.currentTarget.scrollY)
-			if (scrollTop <= secaoSobreMim) {
-				setActiveNavbar("hero")
-			} else if (scrollTop <= secaoHabilidades) {
-				setActiveNavbar("sobre-mim")
-			} else if (scrollTop <= secaoProjetos) {
-				setActiveNavbar("habilidades")
-			} else {
-				setActiveNavbar("projetos")
-			}
+			defineActiveSection(setActiveNavbar)
 		})
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		return () =>
+			window.removeEventListener("scroll", () => {
+				defineActiveSection(setActiveNavbar)
+			})
 	}, [])
 
 	return (
@@ -51,6 +39,7 @@ export function App() {
 				<Header
 					activeNavbar={activeNavbar}
 					setActiveLanguage={setActiveLanguage}
+					setActiveNavbar={setActiveNavbar}
 					activeLanguage={activeLanguage}
 				/>
 				<Hero activeLanguage={activeLanguage} />

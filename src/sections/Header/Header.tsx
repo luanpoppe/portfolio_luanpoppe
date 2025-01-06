@@ -2,13 +2,14 @@ import { Navbar } from "./Navbar"
 import { NavbarMobile } from "./NavbarMobile"
 import { IoLanguage } from "react-icons/io5"
 import { FlagsComponents } from "./FlagsComponents"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import styled from "styled-components"
 import { fontTitleHeader } from "../../utils/fontSizes"
 import { corPadraoDeFundo } from "../../utils/colors"
 
 type Props = PropActiveLanguage & {
-	setActiveLanguage: React.Dispatch<React.SetStateAction<ActiveLanguage>>
+	setActiveLanguage: SetState<ActiveLanguage>
+	setActiveNavbar: SetState<ActiveNavbar>
 	activeNavbar: ActiveNavbar
 }
 
@@ -19,16 +20,10 @@ const HeaderStyled = styled.header`
 	z-index: 1;
 `
 
-export function Header({
-	activeLanguage,
-	activeNavbar,
-	setActiveLanguage
-}: Props) {
+export function Header(props: Props) {
 	const [isLanguageOpen, setIsLanguageOpen] = useState<boolean>(false)
-
-	useEffect(() => {
-		console.log('isLanguageOpen: ', isLanguageOpen)
-	}, [isLanguageOpen])
+	const { activeLanguage, activeNavbar, setActiveNavbar, setActiveLanguage } =
+		props
 
 	return (
 		<>
@@ -36,11 +31,17 @@ export function Header({
 				<NavbarMobile
 					className="d-flex aic d-lg-none h-100"
 					activeNavbar={activeNavbar}
+					setActiveNavbar={setActiveNavbar}
 					activeLanguage={activeLanguage}
 					setActiveLanguage={setActiveLanguage}
 				/>
 
-				<h1 className="m-0">
+				<h1
+					className="m-0 cursor-pointer"
+					onClick={() =>
+						window.scrollTo({ top: 0, behavior: "smooth" })
+					}
+				>
 					{"<"}Luan <span className="color-purple">Poppe</span>
 					{" />"}
 				</h1>
