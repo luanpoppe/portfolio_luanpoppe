@@ -6,12 +6,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import { fontTitleHeader } from "../../utils/fontSizes"
 import { corPadraoDeFundo } from "../../utils/colors"
-
-type Props = PropActiveLanguage & {
-	setActiveLanguage: SetState<ActiveLanguage>
-	setActiveNavbar: SetState<ActiveNavbar>
-	activeNavbar: ActiveNavbar
-}
+import { useAppContext } from "../../utils/useContext"
 
 const HeaderStyled = styled.header`
 	background-color: ${corPadraoDeFundo};
@@ -20,21 +15,16 @@ const HeaderStyled = styled.header`
 	z-index: 1;
 `
 
-export function Header(props: Props) {
+export function Header() {
+	const context = useAppContext()
+
 	const [isLanguageOpen, setIsLanguageOpen] = useState<boolean>(false)
-	const { activeLanguage, activeNavbar, setActiveNavbar, setActiveLanguage } =
-		props
+	const { activeLanguage, activeNavbar, setActiveLanguage } = context
 
 	return (
 		<>
 			<HeaderStyled className="main-padding w-100 d-flex jcb aic mb-4 position-sticky top-0 start-0 text-nowrap">
-				<NavbarMobile
-					className="d-flex aic d-lg-none h-100"
-					activeNavbar={activeNavbar}
-					setActiveNavbar={setActiveNavbar}
-					activeLanguage={activeLanguage}
-					setActiveLanguage={setActiveLanguage}
-				/>
+				<NavbarMobile />
 
 				<h1
 					className="m-0 cursor-pointer"

@@ -2,8 +2,12 @@ import TituloSecao from "../../components/TituloSecao"
 import { ImagensHabilidades } from "./ImagensHabilidades"
 import { habilidadesTexto } from "../../utils/textos/titles"
 import { getTextLang } from "../../utils/textos/funcs"
+import { useAppContext } from "../../utils/useContext"
 
-export function HabilidadesSecao({ activeLanguage }: PropActiveLanguage) {
+export function HabilidadesSecao() {
+	const context = useAppContext()
+	const { activeLanguage } = context
+
 	return (
 		<section className="w-100 main-padding d-flex flex-column jcc mb-5">
 			<TituloSecao id="habilidades" className="mb-5">

@@ -9,9 +9,11 @@ import { defineProjectsIndexes } from "./utils"
 import TituloSecao from "../../components/TituloSecao"
 import { getTextLang } from "../../utils/textos/funcs"
 import { projetoTexto } from "../../utils/textos/titles"
+import { useAppContext } from "../../utils/useContext" 
 
-export function ProjetosSecao(props: PropActiveLanguage) {
-	const { activeLanguage } = props
+export function ProjetosSecao() {
+	const context = useAppContext()
+	const { activeLanguage } = context
 
 	const [indexProjetoAtivo, setIndexProjetoAtivo] = useState<number>(null)
 

@@ -3,10 +3,13 @@ import { HeroParagraph, HeroTitle } from "./TextHero"
 import { CallToActionHero } from "./CallToActionHero"
 import styled from "styled-components"
 import { fontSmallText } from "../../utils/fontSizes"
+import { useAppContext } from "../../utils/useContext"
 
-type Props = PropActiveLanguage
+// type Props = PropActiveLanguage
 
-export function Hero({ activeLanguage }: Props) {
+export function Hero() {
+	const { activeLanguage } = useAppContext()
+
 	return (
 		<main
 			id="hero"

@@ -5,8 +5,12 @@ import { imagemSecaoSobreMim } from "../../utils/images"
 import { aboutMeTexts } from "../../utils/textos/aboutMe"
 import { sobreMimTexto } from "../../utils/textos/titles"
 import { getTextLang } from "../../utils/textos/funcs"
+import { useAppContext } from "../../utils/useContext"
 
-export function AboutMe({ activeLanguage }: PropActiveLanguage) {
+export function AboutMe() {
+	const context = useAppContext()
+	const { activeLanguage } = context
+
 	return (
 		<AboutMeStyled className="main-padding w-100 my-6 text-center d-flex flex-column">
 			<TituloSecao id="sobre-mim" className="col-12">

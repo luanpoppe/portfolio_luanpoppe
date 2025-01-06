@@ -1,21 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
 import { navbarTexts } from "../../../utils/textos/navbar"
 import { Modal } from "react-bootstrap"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { corPadraoTextos } from "../../../utils/colors"
 import { getTextLang } from "../../../utils/textos/funcs"
+import { useAppContext } from "../../../utils/useContext"
 
-type Props = PropActiveNavbar &
-	PropClass &
-	PropActiveLanguage & {
-		setActiveNavbar: SetState<ActiveNavbar>
-		setActiveLanguage: SetState<ActiveLanguage>
-		setIsNavbarMobileOpen?: SetState<boolean>
-		isNavbarMobileOpen?: boolean
-	}
-
-export function NavbarMobile(props: Props) {
-	const [isNavbarMobileOpen, setIsNavbarMobileOpen] = useState(false)
+export function NavbarMobile() {
+	const context = useAppContext()
+	const { isNavbarMobileOpen, setIsNavbarMobileOpen } = context
 
 	return (
 		<>
@@ -26,13 +19,7 @@ export function NavbarMobile(props: Props) {
 			/>
 			<Modal
 				animation={false}
-				dialogAs={() =>
-					NavbarMobileOk({
-						...props,
-						isNavbarMobileOpen,
-						setIsNavbarMobileOpen
-					})
-				}
+				dialogAs={() => NavbarMobileOk()}
 				show={isNavbarMobileOpen}
 				onHide={() => setIsNavbarMobileOpen(false)}
 			/>
@@ -40,7 +27,7 @@ export function NavbarMobile(props: Props) {
 	)
 }
 
-function NavbarMobileOk(props: Props) {
+function NavbarMobileOk() {
 	const styles: React.CSSProperties = {
 		width: "60%",
 
@@ -52,34 +39,38 @@ function NavbarMobileOk(props: Props) {
 		borderBottomRightRadius: "2px"
 	}
 
+	const context = useAppContext()
+	const { activeLanguage } = context
+
 	return (
 		<div style={styles} className="d-flex flex-column slide-right">
 			<ul className="m-0 p-0 d-flex flex-column gap-1">
-				<ItemMenu {...props} idDaSecao="hero" isFirst={true}>
-					{getTextLang(navbarTexts.home, props.activeLanguage)}
+				<ItemMenu idDaSecao="hero" isFirst={true}>
+					{getTextLang(navbarTexts.home, activeLanguage)}
 				</ItemMenu>
-				<ItemMenu {...props} idDaSecao="sobre-mim">
-					{getTextLang(navbarTexts.sobreMim, props.activeLanguage)}
+				<ItemMenu idDaSecao="sobre-mim">
+					{getTextLang(navbarTexts.sobreMim, activeLanguage)}
 				</ItemMenu>
-				<ItemMenu {...props} idDaSecao="habilidades">
-					{getTextLang(navbarTexts.habilidades, props.activeLanguage)}
+				<ItemMenu idDaSecao="habilidades">
+					{getTextLang(navbarTexts.habilidades, activeLanguage)}
 				</ItemMenu>
-				<ItemMenu {...props} idDaSecao="projetos">
-					{getTextLang(navbarTexts.projetos, props.activeLanguage)}
+				<ItemMenu idDaSecao="projetos">
+					{getTextLang(navbarTexts.projetos, activeLanguage)}
 				</ItemMenu>
 			</ul>
 		</div>
 	)
 }
 
-type ItemMenuProps = Props &
-	React.PropsWithChildren & {
-		idDaSecao: string
-		isFirst?: boolean
-	}
+type ItemMenuProps = React.PropsWithChildren & {
+	idDaSecao: string
+	isFirst?: boolean
+}
 
 function ItemMenu(props: ItemMenuProps) {
-	const className = props.activeNavbar === "hero" ? "navbarSublinhado" : ""
+	const context = useAppContext()
+	const { activeNavbar, setIsNavbarMobileOpen, isNavbarMobileOpen } = context
+	const className = activeNavbar === "hero" ? "navbarSublinhado" : ""
 
 	return (
 		<>
@@ -88,15 +79,11 @@ function ItemMenu(props: ItemMenuProps) {
 					borderRadius: props.isFirst ? "0px 0px 6px 6px" : "6px",
 					fontSize: "1.5rem"
 				}}
-				className={`px-3 py-3 pb-1 ${className} ${
-					props.className ?? ""
-				}`}
+				className={`px-3 py-3 pb-1 ${className}`}
 			>
 				<a
 					href={`#${props.idDaSecao}`}
-					onClick={() =>
-						props.setIsNavbarMobileOpen(!props.isNavbarMobileOpen)
-					}
+					onClick={() => setIsNavbarMobileOpen(!isNavbarMobileOpen)}
 				>
 					{props.children}
 				</a>
