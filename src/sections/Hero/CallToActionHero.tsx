@@ -7,6 +7,7 @@ import { githubIcon, gmailIcon, linkedinIcon } from "../../utils/images"
 import { heroTexts } from "../../utils/textos/hero"
 import { getTextLang } from "../../utils/textos/funcs"
 import { ClickArrowIcon } from "../../components/Icons/ClickArrowIcon"
+import { FaWhatsapp } from "react-icons/fa"
 
 export function CallToActionHero({ activeLanguage }: PropActiveLanguage) {
 	return (
@@ -26,6 +27,13 @@ export function CallToActionHero({ activeLanguage }: PropActiveLanguage) {
 					{getTextLang(heroTexts.menores.contato, activeLanguage)}
 				</p>
 				<div className="d-flex jcc gap-2">
+					<a href="https://wa.me/5511978046445" target="_blank">
+						<FaWhatsapp
+							className="scale-up-350ms cursor-pointer"
+							size={40}
+							style={{ margin: "0 4px", color: "green" }}
+						/>
+					</a>
 					<GitHubIcon />
 					<LinkedinIcon />
 					<EmailIcon />
@@ -38,6 +46,7 @@ export function CallToActionHero({ activeLanguage }: PropActiveLanguage) {
 function GitHubIcon() {
 	return (
 		<a
+			className="scale-up-350ms"
 			target="_blank"
 			href="https://github.com/luanpoppe"
 			title="GitHub"
@@ -51,6 +60,7 @@ function GitHubIcon() {
 function LinkedinIcon() {
 	return (
 		<a
+			className="scale-up-350ms"
 			target="_blank"
 			href="https://www.linkedin.com/in/luan-poppe/"
 			title="LinkedIn"
@@ -63,7 +73,11 @@ function LinkedinIcon() {
 
 function EmailIcon() {
 	return (
-		<a href="mailto:luanpoppe@gmail.com" title="Entre em Contato">
+		<a
+			href="mailto:luanpoppe@gmail.com"
+			title="Entre em Contato"
+			className="scale-up-350ms"
+		>
 			<ContactIconsStyled src={gmailIcon} alt="Gmail" />
 		</a>
 	)

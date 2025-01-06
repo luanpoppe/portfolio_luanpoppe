@@ -5,12 +5,7 @@ import { widthTablet } from "../../utils/mediaQuery"
 export const ContactIconsStyled = styled.img`
 	max-width: 40px;
 	border-radius: 50%;
-	margin: 0 8px;
-
-	&:hover {
-		transform: scale(1.1);
-		transition: all ease 350ms;
-	}
+	margin: 0 4px;
 `
 
 export const AcessarCurriculoStyled = styled.a`
