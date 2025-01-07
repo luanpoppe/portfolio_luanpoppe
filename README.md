@@ -14,9 +14,7 @@ Este projeto foi desenvolvido por mim com o objetivo de apresentar minhas habili
 
 
 ## Demonstração
-
-Insira um gif ou um link de alguma demonstração
-
+![alt text](public/previa-site-gif.gif)
 
 ## Rodando localmente
 
@@ -44,6 +42,7 @@ Inicialize o projeto
 - Navegação prática com seções acessíveis através do menu
 - Animações simples, mas eficazes, para aprimorar a experiência do usuário
 - Uso de modais para exibir informações detalhadas sobre projetos específicos
+- Possibilidade de escolha da língua do site em inglês ou português
 
 
 ## Melhorias
