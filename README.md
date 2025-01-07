@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Título do Projeto
 
-Currently, two official plugins are available:
+Este projeto foi desenvolvido por mim com o objetivo de apresentar minhas habilidades e trabalhos no mundo da programação, em um site com design elegante e navegação intuitiva. A primeira versão foi criada em agosto de 2023, antes de eu adquirir minha primeira experiência profissional na área. Agora, cerca de um ano e meio depois, decidi revisitar o projeto para aprimorá-lo com os conhecimentos que adquiri ao longo desse tempo. O resultado final está disponível em: https://portfolio-luanpoppe-frontend.vercel.app/.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack utilizada
 
-## Expanding the ESLint configuration
+**Front-end:**:
+- **React + Vite**: Escolhido pela agilidade no desenvolvimento desde o início do projeto, além da facilidade de publicação.
+- **TypeScript**: Adotado para trazer maior segurança e produtividade ao desenvolvimento, com tipagens específicas alinhadas às necessidades do projeto.
+- **Context API**: Utilizado para simplificar a gestão de estado entre diferentes componentes, garantindo consistência e eficiência.
+- **Bootstrap + React-Bootstrap**: Implementado para aproveitar soluções prontas e otimizadas que agilizam o desenvolvimento de interfaces modernas e responsivas.
+- **React-Icons**: Ferramenta prática para integrar ícones diretamente como componentes React, facilitando a personalização e o uso.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Demonstração
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Insira um gif ou um link de alguma demonstração
+
+
+## Rodando localmente
+
+Crie uma pasta onde o projeto irá ficar
+
+Acesse a pasta em questão pelo terminal e clone o projeto com o seguinte comando:
+```bash
+  git clone https://github.com/luanpoppe/portfolio_luanpoppe .
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Instale as dependências
+```bash
+  npm install
 ```
+
+Inicialize o projeto
+
+```bash
+  npm run dev
+```
+
+
+## Funcionalidades
+- Totalmente responsivo, adaptando-se a diferentes tamanhos de tela
+- Navegação prática com seções acessíveis através do menu
+- Animações simples, mas eficazes, para aprimorar a experiência do usuário
+- Uso de modais para exibir informações detalhadas sobre projetos específicos
+
+
+## Melhorias
+- Adicionar opção de tema dark e light
+- Adicionar um filtro de projetos por tema/linguagem/framework.
