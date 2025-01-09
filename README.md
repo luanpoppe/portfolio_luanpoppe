@@ -1,5 +1,4 @@
-
-# Título do Projeto
+# Site de Portfólio Pessoal
 
 Este projeto foi desenvolvido por mim com o objetivo de apresentar minhas habilidades e trabalhos no mundo da programação, em um site com design elegante e navegação intuitiva. A primeira versão foi criada em agosto de 2023, antes de eu adquirir minha primeira experiência profissional na área. Agora, cerca de um ano e meio depois, decidi revisitar o projeto para aprimorá-lo com os conhecimentos que adquiri ao longo desse tempo. O resultado final está disponível em: https://portfolio-luanpoppe-frontend.vercel.app/.
 
