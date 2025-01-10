@@ -2,13 +2,50 @@ import {
 	cloneDisneyPlus,
 	ebacTechTalks,
 	eplayImagem,
-	gameShop,
-	gamesBootstrap,
+	// gameShop,
+	// gamesBootstrap,
 	portfolioGithub,
-	todoListReact
+	// todoListReact,
+	sitePessoalPortfolio,
+	sitePortfolioJulia
 } from "./images"
 
 const objetoProjetos: Projeto[] = [
+	{
+		nome: "Portfólio de UI/UX",
+		imagem: sitePortfolioJulia,
+		descricao:
+			"Este projeto foi desenvolvido a pedido de uma amiga que está em transição de carreira para a área de UX/UI. O objetivo foi aprimorar o site que ela criou utilizando uma plataforma de criação sem código, a qual, embora útil, apresenta diversas limitações. Com isso, recriei o site, oferecendo mais flexibilidade e recursos.",
+		link: "https://landing-page-julia-sigma.vercel.app/",
+		github: "https://github.com/luanpoppe/landing-page-julia",
+		habilidades: [
+			"React",
+			"Typescript",
+			"React Router DOM",
+			"Styled Components",
+			"Bootstrap",
+			"Context API"
+		],
+		isModalOpen: false,
+		indexNumber: null
+	},
+	{
+		nome: "Portfólio Pessoal",
+		imagem: sitePessoalPortfolio,
+		descricao:
+			"Este projeto foi desenvolvido por mim com o objetivo de apresentar minhas habilidades e trabalhos no mundo da programação, em um site com design elegante e navegação intuitiva. A primeira versão foi criada em agosto de 2023, antes de eu adquirir minha primeira experiência profissional na área. Agora, cerca de um ano e meio depois, decidi revisitar o projeto para aprimorá-lo com os conhecimentos que adquiri ao longo desse tempo. ",
+		link: "https://portfolio-luanpoppe-frontend.vercel.app/",
+		github: "https://github.com/luanpoppe/portfolio_luanpoppe",
+		habilidades: [
+			"React",
+			"Typescript",
+			"Styled Components",
+			"Bootstrap",
+			"Context API"
+		],
+		isModalOpen: false,
+		indexNumber: null
+	},
 	{
 		nome: "EPLAY",
 		imagem: eplayImagem,
@@ -26,17 +63,17 @@ const objetoProjetos: Projeto[] = [
 		isModalOpen: false,
 		indexNumber: null
 	},
-	{
-		nome: "To-Do List",
-		imagem: todoListReact,
-		descricao:
-			"Desenvolvi este site seguindo as aulas do curso de front-end da EBAC. O site funciona como uma lista de tarefas dinâmica, onde pode ser realizada a edição de tarefas, assim como adição, exclusão, bem como é possível filtrar as mesmas.",
-		link: "https://to-do-list-react-lac.vercel.app/",
-		github: "https://github.com/luanpoppe/M_31-To-Do_List_React",
-		habilidades: ["React", "Javascript", "Typescript", "Styled Components"],
-		isModalOpen: false,
-		indexNumber: null
-	},
+	// {
+	// 	nome: "To-Do List",
+	// 	imagem: todoListReact,
+	// 	descricao:
+	// 		"Desenvolvi este site seguindo as aulas do curso de front-end da EBAC. O site funciona como uma lista de tarefas dinâmica, onde pode ser realizada a edição de tarefas, assim como adição, exclusão, bem como é possível filtrar as mesmas.",
+	// 	link: "https://to-do-list-react-lac.vercel.app/",
+	// 	github: "https://github.com/luanpoppe/M_31-To-Do_List_React",
+	// 	habilidades: ["React", "Javascript", "Typescript", "Styled Components"],
+	// 	isModalOpen: false,
+	// 	indexNumber: null
+	// },
 	{
 		nome: "Portfólio GitHub",
 		imagem: portfolioGithub,
@@ -69,32 +106,67 @@ const objetoProjetos: Projeto[] = [
 		habilidades: ["HTML", "CSS", "Bootstrap", "SASS", "Javascript"],
 		isModalOpen: false,
 		indexNumber: null
-	},
-	{
-		nome: "Luan Poppe Games",
-		imagem: gamesBootstrap,
-		descricao:
-			"Este site foi desenvolvido utilizando os conceitos básicos de HTML e CSS, bem como utilizando o Bootstrap para auxiliar durtante a estilização dos elementos. Use tamém o pré-processador SASS para também auxiliar e agilizar a estilização do site. O site também foi feito de forma a ser devidamente responsivo a dispositivos de diferentes tamanhos.",
-		link: "https://loja-games-bootstrap.vercel.app/",
-		github: "https://github.com/luanpoppe/E_14-Loja_Games_bootstrap",
-		habilidades: ["HTML", "CSS", "Bootstrap", "SASS"],
-		isModalOpen: false,
-		indexNumber: null
-	},
-	{
-		nome: "Games Shop",
-		imagem: gameShop,
-		descricao:
-			"Meu primeiro site desenvolvido logo no começo do curso de front-end que estou realizando pela plataforma da EBAC. Este site foi desenvolvido utilizando apenas HTML e CSS, mostrando como mesmo utilizando apenas o conceitos básicos e iniciais do front-end, ainda é possível o desenvolvimento de páginas web bonitas e funcionais.",
-		link: "https://game-shop-ebac-gamma.vercel.app/",
-		github: "https://github.com/luanpoppe/M_05-game-shop",
-		habilidades: ["HTML", "CSS"],
-		isModalOpen: false,
-		indexNumber: null
 	}
+	// {
+	// 	nome: "Luan Poppe Games",
+	// 	imagem: gamesBootstrap,
+	// 	descricao:
+	// 		"Este site foi desenvolvido utilizando os conceitos básicos de HTML e CSS, bem como utilizando o Bootstrap para auxiliar durtante a estilização dos elementos. Use tamém o pré-processador SASS para também auxiliar e agilizar a estilização do site. O site também foi feito de forma a ser devidamente responsivo a dispositivos de diferentes tamanhos.",
+	// 	link: "https://loja-games-bootstrap.vercel.app/",
+	// 	github: "https://github.com/luanpoppe/E_14-Loja_Games_bootstrap",
+	// 	habilidades: ["HTML", "CSS", "Bootstrap", "SASS"],
+	// 	isModalOpen: false,
+	// 	indexNumber: null
+	// },
+	// {
+	// 	nome: "Games Shop",
+	// 	imagem: gameShop,
+	// 	descricao:
+	// 		"Meu primeiro site desenvolvido logo no começo do curso de front-end que estou realizando pela plataforma da EBAC. Este site foi desenvolvido utilizando apenas HTML e CSS, mostrando como mesmo utilizando apenas o conceitos básicos e iniciais do front-end, ainda é possível o desenvolvimento de páginas web bonitas e funcionais.",
+	// 	link: "https://game-shop-ebac-gamma.vercel.app/",
+	// 	github: "https://github.com/luanpoppe/M_05-game-shop",
+	// 	habilidades: ["HTML", "CSS"],
+	// 	isModalOpen: false,
+	// 	indexNumber: null
+	// }
 ]
 
 const objetoProjetosIngles: Projeto[] = [
+	{
+		nome: "UI/UX Portfolio",
+		imagem: sitePortfolioJulia,
+		descricao:
+			"This project was developed at the request of a friend transitioning her career to the UX/UI field. The goal was to improve the website she created using a no-code platform, which, while helpful, has several limitations. Therefore, I rebuilt the site, providing more flexibility and features.",
+		link: "https://landing-page-julia-sigma.vercel.app/",
+		github: "https://github.com/luanpoppe/landing-page-julia",
+		habilidades: [
+			"React",
+			"Typescript",
+			"React Router DOM",
+			"Styled Components",
+			"Bootstrap",
+			"Context API"
+		],
+		isModalOpen: false,
+		indexNumber: null
+	},
+	{
+		nome: "Personal Portfolio",
+		imagem: sitePessoalPortfolio,
+		descricao:
+			"This project was developed by me with the goal of showcasing my skills and work in the programming world through a website with an elegant design and intuitive navigation. The first version was created in August 2023, before I gained my first professional experience in the field. Now, about a year and a half later, I decided to revisit the project to enhance it with the knowledge I’ve acquired during this time.",
+		link: "https://portfolio-luanpoppe-frontend.vercel.app/",
+		github: "https://github.com/luanpoppe/portfolio_luanpoppe",
+		habilidades: [
+			"React",
+			"Typescript",
+			"Styled Components",
+			"Bootstrap",
+			"Context API"
+		],
+		isModalOpen: false,
+		indexNumber: null
+	},
 	{
 		nome: "EPLAY",
 		imagem: eplayImagem,
@@ -112,17 +184,17 @@ const objetoProjetosIngles: Projeto[] = [
 		isModalOpen: false,
 		indexNumber: null
 	},
-	{
-		nome: "To-Do List",
-		imagem: todoListReact,
-		descricao:
-			"I developed this website following the lessons from the EBAC front-end course. The website works as a dynamic task list, where tasks can be edited, added, and deleted, and it's also possible to filter them.",
-		link: "https://to-do-list-react-lac.vercel.app/",
-		github: "https://github.com/luanpoppe/M_31-To-Do_List_React",
-		habilidades: ["React", "Javascript", "Typescript", "Styled Components"],
-		isModalOpen: false,
-		indexNumber: null
-	},
+	// {
+	// 	nome: "To-Do List",
+	// 	imagem: todoListReact,
+	// 	descricao:
+	// 		"I developed this website following the lessons from the EBAC front-end course. The website works as a dynamic task list, where tasks can be edited, added, and deleted, and it's also possible to filter them.",
+	// 	link: "https://to-do-list-react-lac.vercel.app/",
+	// 	github: "https://github.com/luanpoppe/M_31-To-Do_List_React",
+	// 	habilidades: ["React", "Javascript", "Typescript", "Styled Components"],
+	// 	isModalOpen: false,
+	// 	indexNumber: null
+	// },
 	{
 		nome: "GitHub Portfolio",
 		imagem: portfolioGithub,
@@ -155,29 +227,29 @@ const objetoProjetosIngles: Projeto[] = [
 		habilidades: ["HTML", "CSS", "Bootstrap", "SASS", "Javascript"],
 		isModalOpen: false,
 		indexNumber: null
-	},
-	{
-		nome: "Luan Poppe Games",
-		imagem: gamesBootstrap,
-		descricao:
-			"This website was developed using the fundamental concepts of HTML and CSS, along with the assistance of Bootstrap to aid in styling the elements. Additionally, the SASS pre-processor was used to further facilitate and simplify the styling process. The site was also designed to be fully responsive across devices of various sizes.",
-		link: "https://loja-games-bootstrap.vercel.app/",
-		github: "https://github.com/luanpoppe/E_14-Loja_Games_bootstrap",
-		habilidades: ["HTML", "CSS", "Bootstrap", "SASS"],
-		isModalOpen: false,
-		indexNumber: null
-	},
-	{
-		nome: "Games Shop",
-		imagem: gameShop,
-		descricao:
-			"My first website, developed right at the beginning of the front-end course I'm taking on the EBAC platform. This site was created using only HTML and CSS, demonstrating how even with just the basic and initial front-end concepts, it's still possible to build beautiful and functional web pages.",
-		link: "https://game-shop-ebac-gamma.vercel.app/",
-		github: "https://github.com/luanpoppe/M_05-game-shop",
-		habilidades: ["HTML", "CSS"],
-		isModalOpen: false,
-		indexNumber: null
 	}
+	// {
+	// 	nome: "Luan Poppe Games",
+	// 	imagem: gamesBootstrap,
+	// 	descricao:
+	// 		"This website was developed using the fundamental concepts of HTML and CSS, along with the assistance of Bootstrap to aid in styling the elements. Additionally, the SASS pre-processor was used to further facilitate and simplify the styling process. The site was also designed to be fully responsive across devices of various sizes.",
+	// 	link: "https://loja-games-bootstrap.vercel.app/",
+	// 	github: "https://github.com/luanpoppe/E_14-Loja_Games_bootstrap",
+	// 	habilidades: ["HTML", "CSS", "Bootstrap", "SASS"],
+	// 	isModalOpen: false,
+	// 	indexNumber: null
+	// },
+	// {
+	// 	nome: "Games Shop",
+	// 	imagem: gameShop,
+	// 	descricao:
+	// 		"My first website, developed right at the beginning of the front-end course I'm taking on the EBAC platform. This site was created using only HTML and CSS, demonstrating how even with just the basic and initial front-end concepts, it's still possible to build beautiful and functional web pages.",
+	// 	link: "https://game-shop-ebac-gamma.vercel.app/",
+	// 	github: "https://github.com/luanpoppe/M_05-game-shop",
+	// 	habilidades: ["HTML", "CSS"],
+	// 	isModalOpen: false,
+	// 	indexNumber: null
+	// }
 ]
 
 export { objetoProjetos, objetoProjetosIngles }

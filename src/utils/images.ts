@@ -9,6 +9,8 @@ import ebacTechTalks from "../images/projetos/ebac_tech_talks.png"
 import cloneDisneyPlus from "../images/projetos/clone_disney.png"
 import gamesBootstrap from "../images/projetos/games_bootstrap.png"
 import gameShop from "../images/projetos/games_shop.png"
+import sitePessoalPortfolio from "../images/projetos/site_portfolio_pessoal.png"
+import sitePortfolioJulia from "../images/projetos/site_portfolio_julia.png"
 
 import htmlIcon from "../images/icons/html.png"
 import cssIcon from "../images/icons/css.png"
@@ -58,5 +60,7 @@ export {
 	angualrIcon,
 	jestIcon,
 	djangoIcon,
-	djangoRestIcon
+	djangoRestIcon,
+	sitePessoalPortfolio,
+	sitePortfolioJulia
 }
