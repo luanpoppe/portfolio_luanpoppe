@@ -6,7 +6,6 @@ export function MainContainer({ children }: PropsWithChildren) {
 	const context = useAppContext()
 	const { setActiveNavbar } = context
 
-	console.clear()
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			defineActiveSection(setActiveNavbar)

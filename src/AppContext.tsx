@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { ContextCreated } from "./utils/useContext"
+import { objetoProjetos } from "./utils/objetoProjetos"
 
 export function AppContext({ children }: React.PropsWithChildren) {
 	const [activeNavbar, setActiveNavbar] = useState<ActiveNavbar>("hero")
 	const [activeLanguage, setActiveLanguage] =
 		useState<ActiveLanguage>("portuguese")
 	const [isNavbarMobileOpen, setIsNavbarMobileOpen] = useState<boolean>(false)
+	const [projectsObj, setProjectsObj] = useState<Projeto[]>(objetoProjetos)
 
 	return (
 		<ContextCreated.Provider
@@ -15,7 +17,9 @@ export function AppContext({ children }: React.PropsWithChildren) {
 				activeLanguage,
 				setActiveLanguage,
 				isNavbarMobileOpen,
-				setIsNavbarMobileOpen
+				setIsNavbarMobileOpen,
+				projectsObj,
+				setProjectsObj
 			}}
 		>
 			{children}

@@ -7,6 +7,8 @@ type ContextType = {
 	setActiveLanguage: SetState<ActiveLanguage>
 	isNavbarMobileOpen: boolean
 	setIsNavbarMobileOpen: SetState<boolean>
+	setProjectsObj: SetState<Projeto[]>
+	projectsObj: Projeto[]
 }
 
 export const ContextCreated = createContext<ContextType>(null)

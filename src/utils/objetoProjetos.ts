@@ -10,7 +10,7 @@ import {
 	sitePortfolioJulia
 } from "./images"
 
-const objetoProjetos: Projeto[] = [
+export const objetoProjetos: Projeto[] = [
 	{
 		nome: "Portfólio de UI/UX",
 		imagem: sitePortfolioJulia,
@@ -33,7 +33,7 @@ const objetoProjetos: Projeto[] = [
 		nome: "Portfólio Pessoal",
 		imagem: sitePessoalPortfolio,
 		descricao:
-			"Este projeto foi desenvolvido por mim com o objetivo de apresentar minhas habilidades e trabalhos no mundo da programação, em um site com design elegante e navegação intuitiva. A primeira versão foi criada em agosto de 2023, antes de eu adquirir minha primeira experiência profissional na área. Agora, cerca de um ano e meio depois, decidi revisitar o projeto para aprimorá-lo com os conhecimentos que adquiri ao longo desse tempo. ",
+			"Este projeto foi desenvolvido por mim com o objetivo de apresentar minhas habilidades e trabalhos no mundo da programação, em um site com design elegante e navegação intuitiva. A primeira versão foi criada em agosto de 2023, antes de eu adquirir minha primeira experiência profissional na área. Agora, cerca de um ano e meio depois, decidi revisitar o projeto para aprimorá-lo com os conhecimentos que adquiri ao longo desse tempo.",
 		link: "https://portfolio-luanpoppe-frontend.vercel.app/",
 		github: "https://github.com/luanpoppe/portfolio_luanpoppe",
 		habilidades: [
@@ -131,7 +131,7 @@ const objetoProjetos: Projeto[] = [
 	// }
 ]
 
-const objetoProjetosIngles: Projeto[] = [
+export const objetoProjetosIngles: Projeto[] = [
 	{
 		nome: "UI/UX Portfolio",
 		imagem: sitePortfolioJulia,
@@ -251,5 +251,3 @@ const objetoProjetosIngles: Projeto[] = [
 	// 	indexNumber: null
 	// }
 ]
-
-export { objetoProjetos, objetoProjetosIngles }
