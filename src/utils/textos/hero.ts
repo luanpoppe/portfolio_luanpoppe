@@ -14,8 +14,8 @@ export const heroTexts = {
 		}
 	],
 	secondaryText: {
-		ptbr: `Atualmente, sou responsável pelo desenvolvimento de testes automatizados na Raro Labs para o banco BMG e, na minha experiência anterior, trabalhei com Desenvolvimento Web Front-end. Além disso, sou co-fundador da empresa Vella, que visa entregar soluções customizadas com uso de inteligência artificial para diversas áreas.`,
-		en: "Currently, I am responsible for developing automated tests at Raro Labs for BMG Bank. In my previous experience, I worked focused on front-end web development, primarily using the Angular framework. Additionally, I'm co-founder of Vella, a company that aims to deliver personalized solutions using artificial intelligence across various fields."
+		ptbr: `Atualmente, atuo como desenvolvedor de software na Raro Labs, com foco na criação de testes automatizados para o banco BMG. Além dessa especialização, tenho experiência anterior no desenvolvimento web front-end, onde trabalhei principalmente com o framework Angular.`,
+		en: "Currently, I work as a software developer at Raro Labs, focusing on creating automated tests for the BMG bank. In addition to this specialization, I have prior experience in front-end web development, where I primarily worked with the Angular framework."
 	},
 	menores: {
 		curriculo: {

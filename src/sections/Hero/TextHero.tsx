@@ -7,7 +7,7 @@ export function HeroTitle({ activeLanguage }: PropActiveLanguage) {
 			{getTextLang(heroTexts.mainText[0], activeLanguage)}
 			<span className="color-purple">Poppe</span>
 			{getTextLang(heroTexts.mainText[1], activeLanguage)}
-			<span className="color-purple"> front-end</span>
+			<span className="color-purple">{`${activeLanguage == "portuguese" ? " de" : ""} software`}</span>
 			{getTextLang(heroTexts.mainText[2], activeLanguage)}
 		</h1>
 	)
