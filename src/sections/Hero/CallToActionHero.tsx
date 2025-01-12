@@ -13,7 +13,7 @@ export function CallToActionHero({ activeLanguage }: PropActiveLanguage) {
 	return (
 		<div className="container-acessar-curriculo mt-4 d-flex jcc flex-column flex-md-row w-100">
 			<AcessarCurriculoStyled
-				href="https://drive.google.com/file/d/1fd20PJj6w6JqNqwimLdGh7stiu9Q2yRR/view?usp=sharing"
+				href="https://drive.google.com/file/d/1-JKlDFYI2hG1M2gysKInJ1aKDGZPhnDa/view?usp=sharing"
 				target="_blank"
 			>
 				<p className="m-0">
