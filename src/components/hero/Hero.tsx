@@ -103,7 +103,7 @@ export function Hero() {
 
 					<a
 						href="#contato"
-						className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:border-accent/40 hover:text-accent"
+						className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:border-accent/40 hover:text-accent"
 					>
 						{getTextLang(heroTexts.actions.contact, activeLanguage)}
 						<ArrowUpRight className="h-4 w-4" />
@@ -117,7 +117,7 @@ export function Hero() {
 								target={href.startsWith("mailto:") ? undefined : "_blank"}
 								rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
 								aria-label={label}
-								className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white/60 text-muted-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+								className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card/60 text-muted-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
 							>
 								<Icon className="h-4 w-4" />
 							</a>
@@ -136,7 +136,7 @@ export function Hero() {
 								"radial-gradient(closest-side, color-mix(in oklab, var(--accent) 30%, transparent), transparent)"
 						}}
 					/>
-					<div className="group relative overflow-hidden rounded-[1.75rem] border border-border bg-white p-2 shadow-[0_30px_60px_-20px_rgba(76,29,149,0.25)]">
+					<div className="group relative overflow-hidden rounded-[1.75rem] border border-border bg-card p-2 shadow-[0_30px_60px_-20px_rgba(76,29,149,0.25)]">
 						<div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.25rem]">
 							<Image
 								src={fotoPerfilLuan}
@@ -147,7 +147,7 @@ export function Hero() {
 								priority
 							/>
 						</div>
-						<div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-border bg-white/80 px-4 py-2.5 backdrop-blur-xl">
+						<div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-border bg-card/80 px-4 py-2.5 backdrop-blur-xl">
 							<div>
 								<p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
 									{getTextLang(heroTexts.portraitOverlayLabel, activeLanguage)}

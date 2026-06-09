@@ -1,13 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, Moon, Sun, X } from "lucide-react"
 import { getTextLang } from "@/utils/textos/funcs"
 import { navbarTexts } from "@/utils/textos/navbar"
-import {
-	objetoProjetos,
-	objetoProjetosIngles
-} from "@/utils/objetoProjetos"
 import { useAppContext } from "@/utils/useContext"
 
 const FLAG_SRC = {
@@ -39,8 +35,9 @@ export function Header() {
 	const {
 		activeLanguage,
 		activeNavbar,
-		setActiveLanguage,
-		setProjectsObj,
+		activeTheme,
+		toggleLanguage,
+		toggleTheme,
 		setActiveNavbar
 	} = useAppContext()
 	const [mobileOpen, setMobileOpen] = useState(false)
@@ -74,19 +71,18 @@ export function Header() {
 		}
 	}, [mobileOpen])
 
-	function toggleLanguage() {
-		if (activeLanguage === "portuguese") {
-			setActiveLanguage("english")
-			setProjectsObj(objetoProjetosIngles)
-		} else {
-			setActiveLanguage("portuguese")
-			setProjectsObj(objetoProjetos)
-		}
-	}
+	const themeAriaLabel =
+		activeLanguage === "portuguese"
+			? activeTheme === "light"
+				? "Ativar modo escuro"
+				: "Ativar modo claro"
+			: activeTheme === "light"
+				? "Enable dark mode"
+				: "Enable light mode"
 
 	return (
 		<header className="fixed left-1/2 top-4 z-50 -translate-x-1/2 px-4">
-			<nav className="flex w-fit items-center gap-1.5 rounded-full border border-border/70 bg-white/75 px-2.5 py-2 shadow-[0_8px_30px_-12px_rgba(76,29,149,0.18)] backdrop-blur-xl">
+			<nav className="flex w-fit items-center gap-1.5 rounded-full border border-border/70 bg-card/75 px-2.5 py-2 shadow-[0_8px_30px_-12px_rgba(76,29,149,0.18)] backdrop-blur-xl">
 				<a
 					href="#home"
 					className="px-3 py-1.5 text-[13px] font-bold tracking-tight text-foreground"
@@ -123,12 +119,30 @@ export function Header() {
 
 				<div className="mx-1 hidden h-4 w-px bg-border md:block" />
 
-				<button
-					type="button"
-					onClick={toggleLanguage}
-					className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10px] font-bold tracking-widest text-muted-foreground transition-colors hover:bg-accent/10 hover:text-accent"
-					aria-label="Trocar idioma"
-				>
+				<div className="flex items-center gap-0.5">
+					<button
+						type="button"
+						onClick={toggleTheme}
+						className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label={themeAriaLabel}
+					>
+						{activeTheme === "light" ? (
+							<Moon className="h-3.5 w-3.5" />
+						) : (
+							<Sun className="h-3.5 w-3.5" />
+						)}
+					</button>
+
+					<button
+						type="button"
+						onClick={toggleLanguage}
+						className="inline-flex cursor-pointer items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10px] font-bold tracking-widest text-muted-foreground transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label={
+							activeLanguage === "portuguese"
+								? "Trocar idioma"
+								: "Switch language"
+						}
+					>
 					<img
 						src={FLAG_SRC[activeLanguage]}
 						alt=""
@@ -136,7 +150,8 @@ export function Header() {
 						className="h-3 w-4 rounded-[2px] object-cover"
 					/>
 					{activeLanguage === "portuguese" ? "PT" : "EN"}
-				</button>
+					</button>
+				</div>
 
 				<button
 					type="button"
@@ -149,7 +164,7 @@ export function Header() {
 			</nav>
 
 			{mobileOpen && (
-				<div className="mt-2 w-fit min-w-full rounded-2xl border border-border/70 bg-white/90 p-3 shadow-[0_8px_30px_-12px_rgba(76,29,149,0.18)] backdrop-blur-xl md:hidden">
+				<div className="mt-2 w-fit min-w-full rounded-2xl border border-border/70 bg-card/90 p-3 shadow-[0_8px_30px_-12px_rgba(76,29,149,0.18)] backdrop-blur-xl md:hidden">
 					<ul className="flex flex-col gap-1">
 						{NAV_ITEMS.map((item) => {
 							const isActive = activeNavbar === item.sectionId
