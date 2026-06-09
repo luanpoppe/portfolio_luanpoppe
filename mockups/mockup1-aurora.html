@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mockup 1 – Aurora (Glassmorphism) | Luan Poppe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --purple: #8b5cf6;
+      --purple-light: #a78bfa;
+      --purple-dark: #6d28d9;
+      --purple-glow: rgba(139, 92, 246, 0.3);
+      --text: #f1f0ff;
+      --text-muted: #94a3b8;
+      --glass-bg: rgba(255,255,255,0.04);
+      --glass-border: rgba(139, 92, 246, 0.2);
+      --glass-hover: rgba(139, 92, 246, 0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── BACKGROUND BLOBS ─── */
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.35;
+      animation: float 12s ease-in-out infinite;
+    }
+    .blob-1 { width: 600px; height: 600px; background: #6d28d9; top: -200px; left: -150px; animation-delay: 0s; }
+    .blob-2 { width: 500px; height: 500px; background: #4f46e5; top: 40%; right: -200px; animation-delay: -4s; }
+    .blob-3 { width: 400px; height: 400px; background: #7c3aed; bottom: -100px; left: 30%; animation-delay: -8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-40px) scale(1.05); }
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 15, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--purple-light); }
+    nav { display: flex; gap: 36px; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--purple-light); }
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 2px;
+      background: var(--purple-light);
+      border-radius: 2px;
+    }
+
+    /* ─── LAYOUT ─── */
+    main { position: relative; z-index: 1; }
+    section { padding: 120px 60px; max-width: 1200px; margin: 0 auto; }
+
+    /* ─── GLASS CARD ─── */
+    .glass {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .glass:hover {
+      background: var(--glass-hover);
+      border-color: rgba(139, 92, 246, 0.4);
+      transition: all 0.4s ease;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      padding-top: 100px;
+    }
+    .hero-image-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .hero-image-ring {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--purple-dark), var(--purple-light), transparent, var(--purple-dark));
+      padding: 3px;
+      animation: spin 8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hero-image-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #1c1c28;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      overflow: hidden;
+    }
+    .hero-image-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      filter: grayscale(30%);
+    }
+    .hero-glow {
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content { flex: 1; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      color: var(--purple-light);
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--purple-light), #c4b5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      box-shadow: 0 0 30px var(--purple-glow);
+    }
+    .btn-primary:hover {
+      background: var(--purple-light);
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px var(--purple-glow);
+    }
+
+    .social-row {
+      display: flex;
+      gap: 12px;
+    }
+    .social-btn {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .social-btn:hover {
+      background: var(--purple-glow);
+      border-color: var(--purple);
+      transform: translateY(-3px);
+    }
+
+    /* ─── SECTION TITLE ─── */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), transparent);
+      border-radius: 2px;
+      margin-bottom: 60px;
+    }
+
+    /* ─── SOBRE MIM ─── */
+    #sobre-mim .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text-blocks { display: flex; flex-direction: column; gap: 24px; }
+    .about-block {
+      padding: 28px;
+      border-radius: 20px;
+    }
+    .about-block p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-size: 0.97rem;
+    }
+    .about-image-card {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-image-placeholder {
+      font-size: 8rem;
+      opacity: 0.2;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .stat-card {
+      padding: 24px 20px;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple-light), #c4b5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ─── HABILIDADES ─── */
+    #habilidades .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px;
+    }
+    .skill-card {
+      padding: 28px 20px;
+      border-radius: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--purple-light);
+      box-shadow: 0 20px 40px rgba(139,92,246,0.2);
+    }
+    .skill-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .skill-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ─── PROJETOS ─── */
+    #projetos .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .project-card {
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(139,92,246,0.25);
+    }
+    .project-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #1a1a2e, #2d1b69);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(10,10,15,0.9));
+    }
+    .project-body { padding: 24px; }
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tag {
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: var(--purple-light);
+    }
+    .project-actions { display: flex; gap: 10px; }
+    .btn-sm {
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .btn-sm.outline {
+      border: 1px solid var(--glass-border);
+      color: var(--text);
+      background: transparent;
+    }
+    .btn-sm.outline:hover { border-color: var(--purple); color: var(--purple-light); }
+    .btn-sm.solid {
+      background: var(--purple);
+      color: white;
+      border: none;
+    }
+    .btn-sm.solid:hover { background: var(--purple-light); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 60px;
+      border-top: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    footer span { color: var(--purple-light); }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--purple-dark); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- Background Blobs -->
+<div class="bg-canvas">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="logo">&lt;Luan <span>Poppe</span> /&gt;</div>
+  <nav>
+    <a href="#hero" class="active">Home</a>
+    <a href="#sobre-mim">Sobre Mim</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+  </nav>
+  <div style="width:40px"></div>
+</header>
+
+<!-- ─── HERO ─── -->
+<main>
+<section id="hero">
+  <!-- Foto -->
+  <div class="hero-image-wrapper">
+    <div class="hero-glow"></div>
+    <div class="hero-image-ring">
+      <div class="hero-image-inner">
+        <span>👨‍💻</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <div class="hero-content">
+    <div class="hero-badge">Disponível para novas oportunidades</div>
+    <h1 class="hero-title">
+      Olá! Me chamo<br>
+      Luan <span class="highlight">Poppe.</span><br>
+      Desenvolvedor <span class="highlight">de Software.</span>
+    </h1>
+    <p class="hero-desc">
+      Atualmente atuando como desenvolvedor na Raro Labs, com foco em testes automatizados para o banco BMG. Experiência em desenvolvimento web front-end com Angular, React e TypeScript.
+    </p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">
+        📄 Currículo
+      </a>
+      <div class="social-row">
+        <div class="social-btn" title="WhatsApp">💬</div>
+        <div class="social-btn" title="GitHub">🐙</div>
+        <div class="social-btn" title="LinkedIn">💼</div>
+        <div class="social-btn" title="Gmail">✉️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOBRE MIM ─── -->
+<section id="sobre-mim">
+  <div class="section-label">// quem sou eu</div>
+  <h2 class="section-title">Sobre Mim</h2>
+  <div class="section-divider"></div>
+
+  <div class="about-grid">
+    <div>
+      <div class="about-text-blocks">
+        <div class="about-block glass">
+          <p>Graduado em medicina, comecei minha trajetória profissional atuando como médico, mas minha paixão pela programação surgiu ao buscar soluções tecnológicas para desafios diários da profissão. Iniciei meus estudos na área de tecnologia de forma autodidata e, desde então, estou sempre me aperfeiçoando.</p>
+        </div>
+        <div class="about-block glass">
+          <p>No momento, estou cursando o terceiro semestre de Análise e Desenvolvimento de Sistemas pela UniRuy, além de estar realizando o curso profissionalizante de Desenvolvimento Fullstack Python pela EBAC.</p>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card glass">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Anos de experiência</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Projetos entregues</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Tecnologias</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-image-card glass">
+      <div class="about-image-placeholder">💻</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HABILIDADES ─── -->
+<section id="habilidades">
+  <div class="section-label">// o que eu uso</div>
+  <h2 class="section-title">Habilidades</h2>
+  <div class="section-divider"></div>
+
+  <div class="skills-grid">
+    <div class="skill-card glass"><span class="skill-icon">🔶</span><span class="skill-name">HTML5</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🔵</span><span class="skill-name">CSS3</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🟡</span><span class="skill-name">JavaScript</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🔷</span><span class="skill-name">TypeScript</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🔴</span><span class="skill-name">Angular</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🟢</span><span class="skill-name">Django</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🌀</span><span class="skill-name">Django REST</span></div>
+    <div class="skill-card glass"><span class="skill-icon">⚛️</span><span class="skill-name">React</span></div>
+    <div class="skill-card glass"><span class="skill-icon">💜</span><span class="skill-name">Redux</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🐙</span><span class="skill-name">Git / GitHub</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🐍</span><span class="skill-name">Python</span></div>
+    <div class="skill-card glass"><span class="skill-icon">🎭</span><span class="skill-name">Playwright</span></div>
+  </div>
+</section>
+
+<!-- ─── PROJETOS ─── -->
+<section id="projetos">
+  <div class="section-label">// meu trabalho</div>
+  <h2 class="section-title">Projetos</h2>
+  <div class="section-divider"></div>
+
+  <div class="projects-grid">
+
+    <div class="project-card glass">
+      <div class="project-img" style="background: linear-gradient(135deg,#2d1b69,#4f46e5)">🎨</div>
+      <div class="project-body">
+        <div class="project-title">Portfólio de UI/UX</div>
+        <p class="project-desc">Portfólio desenvolvido para uma amiga em transição de carreira para a área de design.</p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Styled Components</span><span class="tag">Bootstrap</span>
+        </div>
+        <div class="project-actions">
+          <span class="btn-sm outline">Ver mais</span>
+          <span class="btn-sm solid">Acessar ↗</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card glass">
+      <div class="project-img" style="background: linear-gradient(135deg,#1a1a2e,#6d28d9)">👤</div>
+      <div class="project-body">
+        <div class="project-title">Portfólio Pessoal</div>
+        <p class="project-desc">Este projeto foi desenvolvido por mim com o objetivo de apresentar minhas habilidades e trabalhos.</p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Context API</span>
+        </div>
+        <div class="project-actions">
+          <span class="btn-sm outline">Ver mais</span>
+          <span class="btn-sm solid">Acessar ↗</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card glass">
+      <div class="project-img" style="background: linear-gradient(135deg,#065f46,#0d9488)">🎮</div>
+      <div class="project-body">
+        <div class="project-title">EPLAY</div>
+        <p class="project-desc">E-commerce de jogos desenvolvido ao longo dos últimos módulos do curso da EBAC.</p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Redux</span>
+        </div>
+        <div class="project-actions">
+          <span class="btn-sm outline">Ver mais</span>
+          <span class="btn-sm solid">Acessar ↗</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card glass">
+      <div class="project-img" style="background: linear-gradient(135deg,#1e3a5f,#1d4ed8)">🐙</div>
+      <div class="project-body">
+        <div class="project-title">Portfólio GitHub</div>
+        <p class="project-desc">Site desenvolvido seguindo o curso de front-end da EBAC para treinar consumo de API.</p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Ajax</span>
+        </div>
+        <div class="project-actions">
+          <span class="btn-sm outline">Ver mais</span>
+          <span class="btn-sm solid">Acessar ↗</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card glass">
+      <div class="project-img" style="background: linear-gradient(135deg,#292524,#57534e)">📢</div>
+      <div class="project-body">
+        <div class="project-title">Ebac Tech Talks</div>
+        <p class="project-desc">Landing page desenvolvida utilizando apenas HTML, CSS e Javascript com SASS.</p>
+        <div class="project-tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SASS</span>
+        </div>
+        <div class="project-actions">
+          <span class="btn-sm outline">Ver mais</span>
+          <span class="btn-sm solid">Acessar ↗</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card glass">
+      <div class="project-img" style="background: linear-gradient(135deg,#1e1b4b,#0ea5e9)">🎬</div>
+      <div class="project-body">
+        <div class="project-title">Clone da Disney Plus</div>
+        <p class="project-desc">Clone do site da Disney+ desenvolvido durante o curso de front-end da EBAC.</p>
+        <div class="project-tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">SASS</span>
+        </div>
+        <div class="project-actions">
+          <span class="btn-sm outline">Ver mais</span>
+          <span class="btn-sm solid">Acessar ↗</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  Desenvolvido por <span>Luan Poppe</span> — 2024 ✦ Todos os direitos reservados
+</footer>
+
+</body>
+</html>

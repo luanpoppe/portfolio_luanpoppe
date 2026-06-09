@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mockup 2 – Bold Editorial | Luan Poppe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --bg-2: #141414;
+      --purple: #9333ea;
+      --purple-light: #c084fc;
+      --purple-dim: rgba(147, 51, 234, 0.15);
+      --text: #fafafa;
+      --text-muted: #71717a;
+      --border: #262626;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 22px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--purple-light); }
+
+    nav { display: flex; gap: 8px; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    nav a:hover { color: var(--text); background: var(--bg-2); }
+    nav a.active { color: var(--text); background: var(--purple-dim); }
+
+    /* ─── LAYOUT ─── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 80px; }
+    section { padding: 120px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .hero-left { display: flex; flex-direction: column; justify-content: center; }
+
+    .hero-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--purple-light);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-number::after {
+      content: '';
+      height: 1px;
+      width: 60px;
+      background: var(--purple-light);
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -3px;
+      margin-bottom: 32px;
+    }
+    .hero-title .outline-text {
+      -webkit-text-stroke: 2px var(--purple-light);
+      color: transparent;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--purple-light);
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 48px;
+      border-left: 3px solid var(--purple);
+      padding-left: 20px;
+    }
+
+    .hero-cta { display: flex; gap: 16px; align-items: center; }
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--purple);
+      color: white;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+    .btn-hero-primary:hover { background: var(--purple-light); transform: translateX(4px); }
+
+    .hero-socials {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .hero-socials span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .social-link {
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .social-link:hover { border-color: var(--purple); background: var(--purple-dim); }
+
+    /* Hero Right – Imagem editorial */
+    .hero-right { position: relative; }
+    .hero-img-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-img-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(147,51,234,0.3));
+    }
+    .hero-img-emoji { font-size: 8rem; opacity: 0.3; }
+    .hero-img-label {
+      position: absolute;
+      bottom: 24px; left: 24px;
+      background: rgba(13,13,13,0.9);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+    }
+    .hero-img-label strong { color: var(--purple-light); display: block; font-weight: 700; }
+    .hero-img-label span { color: var(--text-muted); }
+
+    .hero-corner-tag {
+      position: absolute;
+      top: -16px; right: -16px;
+      width: 80px; height: 80px;
+      background: var(--purple);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.3;
+      transform: rotate(12deg);
+    }
+
+    /* ─── SECTION HEADER ─── */
+    .sec-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 70px;
+    }
+    .sec-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 6rem;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+      user-select: none;
+    }
+    .sec-title-wrap { display: flex; flex-direction: column; }
+    .sec-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 8px;
+    }
+    .sec-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    /* ─── SOBRE MIM ─── */
+    #sobre-mim .about-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-img-editorial {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      position: sticky;
+      top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      opacity: 0.4;
+    }
+    .about-content { display: flex; flex-direction: column; gap: 40px; }
+    .about-para {
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-para:last-child { border-bottom: none; }
+    .about-para-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--purple-light);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .about-para p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .edu-cards { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+    .edu-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      border-left: 3px solid var(--purple);
+      transition: border-color 0.2s;
+    }
+    .edu-card:hover { border-color: var(--purple-light); border-left-color: var(--purple-light); }
+    .edu-icon { font-size: 1.8rem; }
+    .edu-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 4px; }
+    .edu-detail { color: var(--text-muted); font-size: 0.82rem; }
+
+    /* ─── HABILIDADES ─── */
+    #habilidades .skills-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .skill-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: default;
+      transition: all 0.2s;
+    }
+    .skill-row:hover .skill-row-name { color: var(--purple-light); }
+    .skill-row:hover .skill-bar-fill { width: var(--target-width) !important; }
+    .skill-row-left { display: flex; align-items: center; gap: 20px; }
+    .skill-row-icon { font-size: 1.6rem; width: 40px; text-align: center; }
+    .skill-row-name { font-weight: 600; font-size: 1rem; transition: color 0.2s; }
+    .skill-row-cat { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .skill-bar {
+      width: 240px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--purple), var(--purple-light));
+      border-radius: 2px;
+      transition: width 0.8s ease;
+    }
+    .skill-pct { font-size: 0.8rem; color: var(--text-muted); min-width: 36px; text-align: right; }
+
+    /* ─── PROJETOS ─── */
+    #projetos .projects-list { display: flex; flex-direction: column; gap: 0; }
+    .proj-item {
+      display: grid;
+      grid-template-columns: 280px 1fr auto;
+      gap: 40px;
+      align-items: center;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .proj-item:hover .proj-title { color: var(--purple-light); }
+    .proj-item:hover .proj-thumb { border-color: var(--purple); }
+    .proj-thumb {
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      transition: border-color 0.2s;
+      overflow: hidden;
+    }
+    .proj-info { flex: 1; }
+    .proj-tags-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .proj-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      padding: 3px 10px;
+      background: var(--purple-dim);
+      border-radius: 4px;
+    }
+    .proj-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .proj-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+    .proj-arrow {
+      font-size: 2rem;
+      color: var(--border);
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    .proj-item:hover .proj-arrow { color: var(--purple-light); transform: translateX(8px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 40px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer .logo { font-family: 'Syne', sans-serif; font-size: 1rem; }
+    footer .logo span { color: var(--purple-light); }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--purple); }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="logo">&lt;Luan <span>Poppe</span> /&gt;</div>
+  <nav>
+    <a href="#hero" class="active">Home</a>
+    <a href="#sobre-mim">Sobre Mim</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+  </nav>
+  <div style="width: 40px"></div>
+</header>
+
+<!-- ─── HERO ─── -->
+<div class="container">
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-number">01 · Desenvolvedor de Software</div>
+    <h1 class="hero-title">
+      Luan<br>
+      <span class="outline-text">Poppe</span><br>
+      <em>Dev.</em>
+    </h1>
+    <p class="hero-desc">
+      Desenvolvedor com foco em front-end e automação de testes. Atua na Raro Labs com Angular, React e TypeScript para o banco BMG.
+    </p>
+    <div class="hero-cta" style="margin-bottom: 32px;">
+      <a href="#" class="btn-hero-primary">📄 Currículo →</a>
+    </div>
+    <div class="hero-socials">
+      <span>Contato</span>
+      <div class="social-link">💬</div>
+      <div class="social-link">🐙</div>
+      <div class="social-link">💼</div>
+      <div class="social-link">✉️</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-corner-tag">Open to Work</div>
+    <div class="hero-img-frame">
+      <div class="hero-img-emoji">👨‍💻</div>
+      <div class="hero-img-label">
+        <strong>Luan Poppe</strong>
+        <span>Desenvolvedor de Software</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOBRE MIM ─── -->
+<section id="sobre-mim">
+  <div class="sec-header">
+    <div class="sec-num">02</div>
+    <div class="sec-title-wrap">
+      <div class="sec-label">Trajetória</div>
+      <h2 class="sec-title">Sobre Mim</h2>
+    </div>
+  </div>
+
+  <div class="about-layout">
+    <div class="about-img-editorial">💻</div>
+    <div class="about-content">
+      <div class="about-para">
+        <div class="about-para-num">01 / Origem</div>
+        <p>Graduado em medicina, comecei minha trajetória profissional atuando como médico, mas minha paixão pela programação surgiu ao buscar soluções tecnológicas para desafios diários da profissão. Iniciei meus estudos na área de tecnologia de forma autodidata e, desde então, estou sempre me aperfeiçoando e buscando novos conhecimentos.</p>
+      </div>
+      <div class="about-para">
+        <div class="about-para-num">02 / Formação</div>
+        <p>No momento, estou cursando o terceiro semestre de Análise e Desenvolvimento de Sistemas pela UniRuy, além de estar realizando o curso profissionalizante de Desenvolvimento Fullstack Python pela EBAC.</p>
+        <div class="edu-cards">
+          <div class="edu-card">
+            <div class="edu-icon">🎓</div>
+            <div>
+              <div class="edu-name">Análise e Desenvolvimento de Sistemas</div>
+              <div class="edu-detail">UniRuy · 3º Semestre (em andamento)</div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon">💻</div>
+            <div>
+              <div class="edu-name">Desenvolvimento Fullstack Python</div>
+              <div class="edu-detail">EBAC · Curso Profissionalizante (em andamento)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-para">
+        <div class="about-para-num">03 / Atuação</div>
+        <p>Atualmente atuo como desenvolvedor de software na Raro Labs, com foco na criação de testes automatizados para o banco BMG. Além disso, tenho experiência anterior no desenvolvimento web front-end, principalmente com Angular.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HABILIDADES ─── -->
+<section id="habilidades">
+  <div class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-title-wrap">
+      <div class="sec-label">Stack Tecnológico</div>
+      <h2 class="sec-title">Habilidades</h2>
+    </div>
+  </div>
+
+  <div class="skills-layout">
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">🔶</div>
+        <div><div class="skill-row-name">HTML5</div><div class="skill-row-cat">Markup</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
+      <div class="skill-pct">92%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">🔵</div>
+        <div><div class="skill-row-name">CSS3 / SASS</div><div class="skill-row-cat">Estilização</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
+      <div class="skill-pct">88%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">🟡</div>
+        <div><div class="skill-row-name">JavaScript</div><div class="skill-row-cat">Linguagem</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+      <div class="skill-pct">85%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">🔷</div>
+        <div><div class="skill-row-name">TypeScript</div><div class="skill-row-cat">Linguagem</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
+      <div class="skill-pct">82%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">⚛️</div>
+        <div><div class="skill-row-name">React / Redux</div><div class="skill-row-cat">Framework</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+      <div class="skill-pct">80%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">🔴</div>
+        <div><div class="skill-row-name">Angular</div><div class="skill-row-cat">Framework</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div>
+      <div class="skill-pct">78%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">🟢</div>
+        <div><div class="skill-row-name">Django / Django REST</div><div class="skill-row-cat">Back-end</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+      <div class="skill-pct">70%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-row-left">
+        <div class="skill-row-icon">🎭</div>
+        <div><div class="skill-row-name">Playwright</div><div class="skill-row-cat">Automação de Testes</div></div>
+      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+      <div class="skill-pct">75%</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJETOS ─── -->
+<section id="projetos">
+  <div class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-title-wrap">
+      <div class="sec-label">Trabalhos</div>
+      <h2 class="sec-title">Projetos</h2>
+    </div>
+  </div>
+
+  <div class="projects-list">
+    <div class="proj-item">
+      <div class="proj-thumb" style="background: linear-gradient(135deg,#2d1b69,#4f46e5)">🎨</div>
+      <div class="proj-info">
+        <div class="proj-tags-row"><span class="proj-tag">React</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Bootstrap</span></div>
+        <div class="proj-title">Portfólio de UI/UX</div>
+        <div class="proj-desc">Portfólio desenvolvido para uma amiga em transição de carreira para a área de design.</div>
+      </div>
+      <div class="proj-arrow">→</div>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-thumb" style="background: linear-gradient(135deg,#1a1a2e,#6d28d9)">👤</div>
+      <div class="proj-info">
+        <div class="proj-tags-row"><span class="proj-tag">React</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Context API</span></div>
+        <div class="proj-title">Portfólio Pessoal</div>
+        <div class="proj-desc">Portfólio para apresentar minhas habilidades e trabalhos de forma profissional.</div>
+      </div>
+      <div class="proj-arrow">→</div>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-thumb" style="background: linear-gradient(135deg,#065f46,#0d9488)">🎮</div>
+      <div class="proj-info">
+        <div class="proj-tags-row"><span class="proj-tag">React</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Redux</span></div>
+        <div class="proj-title">EPLAY</div>
+        <div class="proj-desc">E-commerce de jogos desenvolvido ao longo dos últimos módulos do curso da EBAC.</div>
+      </div>
+      <div class="proj-arrow">→</div>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-thumb" style="background: linear-gradient(135deg,#1e3a5f,#1d4ed8)">🐙</div>
+      <div class="proj-info">
+        <div class="proj-tags-row"><span class="proj-tag">React</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Ajax</span></div>
+        <div class="proj-title">Portfólio GitHub</div>
+        <div class="proj-desc">Site para treinar consumo de API do GitHub, desenvolvido no curso da EBAC.</div>
+      </div>
+      <div class="proj-arrow">→</div>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-thumb" style="background: linear-gradient(135deg,#292524,#78716c)">📢</div>
+      <div class="proj-info">
+        <div class="proj-tags-row"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">SASS</span></div>
+        <div class="proj-title">Ebac Tech Talks</div>
+        <div class="proj-desc">Landing page desenvolvida utilizando apenas HTML, CSS e Javascript com SASS.</div>
+      </div>
+      <div class="proj-arrow">→</div>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-thumb" style="background: linear-gradient(135deg,#1e1b4b,#0ea5e9)">🎬</div>
+      <div class="proj-info">
+        <div class="proj-tags-row"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">Bootstrap</span></div>
+        <div class="proj-title">Clone da Disney Plus</div>
+        <div class="proj-desc">Clone do site da Disney+ desenvolvido durante o curso de front-end da EBAC.</div>
+      </div>
+      <div class="proj-arrow">→</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="logo">&lt;Luan <span>Poppe</span> /&gt;</div>
+  <span>© 2024 · Todos os direitos reservados</span>
+  <div style="display:flex;gap:12px">
+    <div class="social-link">💬</div>
+    <div class="social-link">🐙</div>
+    <div class="social-link">💼</div>
+    <div class="social-link">✉️</div>
+  </div>
+</footer>
+
+</body>
+</html>
