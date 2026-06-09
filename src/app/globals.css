@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
@@ -62,6 +64,34 @@
 	--border: oklch(0.21 0.05 295 / 0.08);
 	--input: oklch(0.21 0.05 295 / 0.1);
 	--ring: oklch(0.48 0.21 295 / 0.5);
+}
+
+.dark {
+	--background: oklch(0.16 0.04 295);
+	--foreground: oklch(0.95 0.01 295);
+
+	--card: oklch(0.21 0.05 295);
+	--card-foreground: oklch(0.95 0.01 295);
+	--popover: oklch(0.21 0.05 295);
+	--popover-foreground: oklch(0.95 0.01 295);
+
+	--primary: oklch(0.68 0.17 295);
+	--primary-foreground: oklch(0.16 0.04 295);
+	--accent: oklch(0.68 0.17 295);
+	--accent-foreground: oklch(0.16 0.04 295);
+
+	--secondary: oklch(0.24 0.05 295);
+	--secondary-foreground: oklch(0.95 0.01 295);
+
+	--muted: oklch(0.24 0.04 295);
+	--muted-foreground: oklch(0.68 0.04 295);
+
+	--destructive: oklch(0.65 0.2 27);
+	--destructive-foreground: oklch(0.95 0.01 295);
+
+	--border: oklch(0.95 0.01 295 / 0.1);
+	--input: oklch(0.95 0.01 295 / 0.12);
+	--ring: oklch(0.68 0.17 295 / 0.45);
 }
 
 @keyframes reveal-up {

@@ -1,5 +1,7 @@
 declare type ActiveLanguage = "english" | "portuguese"
 
+declare type ActiveTheme = "light" | "dark"
+
 declare type ActiveNavbar =
 	| "home"
 	| "hero"
