@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect } from "react"
 import Image from "next/image"
 import { ArrowUpRight, Download } from "lucide-react"
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa"
@@ -8,6 +7,7 @@ import { HiOutlineMail } from "react-icons/hi"
 import { getTextLang } from "@/utils/textos/funcs"
 import { heroTexts } from "@/utils/textos/hero"
 import { useAppContext } from "@/utils/useContext"
+import { useRevealOnScroll } from "@/utils/useRevealOnScroll"
 import fotoPerfilLuan from "@/images/foto_perfil_luan.jpg"
 import { HeroRoleText } from "./HeroRoleText"
 
@@ -39,24 +39,7 @@ const SOCIAL_LINKS = [
 
 export function Hero() {
 	const { activeLanguage } = useAppContext()
-
-	useEffect(() => {
-		const elements = document.querySelectorAll<HTMLElement>("[data-reveal]")
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("animate-reveal")
-						observer.unobserve(entry.target)
-					}
-				})
-			},
-			{ threshold: 0.12 }
-		)
-
-		elements.forEach((el) => observer.observe(el))
-		return () => observer.disconnect()
-	}, [])
+	useRevealOnScroll()
 
 	return (
 		<section
