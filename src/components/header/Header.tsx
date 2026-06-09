@@ -5,6 +5,7 @@ import { Menu, Moon, Sun, X } from "lucide-react"
 import { getTextLang } from "@/utils/textos/funcs"
 import { navbarTexts } from "@/utils/textos/navbar"
 import { useAppContext } from "@/utils/useContext"
+import { HeaderLogo } from "./HeaderLogo"
 
 const FLAG_SRC = {
 	portuguese:
@@ -83,13 +84,7 @@ export function Header() {
 	return (
 		<header className="fixed left-1/2 top-4 z-50 -translate-x-1/2 px-4">
 			<nav className="flex w-fit items-center gap-1.5 rounded-full border border-border/70 bg-card/75 px-2.5 py-2 shadow-[0_8px_30px_-12px_rgba(76,29,149,0.18)] backdrop-blur-xl">
-				<a
-					href="#home"
-					className="px-3 py-1.5 text-[13px] font-bold tracking-tight text-foreground"
-					onClick={() => setMobileOpen(false)}
-				>
-					Luan <span className="text-accent">Poppe</span>
-				</a>
+				<HeaderLogo onClick={() => setMobileOpen(false)} />
 
 				<div className="mx-1 hidden h-4 w-px bg-border md:block" />
 
