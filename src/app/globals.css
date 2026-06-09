@@ -67,31 +67,33 @@
 }
 
 .dark {
-	--background: oklch(0.16 0.04 295);
-	--foreground: oklch(0.95 0.01 295);
+	/* Base neutra — cinza-escuro suave, sem dominância roxa */
+	--background: oklch(0.19 0.006 280);
+	--foreground: oklch(0.93 0.006 280);
 
-	--card: oklch(0.21 0.05 295);
-	--card-foreground: oklch(0.95 0.01 295);
-	--popover: oklch(0.21 0.05 295);
-	--popover-foreground: oklch(0.95 0.01 295);
+	--card: oklch(0.23 0.008 280);
+	--card-foreground: oklch(0.93 0.006 280);
+	--popover: oklch(0.23 0.008 280);
+	--popover-foreground: oklch(0.93 0.006 280);
 
-	--primary: oklch(0.68 0.17 295);
-	--primary-foreground: oklch(0.16 0.04 295);
-	--accent: oklch(0.68 0.17 295);
-	--accent-foreground: oklch(0.16 0.04 295);
+	/* Roxo reservado para destaques e interações */
+	--primary: oklch(0.64 0.13 295);
+	--primary-foreground: oklch(0.98 0.005 295);
+	--accent: oklch(0.64 0.13 295);
+	--accent-foreground: oklch(0.98 0.005 295);
 
-	--secondary: oklch(0.24 0.05 295);
-	--secondary-foreground: oklch(0.95 0.01 295);
+	--secondary: oklch(0.27 0.008 280);
+	--secondary-foreground: oklch(0.93 0.006 280);
 
-	--muted: oklch(0.24 0.04 295);
-	--muted-foreground: oklch(0.68 0.04 295);
+	--muted: oklch(0.27 0.008 280);
+	--muted-foreground: oklch(0.62 0.012 280);
 
-	--destructive: oklch(0.65 0.2 27);
-	--destructive-foreground: oklch(0.95 0.01 295);
+	--destructive: oklch(0.62 0.18 27);
+	--destructive-foreground: oklch(0.98 0.005 280);
 
-	--border: oklch(0.95 0.01 295 / 0.1);
-	--input: oklch(0.95 0.01 295 / 0.12);
-	--ring: oklch(0.68 0.17 295 / 0.45);
+	--border: oklch(0.93 0.006 280 / 0.09);
+	--input: oklch(0.93 0.006 280 / 0.11);
+	--ring: oklch(0.64 0.13 295 / 0.35);
 }
 
 @keyframes reveal-up {
@@ -107,6 +109,19 @@
 
 @utility animate-reveal {
 	animation: reveal-up 0.8s var(--ease-out-expo) both;
+}
+
+@keyframes sweep {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(400%);
+	}
+}
+
+@utility animate-sweep {
+	animation: sweep 3s ease-in-out infinite;
 }
 
 @keyframes hero-underline-color {
@@ -128,6 +143,20 @@
 	text-decoration-skip-ink: none;
 	text-decoration-color: var(--accent);
 	animation: hero-underline-color 4.5s ease-in-out infinite;
+}
+
+@keyframes hero-underline-color-dark {
+	0%,
+	100% {
+		text-decoration-color: var(--accent);
+	}
+	50% {
+		text-decoration-color: oklch(0.74 0.1 295);
+	}
+}
+
+.dark .hero-role-highlight {
+	animation-name: hero-underline-color-dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -157,5 +186,14 @@
 	::selection {
 		background-color: color-mix(in oklab, var(--accent) 18%, transparent);
 		color: var(--accent);
+	}
+
+	.dark ::selection {
+		background-color: color-mix(in oklab, var(--accent) 24%, transparent);
+		color: oklch(0.82 0.1 295);
+	}
+
+	.dark .page-glow {
+		opacity: 0.28;
 	}
 }
