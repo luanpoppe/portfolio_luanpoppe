@@ -3,6 +3,7 @@ import { Contact } from "@/components/contact/Contact"
 import { Footer } from "@/components/footer/Footer"
 import { Header } from "@/components/header/Header"
 import { Hero } from "@/components/hero/Hero"
+import { RevealOnScroll } from "@/components/RevealOnScroll"
 import { SectionDivider } from "@/components/SectionDivider"
 import { Projects } from "@/components/projects/Projects"
 import { Skills } from "@/components/skills/Skills"
@@ -28,6 +29,7 @@ export default function HomePage() {
 			/>
 
 			<Header />
+			<RevealOnScroll />
 
 			<main className="mx-auto max-w-6xl px-6 pt-32 md:pt-36">
 				<Hero />

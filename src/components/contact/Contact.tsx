@@ -3,11 +3,9 @@
 import { getTextLang } from "@/utils/textos/funcs"
 import { contactLinks, contactTexts } from "@/utils/textos/contact"
 import { useAppContext } from "@/utils/useContext"
-import { useRevealOnScroll } from "@/utils/useRevealOnScroll"
 
 export function Contact() {
 	const { activeLanguage } = useAppContext()
-	useRevealOnScroll()
 
 	return (
 		<section id="contato" className="py-24 md:py-32" data-reveal>

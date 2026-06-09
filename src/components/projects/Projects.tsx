@@ -6,12 +6,10 @@ import {
 	projectsTexts
 } from "@/utils/textos/projects"
 import { useAppContext } from "@/utils/useContext"
-import { useRevealOnScroll } from "@/utils/useRevealOnScroll"
 import { ProjectCard } from "./ProjectCard"
 
 export function Projects() {
 	const { activeLanguage, projectsObj } = useAppContext()
-	useRevealOnScroll()
 
 	const orderedProjects = projectsDisplayOrder
 		.map((github) => projectsObj.find((projeto) => projeto.github === github))

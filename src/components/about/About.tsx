@@ -3,11 +3,9 @@
 import { getTextLang } from "@/utils/textos/funcs"
 import { aboutMeTexts } from "@/utils/textos/aboutMe"
 import { useAppContext } from "@/utils/useContext"
-import { useRevealOnScroll } from "@/utils/useRevealOnScroll"
 
 export function About() {
 	const { activeLanguage } = useAppContext()
-	useRevealOnScroll()
 
 	return (
 		<section id="sobre-mim" className="py-24 md:py-32">

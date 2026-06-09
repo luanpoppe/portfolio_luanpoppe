@@ -4,11 +4,9 @@ import Image from "next/image"
 import { getTextLang } from "@/utils/textos/funcs"
 import { skillsList, skillsTexts } from "@/utils/textos/skills"
 import { useAppContext } from "@/utils/useContext"
-import { useRevealOnScroll } from "@/utils/useRevealOnScroll"
 
 export function Skills() {
 	const { activeLanguage } = useAppContext()
-	useRevealOnScroll()
 
 	return (
 		<section id="habilidades" className="py-24 md:py-32">

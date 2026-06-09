@@ -96,20 +96,6 @@
 	--ring: oklch(0.64 0.13 295 / 0.35);
 }
 
-@keyframes reveal-up {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-@utility animate-reveal {
-	animation: reveal-up 0.8s var(--ease-out-expo) both;
-}
 
 @keyframes sweep {
 	from {
@@ -195,5 +181,26 @@
 
 	.dark .page-glow {
 		opacity: 0.28;
+	}
+
+	[data-reveal] {
+		opacity: 0;
+		transform: translateY(24px);
+		transition:
+			opacity 2s var(--ease-out-expo),
+			transform 2s var(--ease-out-expo);
+	}
+
+	[data-reveal].animate-reveal {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		[data-reveal] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
 	}
 }
