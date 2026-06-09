@@ -3,7 +3,7 @@ import { ContextCreated } from "./utils/useContext"
 import { objetoProjetos } from "./utils/objetoProjetos"
 
 export function AppContext({ children }: React.PropsWithChildren) {
-	const [activeNavbar, setActiveNavbar] = useState<ActiveNavbar>("hero")
+	const [activeNavbar, setActiveNavbar] = useState<ActiveNavbar>("home")
 	const [activeLanguage, setActiveLanguage] =
 		useState<ActiveLanguage>("portuguese")
 	const [isNavbarMobileOpen, setIsNavbarMobileOpen] = useState<boolean>(false)

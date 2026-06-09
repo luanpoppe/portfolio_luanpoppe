@@ -3,6 +3,10 @@ export const navbarTexts = {
 		ptbr: "Home",
 		en: "Home"
 	},
+	servicos: {
+		ptbr: "Serviços",
+		en: "Services"
+	},
 	sobreMim: {
 		ptbr: "Sobre Mim",
 		en: "About Me"
@@ -14,5 +18,13 @@ export const navbarTexts = {
 	projetos: {
 		ptbr: "Projetos",
 		en: "Projects"
+	},
+	contato: {
+		ptbr: "Contato",
+		en: "Contact"
+	},
+	contratar: {
+		ptbr: "Contratar",
+		en: "Hire me"
 	}
 }

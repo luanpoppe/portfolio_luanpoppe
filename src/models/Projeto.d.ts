@@ -1,6 +1,6 @@
 declare type Projeto = {
 	nome: string
-	imagem: string
+	imagem: string | import("next/image").StaticImageData
 	descricao: string
 	link: string
 	github: string
