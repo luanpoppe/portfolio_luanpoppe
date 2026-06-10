@@ -110,6 +110,20 @@
 	animation: sweep 3s ease-in-out infinite;
 }
 
+@keyframes float-soft {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+@utility animate-float-soft {
+	animation: float-soft 5s ease-in-out infinite;
+}
+
 @property --hero-accent-anim {
 	syntax: "<color>";
 	inherits: true;
@@ -380,5 +394,26 @@
 			transform: none;
 			transition: none;
 		}
+	}
+
+	.grain {
+		background-image: radial-gradient(
+			oklch(0.48 0.21 295 / 0.06) 1px,
+			transparent 1px
+		);
+		background-size: 22px 22px;
+	}
+
+	.pop-shadow {
+		box-shadow:
+			0 1px 0 oklch(0.48 0.21 295 / 0.05),
+			0 30px 60px -30px oklch(0.48 0.21 295 / 0.18);
+	}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.animate-float-soft {
+		animation: none !important;
 	}
 }
