@@ -1,4 +1,50 @@
 export const heroTexts = {
+	badge: {
+		ptbr: "Disponível para conversar",
+		en: "Available to chat"
+	},
+	headlineBefore: {
+		ptbr: "Olá! Me chamo Luan ",
+		en: "Hello! My name is Luan "
+	},
+	headlineAccent: {
+		ptbr: "Poppe",
+		en: "Poppe"
+	},
+	headlineAfterPrefix: {
+		ptbr: "Atuo como ",
+		en: "I work as a "
+	},
+	headlineRole: {
+		ptbr: "desenvolvedor de software",
+		en: "software developer"
+	},
+	secondaryText: {
+		ptbr: "Desenvolvedor de Software com forte atuação no ecossistema JavaScript/TypeScript. Especialista em construir APIs de alta performance (Node.js, NestJS) e soluções baseadas em Inteligência Artificial (RAG, Agentes). No Front-end, crio interfaces dinâmicas com React e Angular.",
+		en: "Software Developer with strong expertise in the JavaScript/TypeScript ecosystem. Specialist in building high-performance APIs (Node.js, NestJS) and Artificial Intelligence solutions (RAG, Agents). On the Front-end, I create dynamic interfaces with React and Angular."
+	},
+	portraitOverlayLabel: {
+		ptbr: "Atualmente",
+		en: "Currently"
+	},
+	portraitOverlayRole: {
+		ptbr: "Loomi",
+		en: "Loomi"
+	},
+	portraitOverlayBadge: {
+		ptbr: "Backend · IA · Fullstack",
+		en: "Backend · AI · Fullstack"
+	},
+	actions: {
+		resume: {
+			ptbr: "Currículo",
+			en: "Resume"
+		},
+		contact: {
+			ptbr: "Entre em contato",
+			en: "Get in touch"
+		}
+	},
 	mainText: [
 		{
 			ptbr: "Olá! Me chamo Luan ",
@@ -13,10 +59,6 @@ export const heroTexts = {
 			en: " developer."
 		}
 	],
-	secondaryText: {
-		ptbr: `Atualmente, atuo como desenvolvedor de software na Raro Labs, com foco na criação de testes automatizados para o banco BMG. Além dessa especialização, tenho experiência anterior no desenvolvimento web front-end, onde trabalhei principalmente com o framework Angular.`,
-		en: "Currently, I work as a software developer at Raro Labs, focusing on creating automated tests for the BMG bank. In addition to this specialization, I have prior experience in front-end web development, where I primarily worked with the Angular framework."
-	},
 	menores: {
 		curriculo: {
 			ptbr: "Currículo",

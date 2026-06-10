@@ -22,5 +22,11 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/app",
+    "src/components/header",
+    "src/components/hero",
+    "src/lib"
+  ]
 }

@@ -12,16 +12,11 @@ import gameShop from "../images/projetos/games_shop.png"
 import sitePessoalPortfolio from "../images/projetos/site_portfolio_pessoal.png"
 import sitePortfolioJulia from "../images/projetos/site_portfolio_julia.png"
 
-import htmlIcon from "../images/icons/html.png"
-import cssIcon from "../images/icons/css.png"
 import javascriptIcon from "../images/icons/javascript.png"
 import typescriptIcon from "../images/icons/typescript.png"
-import sassIcon from "../images/icons/sass.png"
-import lessIcon from "../images/icons/less.png"
 import reactIcon from "../images/icons/react.png"
 import reduxIcon from "../images/icons/redux.png"
 import nodejsIcon from "../images/icons/nodejs.png"
-import bootstrapIcon from "../images/icons/bootstrap.png"
 import gitIcon from "../images/icons/git.png"
 import pythonIcon from "../images/icons/python.png"
 import githubIcon from "../images/icons/github.png"
@@ -31,7 +26,23 @@ import gmailIcon from "../images/icons/gmail.png"
 import angualrIcon from "../images/icons/angular.png"
 import jestIcon from "../images/icons/jest.svg"
 import djangoIcon from "../images/icons/django.svg"
-import djangoRestIcon from "../images/icons/Django REST.svg"
+import langchainIcon from "../images/icons/langchain.svg"
+import langgraphIcon from "../images/icons/langgraph.png"
+import ollamaIcon from "../images/icons/ollama.svg"
+import cursorIcon from "../images/icons/cursor.svg"
+import claudeCodeIcon from "../images/icons/claude-code.svg"
+import nextjsIcon from "../images/icons/nextjs.webp"
+import tailwindIcon from "../images/icons/tailwind.svg"
+import shadcnIcon from "../images/icons/shadcn.png"
+import vitestIcon from "../images/icons/vitest.svg"
+import nestjsIcon from "../images/icons/nestjs.svg"
+import zodIcon from "../images/icons/zod.png"
+import redisIcon from "../images/icons/redis.svg"
+import fastifyIcon from "../images/icons/fastify.svg"
+import expressIcon from "../images/icons/express.png"
+import dockerIcon from "../images/icons/docker.png"
+import bullmqIcon from "../images/icons/bullmq.png"
+import postgresIcon from "../images/icons/postgres.png"
 
 export { fotoPerfilLuan, imagemSecaoSobreMim, closeButton }
 export { githubIcon, gmailIcon, linkedinIcon }
@@ -45,22 +56,33 @@ export {
 	gameShop
 }
 export {
-	htmlIcon,
-	cssIcon,
 	javascriptIcon,
-	lessIcon,
-	sassIcon,
 	typescriptIcon,
 	reactIcon,
 	reduxIcon,
-	bootstrapIcon,
 	gitIcon,
 	nodejsIcon,
 	pythonIcon,
 	angualrIcon,
 	jestIcon,
 	djangoIcon,
-	djangoRestIcon,
+	langchainIcon,
+	langgraphIcon,
+	ollamaIcon,
+	cursorIcon,
+	claudeCodeIcon,
+	nextjsIcon,
+	tailwindIcon,
+	shadcnIcon,
+	vitestIcon,
+	nestjsIcon,
+	zodIcon,
+	redisIcon,
+	fastifyIcon,
+	expressIcon,
+	dockerIcon,
+	bullmqIcon,
+	postgresIcon,
 	sitePessoalPortfolio,
 	sitePortfolioJulia
 }

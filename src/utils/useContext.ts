@@ -5,6 +5,9 @@ type ContextType = {
 	setActiveNavbar: SetState<ActiveNavbar>
 	activeLanguage: ActiveLanguage
 	setActiveLanguage: SetState<ActiveLanguage>
+	toggleLanguage: () => void
+	activeTheme: ActiveTheme
+	toggleTheme: () => void
 	isNavbarMobileOpen: boolean
 	setIsNavbarMobileOpen: SetState<boolean>
 	setProjectsObj: SetState<Projeto[]>

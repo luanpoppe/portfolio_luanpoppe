@@ -2,6 +2,11 @@ type Props = {
 	projeto: Projeto
 	isInModal?: boolean
 }
+
+function getImageSrc(imagem: Projeto["imagem"]) {
+	return typeof imagem === "string" ? imagem : imagem.src
+}
+
 export function ImagemProjeto({ projeto, isInModal }: Props) {
 	return (
 		<a
@@ -12,7 +17,7 @@ export function ImagemProjeto({ projeto, isInModal }: Props) {
 		>
 			<img
 				className="imagem-projeto w-100"
-				src={projeto?.imagem}
+				src={getImageSrc(projeto?.imagem)}
 				alt={projeto?.nome}
 			/>
 		</a>

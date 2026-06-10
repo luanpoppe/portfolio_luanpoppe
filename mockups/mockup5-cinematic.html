@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mockup 5 – Cinematic | Luan Poppe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #030308;
+      --bg-soft: #0a0a12;
+      --text: #e8e4df;
+      --text-dim: rgba(232, 228, 223, 0.45);
+      --purple: #9333ea;
+      --purple-glow: #a855f7;
+      --purple-soft: rgba(147, 51, 234, 0.35);
+      --line: rgba(255, 255, 255, 0.08);
+      --display: 'Syncopate', sans-serif;
+      --body: 'Outfit', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--body);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 28px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      pointer-events: none;
+    }
+    header > * { pointer-events: auto; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .brand-lines span {
+      display: block;
+      height: 1px;
+      background: var(--line);
+    }
+    .brand-lines span:nth-child(1) { width: 28px; }
+    .brand-lines span:nth-child(2) { width: 18px; }
+    .brand-name {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      line-height: 1.6;
+    }
+    .brand-name em {
+      font-style: normal;
+      color: var(--purple-glow);
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+    }
+    nav a {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--text); }
+
+    .header-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .pill-btn {
+      font-family: var(--body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 10px 22px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .pill-btn:hover {
+      color: var(--text);
+      border-color: rgba(255,255,255,0.25);
+    }
+    .pill-btn.accent {
+      border-color: rgba(168, 85, 247, 0.4);
+      color: var(--purple-glow);
+    }
+    .pill-btn.accent:hover {
+      background: rgba(168, 85, 247, 0.1);
+      border-color: var(--purple-glow);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 120px 48px 80px;
+    }
+
+    /* Círculos concêntricos */
+    .hero-rings {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(90vw, 900px);
+      aspect-ratio: 1;
+      pointer-events: none;
+    }
+    .hero-rings svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.35;
+    }
+
+    /* Esfera central */
+    .hero-orb-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -42%);
+      width: min(52vw, 480px);
+      aspect-ratio: 1;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-orb {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(216, 180, 254, 0.9) 0%, transparent 35%),
+        radial-gradient(circle at 65% 55%, rgba(124, 58, 237, 0.8) 0%, transparent 40%),
+        radial-gradient(circle at 50% 70%, rgba(30, 27, 75, 0.9) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.5) 0%, transparent 30%),
+        radial-gradient(ellipse at 50% 50%, #1a0a2e 0%, #030308 70%);
+      box-shadow:
+        0 0 80px rgba(168, 85, 247, 0.25),
+        0 0 160px rgba(124, 58, 237, 0.15),
+        inset 0 0 60px rgba(0,0,0,0.5);
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50% { transform: scale(1.02) translateY(-12px); }
+    }
+    .hero-orb::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 1px solid rgba(168, 85, 247, 0.15);
+    }
+
+    /* Texto borrado nas laterais */
+    .hero-blur-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.12;
+      filter: blur(6px);
+      white-space: nowrap;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-blur-text.left { left: -2%; }
+    .hero-blur-text.right { right: -2%; text-align: right; }
+
+    /* Tipografia principal */
+    .hero-headline {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      max-width: 1100px;
+      margin-bottom: 48px;
+    }
+    .hero-headline h1 {
+      font-family: var(--display);
+      font-size: clamp(1.6rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.35;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .hero-headline h1 .dim {
+      color: var(--text-dim);
+    }
+    .hero-headline h1 .behind {
+      position: relative;
+      z-index: -1;
+    }
+
+    .hero-sub {
+      position: relative;
+      z-index: 5;
+      max-width: 520px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+      margin-bottom: 56px;
+    }
+
+    .hero-author {
+      position: absolute;
+      bottom: 48px;
+      left: 48px;
+      z-index: 5;
+    }
+    .hero-author-name {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .hero-author-role {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--purple-glow);
+      margin-top: 8px;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 48px;
+      right: 48px;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-dim);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--purple-glow), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* Split statement */
+    .statement {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 20px;
+      pointer-events: none;
+    }
+    .statement span {
+      font-family: var(--display);
+      font-size: clamp(0.9rem, 1.8vw, 1.4rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      max-width: 200px;
+      line-height: 1.4;
+    }
+    .statement .right { text-align: right; color: var(--purple-glow); opacity: 0.7; }
+
+    /* ─── SEÇÃO CINEMÁTICA ─── */
+    .cine-section {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 48px;
+      overflow: hidden;
+    }
+    .cine-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, var(--bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%),
+        radial-gradient(ellipse at 50% 80%, rgba(88, 28, 135, 0.25) 0%, transparent 60%),
+        linear-gradient(160deg, #0a0618 0%, #030308 50%, #0d0820 100%);
+    }
+    .cine-bg.mountains {
+      background:
+        linear-gradient(to bottom, var(--bg) 0%, rgba(3,3,8,0.4) 35%, rgba(3,3,8,0.85) 75%, var(--bg) 100%),
+        radial-gradient(ellipse at 50% 100%, rgba(60, 30, 100, 0.4) 0%, transparent 50%),
+        linear-gradient(180deg, #030308 0%, #12082a 40%, #1a1035 70%, #0a0618 100%);
+    }
+    .cine-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .cine-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+    }
+    .cine-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--purple-glow);
+      margin-bottom: 32px;
+    }
+    .cine-title {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1.45;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .cine-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ─── SOBRE MIM ─── */
+    #sobre-mim {
+      padding: 140px 48px;
+      position: relative;
+    }
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .about-left .big-statement {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      line-height: 1.15;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+    .about-left .big-statement span {
+      display: block;
+      color: var(--text-dim);
+    }
+    .about-left .big-statement em {
+      font-style: normal;
+      color: var(--purple-glow);
+    }
+
+    .about-para {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .about-right {
+      position: relative;
+    }
+    .about-image-frame {
+      aspect-ratio: 3/4;
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(160deg, #1a1030, #0a0618);
+      border: 1px solid var(--line);
+    }
+    .about-image-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg) 0%, transparent 40%);
+      z-index: 1;
+    }
+    .about-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      opacity: 0.25;
+    }
+    .about-image-caption {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      z-index: 2;
+    }
+    .about-image-caption strong {
+      font-family: var(--display);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .about-image-caption span {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+    }
+
+    .edu-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      margin-top: 40px;
+      border-top: 1px solid var(--line);
+    }
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding-left 0.3s;
+    }
+    .edu-item:hover { padding-left: 12px; }
+    .edu-item strong {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .edu-item span {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ─── HABILIDADES ─── */
+    #habilidades {
+      padding: 140px 48px;
+      background: var(--bg-soft);
+      position: relative;
+    }
+    #habilidades::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+    }
+
+    .skills-header {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .skills-header h2 {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .skills-header p {
+      max-width: 320px;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    .skills-orbit {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .skill-pill {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 14px 28px;
+      transition: all 0.35s;
+      cursor: default;
+    }
+    .skill-pill:hover {
+      color: var(--text);
+      border-color: rgba(168, 85, 247, 0.5);
+      background: rgba(168, 85, 247, 0.08);
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* ─── PROJETOS ─── */
+    #projetos {
+      padding: 140px 0;
+      position: relative;
+    }
+    .projects-intro {
+      padding: 0 48px;
+      max-width: 1200px;
+      margin: 0 auto 80px;
+    }
+    .projects-intro h2 {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .projects-intro p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      max-width: 480px;
+      line-height: 1.75;
+    }
+
+    .projects-gallery {
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 280px;
+      gap: 40px;
+      align-items: center;
+      padding: 40px 48px;
+      border-top: 1px solid var(--line);
+      transition: all 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .proj-row:last-child { border-bottom: 1px solid var(--line); }
+    .proj-row:hover {
+      background: rgba(168, 85, 247, 0.04);
+      padding-left: 64px;
+    }
+    .proj-row:hover .proj-row-title { color: var(--purple-glow); }
+    .proj-row:hover .proj-row-arrow { transform: translateX(8px); opacity: 1; }
+
+    .proj-index {
+      font-family: var(--display);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+    }
+    .proj-index em {
+      font-style: normal;
+      color: var(--purple-glow);
+    }
+    .proj-row-body {}
+    .proj-row-title {
+      font-family: var(--display);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .proj-row-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+      max-width: 500px;
+    }
+    .proj-row-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .proj-row-tags span {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-glow);
+      opacity: 0.7;
+    }
+    .proj-row-visual {
+      aspect-ratio: 16/10;
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      border: 1px solid var(--line);
+      transition: border-color 0.3s;
+    }
+    .proj-row:hover .proj-row-visual { border-color: rgba(168, 85, 247, 0.3); }
+    .proj-row-arrow {
+      position: absolute;
+      right: 48px;
+      font-size: 1.5rem;
+      color: var(--purple-glow);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    /* ─── CTA FINAL ─── */
+    .final-cta {
+      position: relative;
+      padding: 160px 48px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .final-cta-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 60%),
+        var(--bg);
+    }
+    .final-cta h2 {
+      position: relative;
+      font-family: var(--display);
+      font-size: clamp(1.6rem, 3.5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      margin-bottom: 40px;
+    }
+    .final-cta h2 em {
+      font-style: normal;
+      color: var(--purple-glow);
+    }
+    .final-cta-actions {
+      position: relative;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-btn {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .cta-btn.primary {
+      background: var(--purple);
+      color: white;
+      border: 1px solid var(--purple);
+    }
+    .cta-btn.primary:hover {
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+    }
+    .cta-btn.ghost {
+      background: transparent;
+      color: var(--text-dim);
+      border: 1px solid var(--line);
+    }
+    .cta-btn.ghost:hover {
+      color: var(--text);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    footer .brand-name { font-size: 0.6rem; }
+    .foot-links {
+      display: flex;
+      gap: 28px;
+    }
+    .foot-links a {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .foot-links a:hover { color: var(--text); }
+    .foot-copy {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.4); }
+
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr auto; padding: 20px 24px; }
+      nav { display: none; }
+      #hero, .cine-section, #sobre-mim, #habilidades, #projetos { padding-left: 24px; padding-right: 24px; }
+      .hero-blur-text { display: none; }
+      .statement { flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+      .statement .right { text-align: center; }
+      .hero-author { left: 24px; bottom: 32px; }
+      .hero-scroll { right: 24px; bottom: 32px; }
+      .about-split { grid-template-columns: 1fr; }
+      .proj-row { grid-template-columns: 1fr; gap: 20px; padding: 32px 24px; }
+      .proj-row:hover { padding-left: 24px; }
+      .proj-row-visual { max-height: 180px; }
+      .skills-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .skills-header p { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#hero" class="brand">
+    <div class="brand-lines">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="brand-name">Luan<br><em>Poppe</em></div>
+  </a>
+
+  <nav>
+    <a href="#hero">Início</a>
+    <a href="#sobre-mim">Sobre</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="#" class="pill-btn accent">Contato</a>
+    <span class="pill-btn">PT</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-rings">
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="198" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="160" stroke="rgba(168,85,247,0.12)" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="120" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="80" stroke="rgba(168,85,247,0.08)" stroke-width="0.5"/>
+      <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+      <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+    </svg>
+  </div>
+
+  <div class="hero-blur-text left">Desenvolvedor</div>
+  <div class="hero-blur-text right">de Software</div>
+
+  <div class="hero-orb-wrap">
+    <div class="hero-orb"></div>
+  </div>
+
+  <div class="hero-headline">
+    <h1>
+      Desenvolvedor de software<br>
+      <span class="dim">com foco em</span> experiências digitais<br>
+      <span class="behind">que conectam pessoas e ideias</span>
+    </h1>
+  </div>
+
+  <p class="hero-sub">
+    Atuo na Raro Labs com testes automatizados e desenvolvimento front-end.
+    Transformo desafios complexos em soluções claras, funcionais e bem construídas.
+  </p>
+
+  <div class="statement">
+    <span>Não é só código</span>
+    <span class="right">É impacto real</span>
+  </div>
+
+  <div class="hero-author">
+    <div class="hero-author-name">Luan<br>Poppe</div>
+    <div class="hero-author-role">Desenvolvedor de Software</div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- BLOCO CINEMÁTICO -->
+<section class="cine-section">
+  <div class="cine-bg mountains"></div>
+  <div class="cine-content">
+    <div class="cine-label">Entre o desafio e a solução</div>
+    <h2 class="cine-title">O nascimento da minha<br>paixão por tecnologia</h2>
+    <p class="cine-text">
+      De médico a desenvolvedor — minha trajetória começou ao buscar soluções tecnológicas
+      para problemas reais. Hoje, cada projeto é uma oportunidade de criar algo que faça diferença.
+    </p>
+  </div>
+</section>
+
+<!-- SOBRE MIM -->
+<section id="sobre-mim">
+  <div class="about-split">
+    <div class="about-left">
+      <div class="big-statement">
+        Encontrei<br>
+        <span>minha</span>
+        <em>paixão</em>
+      </div>
+
+      <p class="about-para">
+        Graduado em medicina, comecei minha trajetória profissional atuando como médico, mas minha paixão pela programação surgiu ao buscar soluções tecnológicas para desafios diários da profissão.
+      </p>
+      <p class="about-para">
+        Iniciei meus estudos na área de tecnologia de forma autodidata e, desde então, estou sempre me aperfeiçoando e buscando novos conhecimentos.
+      </p>
+      <p class="about-para">
+        Atualmente atuo como desenvolvedor de software na Raro Labs, com foco na criação de testes automatizados para o banco BMG. Tenho experiência anterior no desenvolvimento web front-end, principalmente com Angular.
+      </p>
+
+      <div class="edu-row">
+        <div class="edu-item">
+          <strong>Análise e Desenvolvimento de Sistemas</strong>
+          <span>UniRuy · 3º semestre</span>
+        </div>
+        <div class="edu-item">
+          <strong>Desenvolvimento Fullstack Python</strong>
+          <span>EBAC · Em andamento</span>
+        </div>
+        <div class="edu-item">
+          <strong>Medicina</strong>
+          <span>Formação anterior</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="about-image-frame">
+        <div class="about-image-placeholder">👨‍💻</div>
+        <div class="about-image-caption">
+          <strong>Luan Poppe</strong>
+          <span>Desenvolvedor de Software</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+  <div class="skills-header">
+    <h2>Habilidades</h2>
+    <p>Ferramentas e tecnologias que utilizo para transformar ideias em produtos digitais de qualidade.</p>
+  </div>
+
+  <div class="skills-orbit">
+    <span class="skill-pill">HTML5</span>
+    <span class="skill-pill">CSS3</span>
+    <span class="skill-pill">JavaScript</span>
+    <span class="skill-pill">TypeScript</span>
+    <span class="skill-pill">React</span>
+    <span class="skill-pill">Redux</span>
+    <span class="skill-pill">Angular</span>
+    <span class="skill-pill">Django</span>
+    <span class="skill-pill">Django REST</span>
+    <span class="skill-pill">Python</span>
+    <span class="skill-pill">Playwright</span>
+    <span class="skill-pill">Git / GitHub</span>
+    <span class="skill-pill">Styled Components</span>
+    <span class="skill-pill">SASS</span>
+    <span class="skill-pill">Bootstrap</span>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <div class="projects-intro">
+    <h2>Projetos</h2>
+    <p>Uma seleção de trabalhos que representam minha evolução e versatilidade como desenvolvedor.</p>
+  </div>
+
+  <div class="projects-gallery">
+
+    <a class="proj-row" href="#">
+      <div class="proj-index"><em>[01]</em> UI/UX</div>
+      <div class="proj-row-body">
+        <div class="proj-row-title">Portfólio de UI/UX</div>
+        <div class="proj-row-desc">Portfólio desenvolvido para uma amiga em transição de carreira para a área de design.</div>
+        <div class="proj-row-tags">
+          <span>React</span><span>TypeScript</span><span>Styled Components</span><span>Bootstrap</span>
+        </div>
+      </div>
+      <div class="proj-row-visual" style="background: linear-gradient(135deg,#2d1b69,#4f46e5)">🎨</div>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="proj-index"><em>[02]</em> Portfolio</div>
+      <div class="proj-row-body">
+        <div class="proj-row-title">Portfólio Pessoal</div>
+        <div class="proj-row-desc">Site para apresentar minhas habilidades e trabalhos de forma profissional.</div>
+        <div class="proj-row-tags">
+          <span>React</span><span>TypeScript</span><span>Context API</span>
+        </div>
+      </div>
+      <div class="proj-row-visual" style="background: linear-gradient(135deg,#1a1a2e,#6d28d9)">👤</div>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="proj-index"><em>[03]</em> E-commerce</div>
+      <div class="proj-row-body">
+        <div class="proj-row-title">EPLAY</div>
+        <div class="proj-row-desc">E-commerce de jogos desenvolvido ao longo dos últimos módulos do curso da EBAC.</div>
+        <div class="proj-row-tags">
+          <span>React</span><span>TypeScript</span><span>Redux</span>
+        </div>
+      </div>
+      <div class="proj-row-visual" style="background: linear-gradient(135deg,#065f46,#0d9488)">🎮</div>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="proj-index"><em>[04]</em> Integração</div>
+      <div class="proj-row-body">
+        <div class="proj-row-title">Portfólio GitHub</div>
+        <div class="proj-row-desc">Site desenvolvido no curso da EBAC para apresentar perfis e repositórios do GitHub.</div>
+        <div class="proj-row-tags">
+          <span>React</span><span>JavaScript</span><span>Styled Components</span>
+        </div>
+      </div>
+      <div class="proj-row-visual" style="background: linear-gradient(135deg,#1e3a5f,#1d4ed8)">🐙</div>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="proj-index"><em>[05]</em> Landing</div>
+      <div class="proj-row-body">
+        <div class="proj-row-title">Ebac Tech Talks</div>
+        <div class="proj-row-desc">Landing page desenvolvida utilizando HTML, CSS e Javascript com SASS.</div>
+        <div class="proj-row-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>SASS</span>
+        </div>
+      </div>
+      <div class="proj-row-visual" style="background: linear-gradient(135deg,#292524,#78716c)">📢</div>
+    </a>
+
+    <a class="proj-row" href="#">
+      <div class="proj-index"><em>[06]</em> Streaming</div>
+      <div class="proj-row-body">
+        <div class="proj-row-title">Clone da Disney Plus</div>
+        <div class="proj-row-desc">Clone do site da Disney+ desenvolvido durante o curso de front-end da EBAC.</div>
+        <div class="proj-row-tags">
+          <span>HTML</span><span>CSS</span><span>Bootstrap</span><span>SASS</span>
+        </div>
+      </div>
+      <div class="proj-row-visual" style="background: linear-gradient(135deg,#1e1b4b,#0ea5e9)">🎬</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <h2>Pronto para transformar<br>sua <em>ideia em realidade?</em></h2>
+  <div class="final-cta-actions">
+    <a href="#" class="cta-btn primary">Entrar em contato</a>
+    <a href="#" class="cta-btn ghost">Ver currículo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#hero" class="brand">
+    <div class="brand-lines"><span></span><span></span></div>
+    <div class="brand-name">Luan<br><em>Poppe</em></div>
+  </a>
+  <div class="foot-links">
+    <a href="#">WhatsApp</a>
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Gmail</a>
+  </div>
+  <div class="foot-copy">© 2024 · Todos os direitos reservados</div>
+</footer>
+
+</body>
+</html>
