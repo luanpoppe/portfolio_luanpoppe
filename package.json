@@ -6,6 +6,7 @@
   "scripts": {
     "dev:legacy": "vite",
     "dev:next": "next dev",
+    "build": "next build",
     "build:legacy": "tsc -p tsconfig.app.json --noEmit && vite build",
     "build:next": "next build",
     "start:next": "next start",
