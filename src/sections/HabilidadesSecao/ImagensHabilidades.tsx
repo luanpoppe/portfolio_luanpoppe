@@ -5,19 +5,13 @@ import { fontMobileTitleIcons, fontTitleIcons } from "../../utils/fontSizes"
 import { widthTablet } from "../../utils/mediaQuery"
 
 const objetoHabilidades = [
-	{ nome: "HTML", imagem: I.htmlIcon },
-	{ nome: "CSS", imagem: I.cssIcon },
 	{ nome: "JavaScript", imagem: I.javascriptIcon },
 	{ nome: "TypeScript", imagem: I.typescriptIcon },
 	{ nome: "Angular", imagem: I.angualrIcon },
 	{ nome: "Django", imagem: I.djangoIcon },
-	{ nome: "Django REST", imagem: I.djangoRestIcon },
 	{ nome: "React", imagem: I.reactIcon },
 	{ nome: "Redux", imagem: I.reduxIcon },
 	{ nome: "Jest", imagem: I.jestIcon },
-	{ nome: "Bootstrap", imagem: I.bootstrapIcon },
-	{ nome: "SASS", imagem: I.sassIcon },
-	{ nome: "LESS", imagem: I.lessIcon },
 	{ nome: "NodeJS", imagem: I.nodejsIcon },
 	{ nome: "Git", imagem: I.gitIcon },
 	{ nome: "Python", imagem: I.pythonIcon }

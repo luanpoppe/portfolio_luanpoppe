@@ -1,21 +1,32 @@
 import type { StaticImageData } from "next/image"
 import {
-	angualrIcon,
-	bootstrapIcon,
-	cssIcon,
-	djangoIcon,
-	djangoRestIcon,
-	gitIcon,
-	htmlIcon,
-	javascriptIcon,
-	jestIcon,
-	lessIcon,
+	typescriptIcon,
 	nodejsIcon,
+	nestjsIcon,
+	langchainIcon,
+	langgraphIcon,
+	cursorIcon,
+	claudeCodeIcon,
+	dockerIcon,
 	pythonIcon,
+	zodIcon,
+	fastifyIcon,
+	redisIcon,
+	postgresIcon,
+	bullmqIcon,
+	expressIcon,
 	reactIcon,
+	nextjsIcon,
 	reduxIcon,
-	sassIcon,
-	typescriptIcon
+	tailwindIcon,
+	shadcnIcon,
+	ollamaIcon,
+	djangoIcon,
+	vitestIcon,
+	jestIcon,
+	angualrIcon,
+	javascriptIcon,
+	gitIcon
 } from "@/utils/images"
 
 export const skillsTexts = {
@@ -32,8 +43,8 @@ export const skillsTexts = {
 		en: "day to day."
 	},
 	description: {
-		ptbr: "Do front-end ao back-end, da automação à entrega — um conjunto versátil para resolver problemas reais.",
-		en: "From front-end to back-end, from automation to delivery — a versatile set to solve real problems."
+		ptbr: "Do front-end ao back-end, da inteligência artificial à infraestrutura. Um conjunto versátil para construir soluções escaláveis e resilientes.",
+		en: "From front-end to back-end, from artificial intelligence to infrastructure. A versatile stack to build scalable and resilient solutions."
 	}
 }
 
@@ -43,20 +54,31 @@ export type SkillItem = {
 }
 
 export const skillsList: SkillItem[] = [
-	{ name: "HTML", image: htmlIcon },
-	{ name: "CSS", image: cssIcon },
-	{ name: "JavaScript", image: javascriptIcon },
 	{ name: "TypeScript", image: typescriptIcon },
-	{ name: "Angular", image: angualrIcon },
-	{ name: "Django", image: djangoIcon },
-	{ name: "Django REST", image: djangoRestIcon },
+	{ name: "Node.js", image: nodejsIcon },
+	{ name: "NestJS", image: nestjsIcon },
+	{ name: "LangChain", image: langchainIcon },
+	{ name: "LangGraph", image: langgraphIcon },
+	{ name: "Cursor", image: cursorIcon },
+	{ name: "Claude Code", image: claudeCodeIcon },
+	{ name: "Docker", image: dockerIcon },
+	{ name: "Python", image: pythonIcon },
+	{ name: "Zod", image: zodIcon },
+	{ name: "Fastify", image: fastifyIcon },
+	{ name: "Redis", image: redisIcon },
+	{ name: "Postgres", image: postgresIcon },
+	{ name: "BullMQ", image: bullmqIcon },
+	{ name: "Express", image: expressIcon },
 	{ name: "React", image: reactIcon },
+	{ name: "Next.js", image: nextjsIcon },
 	{ name: "Redux", image: reduxIcon },
+	{ name: "Tailwind CSS", image: tailwindIcon },
+	{ name: "shadcn/ui", image: shadcnIcon },
+	{ name: "Ollama", image: ollamaIcon },
+	{ name: "Django", image: djangoIcon },
+	{ name: "Vitest", image: vitestIcon },
 	{ name: "Jest", image: jestIcon },
-	{ name: "Bootstrap", image: bootstrapIcon },
-	{ name: "SASS", image: sassIcon },
-	{ name: "LESS", image: lessIcon },
-	{ name: "NodeJS", image: nodejsIcon },
-	{ name: "Git", image: gitIcon },
-	{ name: "Python", image: pythonIcon }
+	{ name: "Angular", image: angualrIcon },
+	{ name: "JavaScript", image: javascriptIcon },
+	{ name: "Git", image: gitIcon }
 ]
