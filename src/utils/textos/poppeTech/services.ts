@@ -4,9 +4,13 @@ export const poppeTechServicesTexts = {
 		ptbr: "O que a Poppe Tech constrói para o seu negócio",
 		en: "What Poppe Tech builds for your business"
 	},
+	ctaNote: {
+		ptbr: "Não sabe exatamente o que automatizar? Me conte como seu atendimento funciona hoje e eu desenho a melhor solução.",
+		en: "Not sure exactly what to automate? Tell me how your customer service works today and I'll design the best solution."
+	},
 	cta: {
-		ptbr: "Não sabe exatamente do que precisa? Me conte o problema e eu desenho a solução para você.",
-		en: "Not sure exactly what you need? Tell me the problem and I'll design the solution for you."
+		ptbr: "Me conte seu problema",
+		en: "Tell me your problem"
 	},
 	items: [
 		{
@@ -26,20 +30,20 @@ export const poppeTechServicesTexts = {
 			timeline: { ptbr: "Prazo médio: 3 dias a 4 semanas", en: "Average timeline: 3 days to 4 weeks" }
 		},
 		{
-			title: { ptbr: "Agentes e Assistentes de IA", en: "AI Agents and Assistants" },
-			description: {
-				ptbr: "IA aplicada a problemas reais: atendimento inteligente, triagem avançada, resumo de dados e geração de documentos.",
-				en: "AI applied to real problems: smart customer service, advanced triage, data summarization, and document generation."
-			},
-			timeline: { ptbr: "Prazo médio: 3 a 6 semanas", en: "Average timeline: 3 to 6 weeks" }
-		},
-		{
 			title: { ptbr: "Sistemas sob medida", en: "Custom systems" },
 			description: {
 				ptbr: "Painéis de gestão, controle de agenda, fluxos de acompanhamento de clientes e ferramentas internas.",
 				en: "Management dashboards, calendar control, client tracking flows, and internal tools."
 			},
 			timeline: { ptbr: "Escopo definido em conjunto", en: "Scope defined together" }
+		},
+		{
+			title: { ptbr: "IA aplicada a tarefas específicas", en: "AI applied to specific tasks" },
+			description: {
+				ptbr: "Triagem, resumo de dados, geração de documentos e atendimento inteligente quando a IA for realmente útil para o processo.",
+				en: "Triage, data summarization, document generation, and smart customer service when AI is truly useful for the process."
+			},
+			timeline: { ptbr: "Prazo médio: 3 a 6 semanas", en: "Average timeline: 3 to 6 weeks" }
 		}
 	]
 }

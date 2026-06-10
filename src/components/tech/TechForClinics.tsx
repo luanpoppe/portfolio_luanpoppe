@@ -1,10 +1,12 @@
 "use client"
 
-import { CircleCheck, Stethoscope } from "lucide-react"
+import { ArrowRight, CircleCheck, Stethoscope } from "lucide-react"
+import { getPoppeTechClinicComboWhatsappUrl } from "@/utils/tech/constants"
 import { getTextLang } from "@/utils/textos/funcs"
 import { poppeTechForClinicsTexts } from "@/utils/textos/poppeTech"
 import { useAppContext } from "@/utils/useContext"
 import { TechSectionBadge } from "./TechSectionBadge"
+import { TechWhatsAppButton } from "./TechWhatsAppButton"
 
 export function TechForClinics() {
 	const { activeLanguage } = useAppContext()
@@ -55,12 +57,18 @@ export function TechForClinics() {
 					))}
 				</div>
 
-				<p
-					data-reveal
-					className="mx-auto mt-10 max-w-2xl rounded-2xl border border-primary/20 bg-primary/5 px-6 py-4 text-center text-base text-foreground"
-				>
-					{getTextLang(poppeTechForClinicsTexts.highlight, activeLanguage)}
-				</p>
+				<div data-reveal className="mx-auto mt-10 max-w-2xl text-center">
+					<p className="rounded-2xl border border-primary/20 bg-primary/5 px-6 py-4 text-base text-foreground">
+						{getTextLang(poppeTechForClinicsTexts.highlight, activeLanguage)}
+					</p>
+					<TechWhatsAppButton
+						href={getPoppeTechClinicComboWhatsappUrl(activeLanguage)}
+						className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-base font-medium text-primary-foreground transition-all hover:-translate-y-px hover:opacity-90"
+					>
+						{getTextLang(poppeTechForClinicsTexts.ctaCombo, activeLanguage)}
+						<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+					</TechWhatsAppButton>
+				</div>
 			</div>
 		</section>
 	)

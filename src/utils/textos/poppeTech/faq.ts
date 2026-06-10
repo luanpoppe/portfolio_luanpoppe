@@ -25,8 +25,8 @@ export const poppeTechFaqTexts = {
 				en: "Are the solutions exclusive to medical clinics?"
 			},
 			answer: {
-				ptbr: "Não. Apesar da grande experiência na área de saúde, as automações são perfeitas para barbearias, salões de beleza, escolas, imobiliárias, escritórios e qualquer pequeno negócio que atenda clientes.",
-				en: "No. Despite extensive experience in healthcare, the automations are perfect for barbershops, salons, schools, real estate agencies, offices, and any small business serving customers."
+				ptbr: "Não. Apesar do conhecimento específico da rotina de consultórios, as automações também funcionam para barbearias, salões de beleza, escolas, imobiliárias, escritórios e qualquer pequeno negócio que atenda clientes.",
+				en: "No. Despite specific knowledge of clinic routines, the automations also work for barbershops, salons, schools, real estate agencies, offices, and any small business serving customers."
 			}
 		},
 		{
@@ -58,6 +58,30 @@ export const poppeTechFaqTexts = {
 			answer: {
 				ptbr: "Basta clicar em qualquer botão de contato desta página para falar direto comigo pelo WhatsApp. Na primeira conversa já entendo seu cenário e sugiro os próximos passos.",
 				en: "Just click any contact button on this page to talk directly to me on WhatsApp. In the first conversation, I'll understand your scenario and suggest next steps."
+			}
+		},
+		{
+			question: { ptbr: "Quanto custa um projeto?", en: "How much does a project cost?" },
+			answer: {
+				ptbr: "Depende do fluxo, das integrações e da complexidade da automação. Antes de começar, você recebe uma proposta clara com escopo, prazo, valor de implementação e, se fizer sentido, mensalidade de suporte.",
+				en: "It depends on the flow, integrations, and complexity of the automation. Before starting, you receive a clear proposal with scope, timeline, implementation value, and, if it makes sense, a monthly support fee."
+			}
+		},
+		{
+			question: { ptbr: "E os dados dos pacientes?", en: "What about patient data?" },
+			answer: {
+				ptbr: "Os fluxos são pensados para coletar apenas as informações necessárias e evitar exposição indevida de dados sensíveis. Em projetos para saúde, a automação deve ser desenhada com cuidado para respeitar privacidade, sigilo e boas práticas de segurança.",
+				en: "Flows are designed to collect only necessary information and avoid undue exposure of sensitive data. In healthcare projects, automation must be carefully designed to respect privacy, confidentiality, and security best practices."
+			}
+		},
+		{
+			question: {
+				ptbr: "Existe suporte depois que o sistema entra no ar?",
+				en: "Is there support after the system goes live?"
+			},
+			answer: {
+				ptbr: "Sim. Os projetos podem incluir um período de suporte após a entrega e, quando fizer sentido, uma mensalidade de manutenção para monitoramento, pequenos ajustes e evolução dos fluxos.",
+				en: "Yes. Projects can include a support period after delivery and, when it makes sense, a monthly maintenance fee for monitoring, small adjustments, and flow evolution."
 			}
 		}
 	]

@@ -5,8 +5,8 @@ export const poppeTechDifferentialsTexts = {
 		{
 			title: { ptbr: "Entendimento do setor de saúde", en: "Healthcare sector understanding" },
 			description: {
-				ptbr: "Fundador com formação em medicina. Entendemos a realidade de médicos, secretárias e pacientes.",
-				en: "Founder with a medical degree. We understand the reality of doctors, receptionists, and patients."
+				ptbr: "Fundador com formação em medicina e experiência com rotina de atendimento. Isso ajuda a desenhar automações que fazem sentido para médicos, secretárias e pacientes.",
+				en: "Founder with a medical degree and experience with care routines. This helps design automations that make sense for doctors, receptionists, and patients."
 			}
 		},
 		{
@@ -26,8 +26,8 @@ export const poppeTechDifferentialsTexts = {
 		{
 			title: { ptbr: "Automação que apoia o humano", en: "Automation that supports humans" },
 			description: {
-				ptbr: "Sistemas criados para complementar sua equipe, tirando o trabalho chato para as pessoas focarem no cuidado.",
-				en: "Systems created to complement your team, removing boring work so people can focus on care."
+				ptbr: "A automação cuida do repetitivo. Sua equipe continua responsável pelo relacionamento, pelas exceções e pelo cuidado humano.",
+				en: "Automation handles the repetitive work. Your team remains responsible for relationships, exceptions, and human care."
 			}
 		},
 		{
@@ -40,8 +40,8 @@ export const poppeTechDifferentialsTexts = {
 		{
 			title: { ptbr: "Experiência prática comprovada", en: "Proven practical experience" },
 			description: {
-				ptbr: "Projetos reais entregues usando tecnologias robustas como TypeScript, Node.js, Next.js e LangChain.",
-				en: "Real projects delivered using robust technologies like TypeScript, Node.js, Next.js, and LangChain."
+				ptbr: "Projetos reais entregues com chatbot de WhatsApp, integração com agenda e fluxos de atendimento automatizados.",
+				en: "Real projects delivered with WhatsApp chatbot, calendar integration, and automated service flows."
 			}
 		}
 	]

@@ -1,34 +1,34 @@
 export const poppeTechInvestmentTexts = {
 	badge: { ptbr: "Investimento", en: "Investment" },
 	title: {
-		ptbr: "Sob medida para sua necessidade e seu bolso",
-		en: "Tailored to your needs and your budget"
+		ptbr: "Projetos com escopo claro antes de começar",
+		en: "Projects with a clear scope before we start"
 	},
 	description: {
-		ptbr: "A Poppe Tech não cobra apenas por horas de desenvolvimento, mas pelo valor entregue. Cada projeto é orçado conforme a complexidade e as integrações necessárias do seu fluxo de atendimento.",
-		en: "Poppe Tech charges for the value delivered, not just development hours. Each project is quoted based on the complexity and necessary integrations of your service flow."
+		ptbr: "Cada projeto é orçado conforme o escopo, integrações e nível de automação necessário. Antes de qualquer desenvolvimento, você recebe uma proposta clara com o que será entregue, prazo e modelo de suporte.",
+		en: "Each project is quoted based on scope, integrations, and the level of automation required. Before any development begins, you receive a clear proposal with deliverables, timeline, and support model."
 	},
 	cta: { ptbr: "Solicitar proposta personalizada", en: "Request a personalized proposal" },
 	items: [
 		{
-			title: { ptbr: "Implementação do projeto", en: "Project implementation" },
+			title: { ptbr: "Implementação", en: "Implementation" },
 			description: {
-				ptbr: "Desenvolvimento inicial do chatbot, automação de processo ou sistema sob medida.",
-				en: "Initial development of the chatbot, process automation, or custom system."
+				ptbr: "Construção inicial do chatbot, automação ou sistema.",
+				en: "Initial build of the chatbot, automation, or system."
 			}
 		},
 		{
-			title: { ptbr: "Mensalidade de manutenção", en: "Monthly maintenance" },
+			title: { ptbr: "Manutenção", en: "Maintenance" },
 			description: {
-				ptbr: "Suporte contínuo, garantia de funcionamento, monitoramento de falhas e pequenas melhorias.",
-				en: "Continuous support, functioning guarantee, failure monitoring, and small improvements."
+				ptbr: "Suporte, monitoramento, ajustes pequenos e garantia de funcionamento.",
+				en: "Support, monitoring, small adjustments, and functioning guarantee."
 			}
 		},
 		{
-			title: { ptbr: "Evolução e novas demandas", en: "Evolution and new demands" },
+			title: { ptbr: "Evolução", en: "Evolution" },
 			description: {
-				ptbr: "Criação de novos fluxos, relatórios avançados e integração com outros sistemas da empresa.",
-				en: "Creation of new flows, advanced reports, and integration with other company systems."
+				ptbr: "Novos fluxos, relatórios, integrações e melhorias conforme sua operação cresce.",
+				en: "New flows, reports, integrations, and improvements as your operation grows."
 			}
 		}
 	]

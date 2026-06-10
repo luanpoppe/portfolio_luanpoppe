@@ -1,9 +1,12 @@
 export const poppeTechForBusinessesTexts = {
 	badge: { ptbr: "Também para pequenos negócios", en: "Also for small businesses" },
-	title: { ptbr: "Não é só para consultórios médicos", en: "It's not just for medical clinics" },
+	title: {
+		ptbr: "Também funciona para negócios que vivem de atendimento e agenda",
+		en: "Also works for businesses that rely on customer service and scheduling"
+	},
 	description: {
-		ptbr: "Barbearias, salões de beleza, estúdios capilares, escolas, imobiliárias, escritórios e outros prestadores de serviço também ganham organização, profissionalismo e velocidade no atendimento ao cliente.",
-		en: "Barbershops, beauty salons, hair studios, schools, real estate agencies, offices, and other service providers also gain organization, professionalism, and speed in customer service."
+		ptbr: "Barbearias, salões, estúdios, escolas, imobiliárias, escritórios e outros prestadores de serviço também podem usar automação para responder mais rápido, confirmar horários e reduzir tarefas manuais no WhatsApp.",
+		en: "Barbershops, salons, studios, schools, real estate agencies, offices, and other service providers can also use automation to respond faster, confirm appointments, and reduce manual tasks on WhatsApp."
 	},
 	tags: [
 		{ ptbr: "Agendamento automático", en: "Automatic scheduling" },

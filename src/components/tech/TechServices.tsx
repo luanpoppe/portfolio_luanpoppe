@@ -14,7 +14,7 @@ export function TechServices() {
 	const { activeLanguage } = useAppContext()
 
 	return (
-		<section id="servicos-cards" className="px-6 py-20 md:py-28">
+		<section id="servicos" className="px-6 py-20 md:py-28">
 			<div className="mx-auto max-w-6xl">
 				<div className="mx-auto mb-12 max-w-3xl text-center">
 					<div data-reveal>
@@ -62,8 +62,11 @@ export function TechServices() {
 					})}
 				</div>
 
-				<div data-reveal className="mt-10 text-center">
-					<TechWhatsAppButton className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-base font-medium transition-all hover:border-primary/40 hover:bg-primary/5">
+				<div data-reveal className="mx-auto mt-12 max-w-2xl text-center">
+					<p className="mb-6 text-base text-muted-foreground md:text-lg">
+						{getTextLang(poppeTechServicesTexts.ctaNote, activeLanguage)}
+					</p>
+					<TechWhatsAppButton className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-base font-medium transition-all hover:border-primary/40 hover:bg-primary/5">
 						{getTextLang(poppeTechServicesTexts.cta, activeLanguage)}
 						<ArrowUpRight className="h-4 w-4 text-primary" aria-hidden />
 					</TechWhatsAppButton>

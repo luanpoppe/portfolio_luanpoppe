@@ -7,8 +7,8 @@ export const poppeTechHeroTexts = {
 	headlineAccent: { ptbr: "pelo WhatsApp", en: "via WhatsApp" },
 	headlineAfter: { ptbr: ".", en: "." },
 	description: {
-		ptbr: "A Poppe Tech cria chatbots de WhatsApp, automações e sistemas sob medida para consultórios e pequenos negócios que querem reduzir tarefas repetitivas, organizar o atendimento e ganhar tempo sem complicação técnica.",
-		en: "Poppe Tech builds WhatsApp chatbots, automations, and custom systems for clinics and small businesses that want to reduce repetitive tasks, organize customer service, and save time without technical complications."
+		ptbr: "A Poppe Tech cria chatbots e automações para consultórios e pequenos negócios que querem organizar agendamentos, responder mais rápido e reduzir tarefas repetitivas no WhatsApp.",
+		en: "Poppe Tech builds chatbots and automations for clinics and small businesses that want to organize appointments, respond faster, and reduce repetitive tasks on WhatsApp."
 	},
 	descriptionSecondary: {
 		ptbr: "O bot cuida do repetitivo para sua equipe focar no que só humanos fazem bem.",

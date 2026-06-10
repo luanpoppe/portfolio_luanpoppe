@@ -63,8 +63,8 @@ export const poppeTechProblemTexts = {
 				en: "Overloaded team"
 			},
 			description: {
-				ptbr: "Secretárias e atendentes sobrecarregados com tarefas previsíveis que poderiam ser 100% automatizadas.",
-				en: "Receptionists and agents overloaded with predictable tasks that could be 100% automated."
+				ptbr: "Secretárias e atendentes sobrecarregados com tarefas previsíveis que poderiam ser automatizadas com segurança.",
+				en: "Receptionists and agents overloaded with predictable tasks that could be safely automated."
 			}
 		}
 	]

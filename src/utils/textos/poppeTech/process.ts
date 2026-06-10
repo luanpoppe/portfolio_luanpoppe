@@ -12,8 +12,8 @@ export const poppeTechProcessTexts = {
 		{
 			title: { ptbr: "Conversa inicial", en: "Initial conversation" },
 			description: {
-				ptbr: "Entendimento profundo do seu negócio, das dores atuais e dos processos que podem ser otimizados.",
-				en: "Deep understanding of your business, current pain points, and processes that can be optimized."
+				ptbr: "Entendimento do seu negócio, das dores atuais e dos processos que podem ser automatizados.",
+				en: "Understanding of your business, current pain points, and processes that can be automated."
 			}
 		},
 		{
@@ -33,8 +33,8 @@ export const poppeTechProcessTexts = {
 		{
 			title: { ptbr: "Testes e ajustes", en: "Testing and adjustments" },
 			description: {
-				ptbr: "Validação rigorosa de todos os fluxos e caminhos antes de colocar a solução no ar.",
-				en: "Rigorous validation of all flows and paths before taking the solution live."
+				ptbr: "Teste dos principais caminhos e ajustes antes de colocar a solução no ar.",
+				en: "Testing of main paths and adjustments before taking the solution live."
 			}
 		},
 		{

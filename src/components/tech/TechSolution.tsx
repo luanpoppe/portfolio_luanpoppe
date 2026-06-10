@@ -1,19 +1,16 @@
 "use client"
 
-import { MessageCircle, Sparkles, Workflow } from "lucide-react"
-import type { LucideIcon } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { getTextLang } from "@/utils/textos/funcs"
 import { poppeTechSolutionTexts } from "@/utils/textos/poppeTech"
 import { useAppContext } from "@/utils/useContext"
 import { TechSectionBadge } from "./TechSectionBadge"
 
-const ICONS: LucideIcon[] = [MessageCircle, Workflow, Sparkles]
-
 export function TechSolution() {
 	const { activeLanguage } = useAppContext()
 
 	return (
-		<section id="servicos" className="px-6 py-20 md:py-28">
+		<section id="solucao" className="px-6 py-20 md:py-28">
 			<div className="mx-auto max-w-6xl">
 				<div className="mx-auto mb-12 max-w-3xl text-center">
 					<div data-reveal>
@@ -35,29 +32,39 @@ export function TechSolution() {
 					</p>
 				</div>
 
-				<div className="grid gap-5 md:grid-cols-3">
-					{poppeTechSolutionTexts.items.map((item, index) => {
-						const Icon = ICONS[index]
-						return (
+				<div
+					data-reveal
+					className="rounded-3xl border border-border bg-card/70 p-6 backdrop-blur md:p-8"
+				>
+					<div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+						{poppeTechSolutionTexts.flowSteps.map((step, index) => (
 							<div
-								key={item.title.ptbr}
-								data-reveal
-								style={{ transitionDelay: `${index * 80}ms` }}
-								className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:pop-shadow"
+								key={step.ptbr}
+								className="flex flex-1 items-center gap-3 md:flex-col md:gap-2 md:text-center"
 							>
-								<div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/0 blur-3xl transition-all group-hover:bg-primary/15" />
-								<div className="mb-5 inline-grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
-									<Icon className="h-5 w-5" aria-hidden />
+								<div className="flex shrink-0 items-center gap-3 md:flex-col">
+									<span className="grid h-9 w-9 place-items-center rounded-full bg-primary/10 font-mono text-sm font-semibold text-primary">
+										{index + 1}
+									</span>
+									{index < poppeTechSolutionTexts.flowSteps.length - 1 && (
+										<ArrowRight
+											className="hidden h-4 w-4 shrink-0 text-muted-foreground/50 md:block"
+											aria-hidden
+										/>
+									)}
 								</div>
-								<h3 className="text-xl font-semibold tracking-tight">
-									{getTextLang(item.title, activeLanguage)}
-								</h3>
-								<p className="mt-2 text-base text-muted-foreground">
-									{getTextLang(item.description, activeLanguage)}
+								<p className="text-sm font-medium leading-snug text-foreground md:text-base">
+									{getTextLang(step, activeLanguage)}
 								</p>
+								{index < poppeTechSolutionTexts.flowSteps.length - 1 && (
+									<ArrowRight
+										className="ml-auto h-4 w-4 shrink-0 text-muted-foreground/50 md:hidden"
+										aria-hidden
+									/>
+								)}
 							</div>
-						)
-					})}
+						))}
+					</div>
 				</div>
 			</div>
 		</section>

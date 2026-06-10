@@ -5,12 +5,16 @@ export const poppeTechForClinicsTexts = {
 		en: "Built for doctors and clinics that rely on WhatsApp"
 	},
 	description: {
-		ptbr: "Com formação em medicina, o fundador da Poppe Tech entende a rotina real de médicos, secretárias e pacientes. Essa experiência faz toda a diferença para criar soluções que realmente funcionam no dia a dia da saúde.",
-		en: "With a medical degree, Poppe Tech's founder understands the real routine of doctors, receptionists, and patients. This experience makes all the difference in creating solutions that truly work in everyday healthcare."
+		ptbr: "Criada por alguém que também conhece a rotina médica por dentro, a Poppe Tech entende o impacto de uma agenda desorganizada, uma secretária sobrecarregada e pacientes sem confirmação.",
+		en: "Built by someone who also knows the medical routine from the inside, Poppe Tech understands the impact of a disorganized calendar, an overloaded receptionist, and patients without confirmation."
 	},
 	highlight: {
 		ptbr: "O combo mais recomendado: Agendamento automático + Lembrete de consulta + Resposta fora do horário.",
 		en: "The most recommended combo: Automatic scheduling + Appointment reminder + After-hours response."
+	},
+	ctaCombo: {
+		ptbr: "Quero esse combo no meu consultório",
+		en: "I want this combo for my clinic"
 	},
 	items: [
 		{

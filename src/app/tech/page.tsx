@@ -25,12 +25,12 @@ export default function TechPage() {
 
 			<TechHero />
 			<TechProblem />
-			<TechSolution />
 			<TechForClinics />
+			<TechSolution />
 			<TechForBusinesses />
 			<TechServices />
-			<TechProcess />
 			<TechCaseStudy />
+			<TechProcess />
 			<TechDifferentials />
 			<TechInvestment />
 			<TechFaq />
