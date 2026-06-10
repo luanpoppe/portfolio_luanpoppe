@@ -20,8 +20,8 @@ export const contactTexts = {
 		en: "?"
 	},
 	description: {
-		ptbr: "Estou aberto a novos projetos freelance, colaborações e oportunidades. Me chame por onde for melhor para você.",
-		en: "I'm open to freelance projects, collaborations, and opportunities. Reach out wherever works best for you."
+		ptbr: "Estou aberto a novos desafios, projetos freelance e oportunidades. Me chame por onde for melhor para você.",
+		en: "I'm open to new challenges, freelance projects, and opportunities. Reach out wherever works best for you."
 	},
 	footerRights: {
 		ptbr: "Todos os direitos reservados.",
@@ -51,9 +51,9 @@ export const contactLinks: ContactLink[] = [
 	},
 	{
 		key: "gmail",
-		href: "mailto:luanpoppe@gmail.com",
+		href: "mailto:luanpoppe.tech@gmail.com",
 		icon: HiOutlineMail,
-		label: { ptbr: "Gmail", en: "Gmail" },
+		label: { ptbr: "E-mail", en: "Email" },
 		action: { ptbr: "Enviar e-mail", en: "Send email" }
 	},
 	{

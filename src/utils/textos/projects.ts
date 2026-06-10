@@ -1,6 +1,7 @@
 type ProjectCardMeta = {
 	colSpan: string
 	featured?: boolean
+	showPreview?: boolean
 	shortDescription: { ptbr: string; en: string }
 }
 
@@ -28,59 +29,61 @@ export const projectsTexts = {
 }
 
 export const projectsDisplayOrder = [
-	"https://github.com/luanpoppe/landing-page-julia",
-	"https://github.com/luanpoppe/M_35-eplay",
+	"https://github.com/luanpoppe/ai",
+	"https://github.com/luanpoppe/the-right-movie-choice",
 	"https://github.com/luanpoppe/portfolio_luanpoppe",
-	"https://github.com/luanpoppe/M_29_portfolio_GitHub-react",
-	"https://github.com/luanpoppe/M_22-ebac-tech-talks",
-	"https://github.com/luanpoppe/M_21_Clone_Disney_Plus"
+	"https://github.com/luanpoppe/M_35-eplay",
+	"https://github.com/luanpoppe/landing-page-julia",
+	"https://github.com/luanpoppe/M_22-ebac-tech-talks"
 ] as const
 
 export const projectsCardMeta: Record<
 	(typeof projectsDisplayOrder)[number],
 	ProjectCardMeta
 > = {
-	"https://github.com/luanpoppe/landing-page-julia": {
+	"https://github.com/luanpoppe/ai": {
 		colSpan: "md:col-span-8",
+		featured: true,
+		showPreview: false,
 		shortDescription: {
-			ptbr: "Site desenvolvido a pedido de uma amiga em transição de carreira, com foco em apresentar seus projetos de design de interface e experiência.",
-			en: "Website built for a friend transitioning careers, focused on showcasing her UI/UX design projects."
+			ptbr: "SDK open-source em TypeScript que atua como uma Facade unificada para LLMs e Agentes Autônomos.",
+			en: "Open-source TypeScript SDK acting as a unified Facade for LLMs and Autonomous Agents."
 		}
 	},
-	"https://github.com/luanpoppe/M_35-eplay": {
+	"https://github.com/luanpoppe/the-right-movie-choice": {
 		colSpan: "md:col-span-4",
-		featured: true,
+		showPreview: false,
 		shortDescription: {
-			ptbr: "E-commerce de games construído durante os últimos módulos do curso da EBAC, com gerenciamento de estado global via Redux.",
-			en: "Games e-commerce built during the final EBAC course modules, with global state management via Redux."
+			ptbr: "API de recomendação de filmes com IA construída com Node.js, Fastify, Redis e Google Gemini.",
+			en: "AI movie recommendation API built with Node.js, Fastify, Redis, and Google Gemini."
 		}
 	},
 	"https://github.com/luanpoppe/portfolio_luanpoppe": {
 		colSpan: "md:col-span-6",
 		shortDescription: {
-			ptbr: "Versão anterior deste portfólio, criada para apresentar minhas habilidades e trabalhos como desenvolvedor.",
-			en: "Previous version of this portfolio, created to showcase my skills and work as a developer."
+			ptbr: "SPA mobile-first desenvolvida com React, TypeScript e Tailwind CSS (migrando para Next.js).",
+			en: "Mobile-first SPA developed with React, TypeScript, and Tailwind CSS (migrating to Next.js)."
 		}
 	},
-	"https://github.com/luanpoppe/M_29_portfolio_GitHub-react": {
+	"https://github.com/luanpoppe/M_35-eplay": {
 		colSpan: "md:col-span-6",
 		shortDescription: {
-			ptbr: "Site desenvolvido durante o curso de front-end da EBAC consumindo a API pública do GitHub.",
-			en: "Website built during the EBAC front-end course using GitHub's public API."
+			ptbr: "Front-end SPA de um e-commerce de games com React e Redux Toolkit.",
+			en: "Front-end SPA for a games e-commerce with React and Redux Toolkit."
+		}
+	},
+	"https://github.com/luanpoppe/landing-page-julia": {
+		colSpan: "md:col-span-6",
+		shortDescription: {
+			ptbr: "Site de portfólio desenvolvido para uma profissional de UX/UI Design.",
+			en: "Portfolio website developed for a UX/UI Design professional."
 		}
 	},
 	"https://github.com/luanpoppe/M_22-ebac-tech-talks": {
 		colSpan: "md:col-span-6",
 		shortDescription: {
-			ptbr: "Plataforma de divulgação de palestras técnicas, construída como projeto integrador do curso.",
-			en: "Technical talks platform built as the course capstone project."
-		}
-	},
-	"https://github.com/luanpoppe/M_21_Clone_Disney_Plus": {
-		colSpan: "md:col-span-6",
-		shortDescription: {
-			ptbr: "Recriação fiel da interface da Disney+ com foco em layout responsivo, animações suaves e componentização.",
-			en: "Faithful Disney+ interface recreation focused on responsive layout, smooth animations, and componentization."
+			ptbr: "Landing page responsiva desenvolvida com HTML, SASS e JavaScript Vanilla.",
+			en: "Responsive landing page developed with HTML, SASS, and Vanilla JavaScript."
 		}
 	}
 }
