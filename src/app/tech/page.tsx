@@ -2,6 +2,7 @@ import { RevealOnScroll } from "@/components/RevealOnScroll"
 import { TechCaseStudy } from "@/components/tech/TechCaseStudy"
 import { TechContact } from "@/components/tech/TechContact"
 import { TechDifferentials } from "@/components/tech/TechDifferentials"
+import { TechAboutFounder } from "@/components/tech/TechAboutFounder"
 import { TechFaq } from "@/components/tech/TechFaq"
 import { TechFooter } from "@/components/tech/TechFooter"
 import { TechForBusinesses } from "@/components/tech/TechForBusinesses"
@@ -32,6 +33,7 @@ export default function TechPage() {
 			<TechCaseStudy />
 			<TechProcess />
 			<TechDifferentials />
+			<TechAboutFounder />
 			<TechInvestment />
 			<TechFaq />
 			<TechContact />

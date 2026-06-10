@@ -48,8 +48,8 @@ export const poppeTechForClinicsTexts = {
 		{
 			title: { ptbr: "Gestão de retornos e pós-consulta", en: "Return management and follow-up" },
 			description: {
-				ptbr: "Régua de relacionamento com lembretes automáticos para agendar retornos e orientações pós-atendimento.",
-				en: "Relationship timeline with automatic reminders to schedule return visits and post-appointment instructions."
+				ptbr: "Envio automático de lembretes para agendar retornos e orientações pós-atendimento.",
+				en: "Automatic reminders to schedule return visits and post-appointment instructions."
 			}
 		},
 		{
