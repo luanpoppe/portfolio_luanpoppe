@@ -53,9 +53,9 @@ export function Hero() {
 					{getTextLang(heroTexts.badge, activeLanguage)}
 				</span>
 
-				<h1 className="mt-6 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+				<h1 className="hero-headline-sync mt-6 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
 					{getTextLang(heroTexts.headlineBefore, activeLanguage)}
-					<span className="text-accent">
+					<span className="hero-accent-text">
 						{getTextLang(heroTexts.headlineAccent, activeLanguage)}
 					</span>
 					.{" "}
@@ -76,18 +76,22 @@ export function Hero() {
 						href={RESUME_URL}
 						target="_blank"
 						rel="noreferrer"
-						className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background shadow-[0_10px_30px_-12px_rgba(76,29,149,0.45)] transition-all duration-300 hover:bg-accent hover:shadow-[0_10px_30px_-8px_rgba(124,58,237,0.5)]"
+						className="hero-hover-shimmer-inverted group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background shadow-[0_10px_30px_-12px_rgba(76,29,149,0.45)] hover:shadow-[0_10px_30px_-8px_rgba(124,58,237,0.5)]"
 					>
-						<Download className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-						{getTextLang(heroTexts.actions.resume, activeLanguage)}
+						<span className="inline-flex items-center gap-2">
+							<Download className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
+							{getTextLang(heroTexts.actions.resume, activeLanguage)}
+						</span>
 					</a>
 
 					<a
 						href="#contato"
-						className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:border-accent/40 hover:text-accent"
+						className="hero-hover-shimmer inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-6 py-3 text-sm font-semibold text-foreground"
 					>
-						{getTextLang(heroTexts.actions.contact, activeLanguage)}
-						<ArrowUpRight className="h-4 w-4" />
+						<span className="inline-flex items-center gap-2">
+							{getTextLang(heroTexts.actions.contact, activeLanguage)}
+							<ArrowUpRight className="h-4 w-4" />
+						</span>
 					</a>
 
 					<div className="ml-1 flex items-center gap-1.5">
@@ -98,7 +102,7 @@ export function Hero() {
 								target={href.startsWith("mailto:") ? undefined : "_blank"}
 								rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
 								aria-label={label}
-								className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card/60 text-muted-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+								className="hero-hover-shimmer grid h-10 w-10 place-items-center rounded-full border border-border bg-card/80 text-muted-foreground"
 							>
 								<Icon className="h-4 w-4" />
 							</a>
@@ -117,8 +121,8 @@ export function Hero() {
 								"radial-gradient(closest-side, color-mix(in oklab, var(--accent) 30%, transparent), transparent)"
 						}}
 					/>
-					<div className="group relative overflow-hidden rounded-[1.75rem] border border-border bg-card p-2 shadow-[0_30px_60px_-20px_rgba(76,29,149,0.25)]">
-						<div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.25rem]">
+					<div className="group rounded-[1.75rem] border border-border bg-card p-2 shadow-[0_30px_60px_-20px_rgba(76,29,149,0.25)]">
+						<div className="aspect-[4/5] w-full overflow-hidden rounded-[1.25rem]">
 							<Image
 								src={fotoPerfilLuan}
 								alt="Retrato de Luan Poppe"

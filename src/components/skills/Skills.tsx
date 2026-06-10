@@ -35,9 +35,9 @@ export function Skills() {
 				{skillsList.map((skill, index) => (
 					<div
 						key={skill.name}
-						className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_20px_40px_-20px_rgba(124,58,237,0.35)]"
+						className="group hero-hover-shimmer relative overflow-hidden rounded-2xl border border-border bg-card/80 p-5 transition-shadow duration-300 hover:shadow-[0_20px_40px_-20px_rgba(124,58,237,0.35)]"
 					>
-						<div className="flex items-center gap-3">
+						<div className="relative flex items-center gap-3">
 							<span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 p-1.5 transition-colors group-hover:bg-accent/15">
 								<Image
 									src={skill.image}
@@ -48,11 +48,11 @@ export function Skills() {
 									aria-hidden
 								/>
 							</span>
-							<span className="text-sm font-semibold leading-tight">
+							<span className="text-sm font-semibold leading-tight transition-colors group-hover:text-accent">
 								{skill.name}
 							</span>
 						</div>
-						<span className="absolute right-3 top-3 font-mono text-[10px] text-muted-foreground/60">
+						<span className="absolute right-3 top-3 z-[1] font-mono text-[10px] text-muted-foreground/60">
 							{String(index + 1).padStart(2, "0")}
 						</span>
 					</div>

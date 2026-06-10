@@ -110,45 +110,223 @@
 	animation: sweep 3s ease-in-out infinite;
 }
 
-@keyframes hero-underline-color {
-	0%,
+@property --hero-accent-anim {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: oklch(0.48 0.21 295);
+}
+
+@keyframes hero-accent-sync {
+	0% {
+		--hero-accent-anim: oklch(0.44 0.2 295);
+	}
 	100% {
-		text-decoration-color: var(--accent);
+		--hero-accent-anim: oklch(0.78 0.19 298);
 	}
-	50% {
-		text-decoration-color: oklch(0.72 0.16 295);
+}
+
+@keyframes hero-accent-sync-dark {
+	0% {
+		--hero-accent-anim: oklch(0.6 0.12 295);
 	}
+	100% {
+		--hero-accent-anim: oklch(0.84 0.11 298);
+	}
+}
+
+.hero-headline-sync {
+	--hero-accent-anim: oklch(0.48 0.21 295);
+	animation: hero-accent-sync 2.8s ease-in-out infinite alternate;
+}
+
+.dark .hero-headline-sync {
+	animation-name: hero-accent-sync-dark;
+}
+
+.hero-accent-text {
+	color: var(--hero-accent-anim);
 }
 
 .hero-role-highlight {
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
-	text-decoration-line: underline;
-	text-decoration-thickness: 4px;
-	text-underline-offset: 0.2em;
-	text-decoration-skip-ink: none;
-	text-decoration-color: var(--accent);
-	animation: hero-underline-color 4.5s ease-in-out infinite;
-}
-
-@keyframes hero-underline-color-dark {
-	0%,
-	100% {
-		text-decoration-color: var(--accent);
-	}
-	50% {
-		text-decoration-color: oklch(0.74 0.1 295);
-	}
-}
-
-.dark .hero-role-highlight {
-	animation-name: hero-underline-color-dark;
+	background-image: linear-gradient(var(--hero-accent-anim), var(--hero-accent-anim));
+	background-repeat: no-repeat;
+	background-size: 100% 5px;
+	background-position: 0 calc(100% - 0.15em);
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.hero-role-highlight {
+	.hero-headline-sync {
 		animation: none;
+		--hero-accent-anim: var(--accent);
 	}
+}
+
+@keyframes hero-btn-gradient-shift {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+.hero-hover-shimmer {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+	transition:
+		border-color 0.35s ease,
+		color 0.35s ease,
+		transform 0.35s ease;
+}
+
+.hero-hover-shimmer > * {
+	position: relative;
+	z-index: 1;
+}
+
+.hero-hover-shimmer::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	border-radius: inherit;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+	background: linear-gradient(
+		125deg,
+		oklch(1 0.006 295) 0%,
+		oklch(0.95 0.05 295) 22%,
+		oklch(0.88 0.13 298) 48%,
+		oklch(0.97 0.03 295) 72%,
+		oklch(0.92 0.08 295) 100%
+	);
+	background-size: 260% 260%;
+	pointer-events: none;
+}
+
+.hero-hover-shimmer:hover {
+	border-color: color-mix(in oklab, var(--accent) 38%, transparent);
+	color: var(--accent);
+	transform: translateY(-2px);
+}
+
+.hero-hover-shimmer:hover::before {
+	opacity: 1;
+	animation: hero-btn-gradient-shift 2.8s ease-in-out infinite alternate;
+}
+
+.dark .hero-hover-shimmer::before {
+	background-image: linear-gradient(
+		125deg,
+		oklch(0.3 0.04 280) 0%,
+		oklch(0.36 0.08 295) 22%,
+		oklch(0.44 0.12 298) 48%,
+		oklch(0.32 0.06 280) 72%,
+		oklch(0.4 0.1 295) 100%
+	);
+	background-size: 260% 260%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-hover-shimmer:hover::before {
+		animation: none;
+		opacity: 1;
+		background-position: 50% 50%;
+	}
+
+	.hero-hover-shimmer:hover {
+		transform: none;
+	}
+}
+
+.hero-hover-shimmer-inverted {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+	transition:
+		border-color 0.35s ease,
+		color 0.35s ease,
+		transform 0.35s ease,
+		box-shadow 0.35s ease;
+}
+
+.hero-hover-shimmer-inverted > * {
+	position: relative;
+	z-index: 1;
+}
+
+.hero-hover-shimmer-inverted::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	border-radius: inherit;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+	background: linear-gradient(
+		125deg,
+		oklch(0.38 0.21 295) 0%,
+		oklch(0.46 0.21 295) 22%,
+		oklch(0.6 0.17 298) 48%,
+		oklch(0.42 0.2 295) 72%,
+		oklch(0.52 0.19 295) 100%
+	);
+	background-size: 260% 260%;
+	pointer-events: none;
+}
+
+.hero-hover-shimmer-inverted:hover {
+	border-color: color-mix(in oklab, var(--accent) 55%, transparent);
+	color: var(--accent-foreground);
+	transform: translateY(-2px);
+}
+
+.hero-hover-shimmer-inverted:hover::before {
+	opacity: 1;
+	animation: hero-btn-gradient-shift 2.8s ease-in-out infinite alternate;
+}
+
+.dark .hero-hover-shimmer-inverted::before {
+	background-image: linear-gradient(
+		125deg,
+		oklch(0.48 0.13 295) 0%,
+		oklch(0.56 0.12 295) 22%,
+		oklch(0.68 0.1 298) 48%,
+		oklch(0.5 0.11 295) 72%,
+		oklch(0.6 0.11 295) 100%
+	);
+	background-size: 260% 260%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-hover-shimmer-inverted:hover::before {
+		animation: none;
+		opacity: 1;
+		background-position: 50% 50%;
+	}
+
+	.hero-hover-shimmer-inverted:hover {
+		transform: none;
+	}
+}
+
+.card-accent-glow {
+	background: radial-gradient(
+		closest-side,
+		color-mix(in oklab, oklch(0.47 0.2 290) 40%, transparent),
+		transparent
+	);
+}
+
+.card-accent-glow-sm {
+	background: radial-gradient(
+		closest-side,
+		color-mix(in oklab, oklch(0.47 0.2 290) 34%, transparent),
+		transparent
+	);
 }
 
 @layer base {

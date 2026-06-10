@@ -1,5 +1,6 @@
 "use client"
 
+import { CardAccentGlow } from "@/components/CardAccentGlow"
 import { getTextLang } from "@/utils/textos/funcs"
 import { contactLinks, contactTexts } from "@/utils/textos/contact"
 import { useAppContext } from "@/utils/useContext"
@@ -10,14 +11,7 @@ export function Contact() {
 	return (
 		<section id="contato" className="py-24 md:py-32" data-reveal>
 			<div className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 md:p-16">
-				<div
-					aria-hidden
-					className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full opacity-60 blur-3xl"
-					style={{
-						background:
-							"radial-gradient(closest-side, color-mix(in oklab, var(--accent) 25%, transparent), transparent)"
-					}}
-				/>
+				<CardAccentGlow />
 
 				<div className="relative grid grid-cols-1 items-end gap-10 md:grid-cols-2">
 					<div>
@@ -43,7 +37,7 @@ export function Contact() {
 								href={href}
 								target={href.startsWith("mailto:") ? undefined : "_blank"}
 								rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
-								className="group flex cursor-pointer items-center justify-between rounded-2xl border border-border bg-background/60 p-4 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent hover:text-accent-foreground"
+								className="hero-hover-shimmer-inverted group flex cursor-pointer items-center justify-between rounded-2xl border border-border bg-background/80 p-4 text-foreground"
 							>
 								<div>
 									<p className="font-mono text-[10px] uppercase tracking-[0.25em] opacity-60">
@@ -53,7 +47,7 @@ export function Contact() {
 										{getTextLang(action, activeLanguage)}
 									</p>
 								</div>
-								<Icon className="h-5 w-5 transition-transform group-hover:rotate-6" />
+								<Icon className="h-5 w-5 shrink-0 transition-transform group-hover:rotate-6" />
 							</a>
 						))}
 					</div>
